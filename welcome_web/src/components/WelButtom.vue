@@ -26,13 +26,12 @@
 }
 
 .buttom {
-  /* position: relative; */
+  position: relative;
   display: flex;
   height: 180px;
   width: 100%;
   font-size: 15px;
   background-color: #2e9deb;
-  margin-top: 350px;
 }
 .img1 {
   height: 100px;
