@@ -26,13 +26,11 @@
 }
 
 .buttom {
-  /* position: relative; */
   display: flex;
   height: 180px;
   width: 100%;
   font-size: 15px;
   background-color: #2e9deb;
-  margin-top: 350px;
 }
 .img1 {
   height: 100px;
@@ -45,7 +43,7 @@
   flex: 1;
   padding-left: 5%;
   padding-top: 3%;
-  /* width: 8%; */
+  width: 8%;
 }
 .words {
   flex: 4;
@@ -56,4 +54,36 @@
   flex: 2;
   padding-top: 3%;
 }
+
+/* 响应式 */
+@media (max-width: 1024px) {  
+  .buttom {
+    font-size: 13px;
+  }
+
+  .img1 {
+    height: 80px;
+    width: 80px;
+  }
+
+  .img2 {
+  width: 150px;
+  }
+}  
+  
+@media (max-width: 768px) {  
+  .buttom {
+    font-size: 10px;
+    height: 120px;
+  }
+
+  .img1 {
+    height: 50px;
+    width: 50px;
+  }
+
+  .img2 {
+    width: 100px;
+  }
+}  
 </style>
