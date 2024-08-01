@@ -8,9 +8,9 @@
     </div>
     <div class="words">
       版权:江西师范大学(Jiangxi Normal University) <br>
-      ICP备案编号：赣B2-20050166号-1 <br>
+      ICP备案编号:赣B2-20050166号-1 <br>
       学校地址：[瑶湖校区]江西省南昌市紫阳大道99号 <br>
-      邮政编码：330022
+      邮政编码:330022
     </div>
     <div class="logo">
         <img src="../assets/homyit_logo.png" alt="" class="img2">

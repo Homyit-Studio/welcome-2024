@@ -1,8 +1,8 @@
 <template>
   <el-carousel class="swiper">
-    <el-carousel-item><img src="@/assets/1.png" alt=""></el-carousel-item>
-    <el-carousel-item><img src="@/assets/2.jpg" alt=""></el-carousel-item>
-    <el-carousel-item><img src="@/assets/3.jpg" alt=""></el-carousel-item>
+    <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
+    <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
+    <el-carousel-item><img src="@/assets/three.jpg" alt=""></el-carousel-item>
   </el-carousel>
 </template>
 
