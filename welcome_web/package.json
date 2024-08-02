@@ -10,8 +10,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "echarts": "^5.5.1",
     "element-plus": "^2.7.8",
+    "jquery": "^3.7.1",
     "pinia": "^2.1.7",
     "swiper": "^11.1.9",
     "vue": "^3.4.29",
