@@ -302,10 +302,16 @@ function initChart() {
 </script>
 
 <template>
-    <div ref="chart" id="chinaMap"></div>
+    <div class="marg">
+        <div ref="chart" id="chinaMap"></div>
+    </div>
 </template>
 
 <style scoped>
+.marg {
+    padding-top: 60px;
+}
+
 #chinaMap {
     width: 100%;
     height: 1000px;
