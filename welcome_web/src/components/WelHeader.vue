@@ -17,14 +17,7 @@
 </template>  
   
 <style scoped>  
-* {  
-  box-sizing: border-box;  
-  margin: 0;  
-  padding: 0;  
-}  
-  
 .header {  
-  position: fixed;
   display: flex;  
   justify-content: space-between;  
   align-items: center;  
@@ -33,6 +26,8 @@
   background-color: #ffffff;  
   position: relative;  
   overflow: hidden;  
+  position: fixed;
+  z-index: 1000;
 }  
   
 .header .img {  

@@ -11,13 +11,13 @@
       <router-view></router-view>
     </div>
     <div class="buttom_wrap">
-      <WelButtom></WelButtom>
+      <!-- <WelButtom></WelButtom> -->
     </div>
   </div>
 </template>
 
 <style scoped>
-* {
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
