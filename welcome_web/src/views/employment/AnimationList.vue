@@ -8,7 +8,7 @@ onMounted(() => {
     const items = document.querySelectorAll('.list-item');
     const playGround = document.querySelector('.playground');
     const list = document.querySelector('.list');
-    //传入横坐标的scroll值给一个value，return出来的就是value值
+    //这个就是我上面提及到的函数，传入横坐标的scroll值给一个value，return出来的就是value值
     function createAnimation(xStart, xEnd, yStart, yEnd) {
         return function (x) {
             //第一阶段
@@ -21,7 +21,7 @@ onMounted(() => {
             }
             //斜线部分（高中函数知识，也可以理解为yStart + ((x - xStart) * (yEnd - yStart) / (xEnd - xStart)) ）
             return yStart + ((x - xStart) / (xEnd - xStart)) * (yEnd - yStart);
-        }
+        };
     }
     //上面这个函数可以这样死调用：const p = createAnimation(100,1000,0,1)
     //p(100),传入的是100，就返回一个value值是1，但是这样太死了，我们滚动的时候怎么会知道传入什么值呢，所以可以想到这里的100应该又得是一个变量，而不是一个死的值
@@ -35,45 +35,40 @@ onMounted(() => {
     //完善这个animationMap
     function updateAnimationMap() {
         //先清空map，因为考虑到缩放浏览器页面大小啥的需要一直计算，这里也可以不写
-        // animationMap.clear();
+        animationMap.clear();
         //防止没有方块
         if (items.length === 0) {
             return;
         }
+        let playGroundRect
+        let scrollY
         let playGroundTop
         let playGroundBottom
-        let reactiveData
-        //拿到蓝色部分的矩形区域
-        if (window.innerWidth <= 450) {
-            //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
-            playGroundTop =    //如上图3所示，结束距离，scrollEnd
-                playGroundBottom = 200;
-            reactiveData = 1
-        }
-        else if (450 < window.innerWidth <= 750) {
+        let reactiveData = 200
+        if (window.innerWidth <= 750) {
+            scrollY = window.scrollY;
             //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
             playGroundTop = 0;
             //如上图3所示，结束距离，scrollEnd
-            playGroundBottom = 400;
-            reactiveData = 1
+            playGroundBottom = 300;
+            reactiveData = 10
         }
-
-        const playGroundRect = playGround.getBoundingClientRect();
-        const scrollY = window.scrollY;
-        //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
-        playGroundTop = playGroundRect.top + scrollY;
-        //如上图3所示，结束距离，scrollEnd
-        playGroundBottom = window.innerHeight - playGroundRect.bottom + scrollY;
-        reactiveData = 200
-
+        else {
+            //拿到蓝色部分的矩形区域
+            playGroundRect = playGround.getBoundingClientRect();
+            scrollY = window.scrollY;
+            //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
+            playGroundTop = playGroundRect.top + scrollY;
+            //如上图3所示，结束距离，scrollEnd
+            playGroundBottom = playGroundRect.bottom + scrollY - window.innerHeight;
+            reactiveData = 10
+        }
         //方块的矩形区域
-        const listRect = list.getBoundingClientRect();
-
-
+        let listRect = list.getBoundingClientRect();
         //循环所以items，因为是每个小方块在动态变化样式
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
-            //拿到order，也就是html中写的出来的顺序，相差reactiveData个滚动位置出来下一组方块
+            //拿到order，也就是html中写的出来的顺序，相差600个滚动位置出来下一组方块
             const scrollStart = playGroundTop + item.dataset.order * reactiveData;
             const scrollEnd = playGroundBottom;
             //拿到方块的宽高左右距离来使方块处于一直居中状态
@@ -158,19 +153,14 @@ onMounted(() => {
     <div class="other">工作室人员有许多人都从事教育和前端行业</div>
     <div class="playground">
         <div class="animation-container">
-
             <div class="list">
                 <div data-order="0" class="list-item"><img src="../../assets/logo-map/tencent_logo.png" alt=""></div>
                 <div data-order="1" class="list-item"><img src="../../assets/logo-map/ByteDance.png" alt=""></div>
-                <!-- <div data-order="2" class="list-item"></div> -->
-                <!-- <div data-order="3" class="list-item"></div> -->
                 <div data-order="2" class="list-item"><img src="../../assets/logo-map/ANT-GROUP.png" alt=""></div>
                 <div data-order="1" class="list-item"><img src="../../assets/logo-map/baidulogo.png" alt=""></div>
                 <div data-order="0" class="list-item"><img src="../../assets/logo-map/RingCentral.png" alt=""></div>
                 <div data-order="0" class="list-item"><img src="../../assets/logo-map/didi.png" alt=""></div>
                 <div data-order="1" class="list-item"><img src="../../assets/logo-map/hd.png" alt=""></div>
-                <!-- <div data-order="2" class="list-item"></div> -->
-                <!-- <div data-order="3" class="list-item"></div> -->
                 <div data-order="2" class="list-item"><img src="../../assets/logo-map/logo_nvidia.png" alt=""></div>
                 <div data-order="1" class="list-item"><img src="../../assets/logo-map/mtlog.png" alt=""></div>
                 <div data-order="0" class="list-item"><img src="../../assets/logo-map/4399.png" alt=""></div>
