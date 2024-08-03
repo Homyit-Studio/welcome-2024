@@ -1,1 +1,9 @@
-<template>详情页</template>
+<script setup>
+</script>
+
+<template>
+    <DevelopMent></DevelopMent>
+</template>
+
+<style scoped>
+</style>
