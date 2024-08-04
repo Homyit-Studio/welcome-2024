@@ -1,6 +1,7 @@
 <script setup>
 import {ref,watch} from 'vue'
-import 'animate.css';
+import axios from 'axios'
+import 'animate.css'
 // 1.创建响应式变量来存储name输入框的值
 const input1Value = ref('')
 // 1.创建图标的响应式变量
@@ -16,11 +17,7 @@ watch(input1Value,(newValue)=>{
         inputIco1Name.value = 'block'
         inputIco2Name.value = 'none'
         inputTest1.value = 0
-      } else if(rules1.test(newValue)==='') {
-        inputIco1Name.value = 'none'
-        inputIco2Name.value = 'block'
-        inputTest1.value = 1
-      } else{
+      }else{
         inputIco1Name.value = 'none'
         inputIco2Name.value = 'block'
         inputTest1.value = 1
@@ -104,12 +101,32 @@ watch(input4Value,(newValue)=>{
         inputTest4.value = 1
       }
 })
+
+// 表单提交处理函数
+const handleSubmit = async () => {
+  if(!input1Value.value || !input2Value.value || !input3Value.value || !input4Value.value){
+    alert('请输入完整的信息')
+    return
+  }
+  const postData = {
+    name:input1Value.value,
+    number:input2Value.value,
+    class:input3Value.value,
+    email:input4Value.value
+  }
+  try{
+    const response = await axios.post('url',postData)
+    alert('提交成功')
+    console.log(response.data)
+  }catch(error){
+    console.error(error)
+    alert('提交失败,请稍后再试')
+  }
+}
 </script>
 
 <template>
   <div class="container">
-    <img class="join1" src="../../assets/join1.png" alt="">
-    <img class="join2" src="../../assets/join2.png" alt="">
     <div class="main">
       <form method="post" @submit.prevent="handleSubmit">
         <div class="top">
@@ -211,30 +228,18 @@ watch(input4Value,(newValue)=>{
 }
 .container{
   transform: translateY(60px);
-  background: linear-gradient(to bottom,#f6f6f6, #B0E0E6);
+  /* background: linear-gradient(to bottom,#f6f6f6, #B0E0E6); */
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   position: relative;
-}
-.join1{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-}
-.join2{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 .main{
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin: 0 auto;
+  height: 470px;
+  transform: translateY(77px);
   text-align: center;
   border-radius: 25px;
   overflow: hidden;
@@ -243,6 +248,8 @@ watch(input4Value,(newValue)=>{
   box-shadow: 10px 10px 20px rgba(25,0,0, .8);
 }
 .top{
+  position: absolute;
+  top: 0px;
   width: 100%;
   height: 50px;
   border-bottom: 1px solid rgb(238, 252, 255);
@@ -258,17 +265,23 @@ watch(input4Value,(newValue)=>{
   cursor: pointer;
 }
 #name{
-  padding-top: 5px;
+  position: absolute;
+  top: 55px;
   position: relative;
 }
 #name .name{
+  position: absolute;
   display: inline-block;
   width: 50px;
   font-size: 15px;
-  margin-left: -10px;
+  top: 5px;
+  left: 33px;
   color: black;
 }
 #name .inputName{
+  position: absolute;
+  top: 0;
+  left: 80px;
   width: 70%;
   height: 35px;
   border-radius: 10px;
@@ -278,21 +291,31 @@ watch(input4Value,(newValue)=>{
   font-size: 12px;
 }
 .name-test{
+  position: absolute;
+  top: 30px;
+  left: 88px;
   font-size: 10px;
   margin-top: 4px;
   color: red;
 }
 #number{
-  padding-top: 5px;
+  position: absolute;
+  top: 110px;
   position: relative;
 }
 #number .number{
+  position: absolute;
   display: inline-block;
   width: 50px;
   font-size: 15px;
-  margin-left: -10px;
+  top: 5px;
+  left: 33px;
+  color: black;
 }
 #number .inputNumber{
+  position: absolute;
+  top: 0;
+  left: 80px;
   width: 70%;
   height: 35px;
   border-radius: 10px;
@@ -302,21 +325,31 @@ watch(input4Value,(newValue)=>{
   font-size: 12px;
 }
 .number-test{
+  position: absolute;
+  top: 30px;
+  left: 88px;
   font-size: 10px;
   margin-top: 4px;
   color: red;
 }
 #class{
-  padding-top: 5px;
+  position: absolute;
+  top: 170px;
   position: relative;
 }
 #class .class{
+  position: absolute;
+  top: 5px;
+  left: 33px;
+  color: black;
   display: inline-block;
   width: 50px;
   font-size: 15px;
-  margin-left: -10px;
 }
 #class .inputClass{
+  position: absolute;
+  top: 0;
+  left: 80px;
   width: 70%;
   height: 35px;
   border-radius: 10px;
@@ -326,21 +359,31 @@ watch(input4Value,(newValue)=>{
   font-size: 12px;
 }
 .class-test{
+  position: absolute;
+  top: 30px;
+  left: 88px;
   font-size: 10px;
   margin-top: 4px;
   color: red;
 }
 #email{
-  padding-top: 5px;
+  position: absolute;
+  top: 230px;
   position: relative;
 }
 #email .email{
+  position: absolute;
+  top: 5px;
+  left: 33px;
+  color: black;
   display: inline-block;
   width: 50px;
   font-size: 15px;
-  margin-left: -10px;
 }
 #email .inputEmail{
+  position: absolute;
+  top: 0;
+  left: 80px;
   width: 70%;
   height: 35px;
   border-radius: 10px;
@@ -350,21 +393,31 @@ watch(input4Value,(newValue)=>{
   font-size: 12px;
 }
 .email-test{
+  position: absolute;
+  top: 30px;
+  left: 88px;
   font-size: 10px;
   margin-top: 4px;
   color: red;
 }
 #direction{
-  padding-top: 5px;
+  position: absolute;
+  top: 290px;
   position: relative;
 }
 #direction .direction{
+  position: absolute;
+  top: 5px;
+  left: 33px;
+  color: black;
   display: inline-block;
   width: 50px;
   font-size: 15px;
-  margin-left: -12px;
 }
 .choice{
+  position: absolute;
+  top: 0;
+  left: 80px;
   width: 70%;
   height: 35px;
   border-radius: 10px;
@@ -374,17 +427,24 @@ watch(input4Value,(newValue)=>{
   font-size: 12px;
 }
 #selfIntroduction{
-  padding-top: 10px;
+  position: absolute;
+  top: 350px;
   position: relative;
 }
 #selfIntroduction .selfIntroduction{
+  position: absolute;
+  top: 20px;
+  left: 13px;
+  color: black;
   display: inline-block;
   width: 65px;
   font-size: 15px;
-  margin-left: -25px;
   transform: translateY(-15px);
 }
 #selfIntroduction .inputSelfIntroduction{
+  position: absolute;
+  top: 0;
+  left: 80px;
   width: 70%;
   height: 40px;
   border: 2px solid #ccc;
@@ -394,6 +454,8 @@ watch(input4Value,(newValue)=>{
   font-size: 12px;
 }
 .button{
+  position: absolute;
+  top: 410px;
   position: relative;
   width: 80px;
   height: 40px;
@@ -408,6 +470,7 @@ watch(input4Value,(newValue)=>{
   -webkit-box-reflect: below 1px linear-gradient(transparent,#0003);
 }
 .button:hover{
+  cursor: pointer;
   background-color: #21ebff;
   color: #111;
   box-shadow: 0 0 50px #21ebff;
@@ -441,12 +504,12 @@ watch(input4Value,(newValue)=>{
 }
 .icon1{
   position: absolute;
-  right: 50px;
-  top: 10px;
+  right: 12%;
+  top: 5px;
 }
 .icon2{
   position: absolute;
-  right: 50px;
-  top: 10px;
+  right: 12%;
+  top: 5px;
 }
 </style>
