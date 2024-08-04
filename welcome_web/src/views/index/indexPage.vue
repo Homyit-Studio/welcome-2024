@@ -71,6 +71,39 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+  <div class="projects">
+    <div class="Title">Programs</div>
+    <div class="projects_items">
+      <div ref="animatedElement1" class="img animate__animated">
+        <div class="img1">
+          <img src="@/assets/财务处.png" alt="">
+        </div>
+        <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
+      </div>
+      <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s">
+        <div class="img1">
+        <img src="@/assets/管理决策评价中心.png" alt="">
+        </div>
+        <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
+      </div>
+      <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s">
+        <div class="img1">
+        <img src="@/assets/国教.png" alt="">
+        </div>
+        <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
+      </div>
+      <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s">
+        <div class="img1">
+        <img src="@/assets/马院.png" alt="">
+        </div>
+        <a href="https://mar.jxnu.edu.cn/">江西师范大学马克思主义学院官网</a>
+      </div>
+    </div>
+    </div>
+  </div>
+>>>>>>> 5a2de23 (about first)
 </template>
 <script>
 import 'animate.css'
@@ -127,7 +160,11 @@ export default {
 <style scoped>
 .main {
   background-color: #f6f6f6;
+<<<<<<< HEAD
   box-sizing: border-box;
+=======
+  box-sizing: border-box; 
+>>>>>>> 5a2de23 (about first)
   padding-top: 60px;
 }
 
@@ -275,7 +312,7 @@ a.btn:hover {
 /* programs */
 .projects_items {
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
