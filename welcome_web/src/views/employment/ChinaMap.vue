@@ -1,5 +1,5 @@
 <script setup>
-import { ref, nextTick, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 //引入地图的json文件
 import chinaMap from '../../assets/json/china.json'
 //引入echarts核心模块
@@ -8,7 +8,7 @@ import * as echarts from 'echarts'
 let chart = ref()
 //数据的声明以及数据的默认值
 let mapData = [
-    { name: '北京市', value: 10 },
+    { name: '北京市', value: 8 },
     { name: '天津市', value: 0 },
     { name: '河北省', value: 0 },
     { name: '山西省', value: 0 },
@@ -16,21 +16,21 @@ let mapData = [
     { name: '辽宁省', value: 0 },
     { name: '吉林省', value: 0 },
     { name: '黑龙江省', value: 0 },
-    { name: '上海市', value: 15 },
-    { name: '江苏省', value: 0 },
-    { name: '浙江省', value: 0 },
+    { name: '上海市', value: 4 },
+    { name: '江苏省', value: 1 },
+    { name: '浙江省', value: 5 },
     { name: '安徽省', value: 0 },
     { name: '福建省', value: 2 },
-    { name: '江西省', value: 10 },
+    { name: '江西省', value: 0 },
     { name: '山东省', value: 0 },
     { name: '河南省', value: 0 },
-    { name: '湖北省', value: 0 },
+    { name: '湖北省', value: 2 },
     { name: '湖南省', value: 0 },
-    { name: '广东省', value: 20 },
+    { name: '广东省', value: 8 },
     { name: '广西壮族自治区', value: 0 },
     { name: '海南省', value: 0 },
-    { name: '重庆市', value: 4 },
-    { name: '四川省', value: 5 },
+    { name: '重庆市', value: 2 },
+    { name: '四川省', value: 1 },
     { name: '贵州省', value: 0 },
     { name: '云南省', value: 0 },
     { name: '西藏自治区', value: 0 },
@@ -39,9 +39,9 @@ let mapData = [
     { name: '青海省', value: 0 },
     { name: '宁夏回族自治区', value: 0 },
     { name: '新疆维吾尔自治区', value: 0 },
-    { name: '台湾省', value: 3 },
-    { name: '香港特别行政区', value: 3 },
-    { name: '澳门特别行政区', value: 3 },
+    { name: '台湾省', value: 0 },
+    { name: '香港特别行政区', value: 2 },
+    { name: '澳门特别行政区', value: 1 },
     { name: '南海诸岛', value: 0 },
 ]
 let data = [
@@ -66,9 +66,17 @@ let data = [
     { name: '东莞市', value: 10 },
     { name: '杭州市', value: 10 },
 ]
-
-
-
+let LinesData = [
+    { coords: [[115.89, 28.68], [116.46, 39.92]] },
+    { coords: [[115.89, 28.68], [121.48, 31.22]] },
+    { coords: [[115.89, 28.68], [113.23, 23.16]] },
+    { coords: [[115.89, 28.68], [114.07, 22.62]] },
+    { coords: [[115.89, 28.68], [118.767413, 32.041544]] },
+    { coords: [[115.89, 28.68], [120.153576, 30.287459]] },
+    { coords: [[115.89, 28.68], [119.306239, 26.075302]] },
+    { coords: [[115.89, 28.68], [106.54, 29.59]] },
+    { coords: [[115.89, 28.68], [114.31, 30.52]] },
+]
 let geoCoordMap = {
     北京市: [116.46, 39.92],
     上海市: [121.48, 31.22],
@@ -89,6 +97,7 @@ let geoCoordMap = {
     佛山市: [113.11, 23.05],
     天津市: [117.2, 39.13],
     沈阳市: [123.38, 41.8],
+    南昌市: [115.89, 28.68],
 }
 const convertData = function (data) {
     var res = [];
@@ -106,9 +115,7 @@ const convertData = function (data) {
 //挂载
 //发送请求?
 onMounted(() => {
-    nextTick(() => {
-        initChart()
-    })
+    initChart()
 })
 
 
@@ -140,7 +147,7 @@ function initChart() {
             formatter: function (params) {
                 //模板字符串,用于设计悬浮框样式
                 let tipHtml = '<div style="width:180px;height:100px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">'
-                    + '<div style="width:140px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' + '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' + '</i>'
+                    + '<div style="width:180px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' + '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' + '</i>'
                     + '<span style="margin-left:10px;color:#fff;font-size:16px;">' + params.name + '</span>' + '</div>'
                     + '<div style="padding:10px">'
                     + '<p style="color:#fff;font-size:12px;">' + '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' + '</i>'
@@ -157,7 +164,7 @@ function initChart() {
             show: false,//是否显示
             type: 'continuous',
             min: 0,//最小个数
-            max: 20,//最大个数
+            max: 10,//最大个数
             realtime: true,//根据数据变化
             left: '0%',//离左边的距离,这边我直接给他隐藏了
             top: '20%',//位置
@@ -266,7 +273,7 @@ function initChart() {
                 rippleEffect: {
                     number: 5,
                     period: 5,
-                    scale: 2.5,
+                    scale: 5,
                     brushType: 'fill'
                 },
                 label: {
@@ -283,6 +290,22 @@ function initChart() {
                 emphasis: {
                     scale: true
                 },
+                tooltip: {
+                    show: false
+                }
+            },
+            {
+                name: '线条',
+                type: 'lines',
+                symbol: ['none'],
+                synbolSize: 1,
+                lineStyle: {
+                    color: '#93EBF8',
+                    width: 2.5,//宽度
+                    opacity: 0.6,//尾迹透明度
+                    curveness: 0.2//尾迹线条曲直度
+                },
+                data: LinesData,
                 tooltip: {
                     show: false
                 }

@@ -5,8 +5,10 @@ import AnimationList from './AnimationList.vue'
 
 
 <template>
-    <ChinaMap />
-    <AnimationList />
+    <div style="background-color:#e6e6e6a0;">
+        <ChinaMap />
+        <AnimationList />
+    </div>
 </template>
 
 
