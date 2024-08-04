@@ -1,13 +1,13 @@
 <script setup>
 import {ref,watch} from 'vue'
-
+import 'animate.css';
 // 1.创建响应式变量来存储name输入框的值
 const input1Value = ref('')
 // 1.创建图标的响应式变量
 const inputIco1Name = ref('none')
 const inputIco2Name = ref('none')
 // 1.创建响应式变量来存储name测试的值
-const inputTest1 = ref('none')
+const inputTest1 = ref(0)
 // 1.定义name的正则表达式
 const rules1 = /^[\u4e00-\u9fa5]{2,4}$/
 // 1.监听name变化
@@ -15,15 +15,15 @@ watch(input1Value,(newValue)=>{
     if (rules1.test(newValue)) {
         inputIco1Name.value = 'block'
         inputIco2Name.value = 'none'
-        inputTest1.value = 'none'
+        inputTest1.value = 0
       } else if(rules1.test(newValue)==='') {
         inputIco1Name.value = 'none'
         inputIco2Name.value = 'block'
-        inputTest1.value = 'block'
+        inputTest1.value = 1
       } else{
         inputIco1Name.value = 'none'
         inputIco2Name.value = 'block'
-        inputTest1.value = 'block'
+        inputTest1.value = 1
       }
 })
 
@@ -33,7 +33,7 @@ const input2Value = ref('')
 const inputIco1Number = ref('none')
 const inputIco2Number = ref('none')
 // 2.创建响应式变量来存储number测试的值
-const inputTest2 = ref('none')
+const inputTest2 = ref(0)
 // 2.定义number的正则表达式
 const rules2 = /^2024\d{8}$/
 // 2.监听number变化
@@ -41,15 +41,15 @@ watch(input2Value,(newValue)=>{
     if (rules2.test(newValue)) {
         inputIco1Number.value = 'block'
         inputIco2Number.value = 'none'
-        inputTest2.value = 'none'
+        inputTest2.value = 0
       } else if(rules2.test(newValue)==='') {
         inputIco1Number.value = 'none'
         inputIco2Number.value = 'block'
-        inputTest2.value = 'block'
+        inputTest2.value = 1
       } else{
         inputIco1Number.value = 'none'
         inputIco2Number.value = 'block'
-        inputTest2.value = 'block'
+        inputTest2.value = 1
       }
 })
 
@@ -59,7 +59,7 @@ const input3Value = ref('')
 const inputIco1Class = ref('none')
 const inputIco2Class = ref('none')
 // 3.创建响应式变量来存储Class测试的值
-const inputTest3 = ref('none')
+const inputTest3 = ref(0)
 // 3.定义Class的正则表达式
 const rules3 = /^[\u4e00-\u9fa5]+[\d]+班$/
 // 3.监听Class变化
@@ -67,15 +67,15 @@ watch(input3Value,(newValue)=>{
     if (rules3.test(newValue)) {
         inputIco1Class.value = 'block'
         inputIco2Class.value = 'none'
-        inputTest3.value = 'none'
+        inputTest3.value = 0
       } else if(rules3.test(newValue)==='') {
         inputIco1Class.value = 'none'
         inputIco2Class.value = 'block'
-        inputTest3.value = 'block'
+        inputTest3.value = 1
       } else{
         inputIco1Class.value = 'none'
         inputIco2Class.value = 'block'
-        inputTest3.value = 'block'
+        inputTest3.value = 1
       }
 })
 
@@ -85,7 +85,7 @@ const input4Value = ref('')
 const inputIco1Email = ref('none')
 const inputIco2Email = ref('none')
 // 4.创建响应式变量来存储Email测试的值
-const inputTest4 = ref('none')
+const inputTest4 = ref(0)
 // 4.定义Email的正则表达式
 const rules4 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 // 4.监听Email变化
@@ -93,26 +93,27 @@ watch(input4Value,(newValue)=>{
     if (rules4.test(newValue)) {
         inputIco1Email.value = 'block'
         inputIco2Email.value = 'none'
-        inputTest4.value = 'none'
+        inputTest4.value = 0
       } else if(rules4.test(newValue)==='') {
         inputIco1Email.value = 'none'
         inputIco2Email.value = 'block'
-        inputTest4.value = 'block'
+        inputTest4.value = 1
       } else{
         inputIco1Email.value = 'none'
         inputIco2Email.value = 'block'
-        inputTest4.value = 'block'
+        inputTest4.value = 1
       }
 })
 </script>
 
 <template>
   <div class="container">
-    <img class="join" src="../../assets/join.jpg" alt="">
+    <img class="join1" src="../../assets/join1.png" alt="">
+    <img class="join2" src="../../assets/join2.png" alt="">
     <div class="main">
       <form method="post" @submit.prevent="handleSubmit">
         <div class="top">
-          <div class="register"><span>Register</span></div>
+          <div class="register animate__animated animate__swing"><span>Register</span></div>
         </div>
         <div class="content">
           <div id="name">
@@ -120,29 +121,29 @@ watch(input4Value,(newValue)=>{
             <input class="inputName" v-model="input1Value" placeholder="请输入你的姓名" type="text">
             <span><img class="icon1" :style="{display:inputIco1Name}" src="../../assets/1.ico" alt=""></span>
             <span><img class="icon2" :style="{display:inputIco2Name}" src="../../assets/2.ico" alt=""></span>
+            <div class="name-test" :style="{opacity:inputTest1}">请输入真实姓名</div>
           </div>
-          <div class="name-test" :style="{display:inputTest1}">请输入真实姓名</div>
           <div id="number">
             <span class="number">学号</span>
             <input class="inputNumber" v-model="input2Value" placeholder="请输入你的学号" type="text">
             <span><img class="icon1" :style="{display:inputIco1Number}" src="../../assets/1.ico" alt=""></span>
             <span><img class="icon2" :style="{display:inputIco2Number}" src="../../assets/2.ico" alt=""></span>
+            <div class="number-test" :style="{opacity:inputTest2}">学号应以2024开头,共12位</div>
           </div>
-          <div class="number-test" :style="{display:inputTest2}">学号应以2024开头,共12位</div>
           <div id="class">
             <span class="class">班级</span>
             <input class="inputClass" v-model="input3Value" placeholder="请输入你的班级" type="text">
             <span><img class="icon1" :style="{display:inputIco1Class}" src="../../assets/1.ico" alt=""></span>
             <span><img class="icon2" :style="{display:inputIco2Class}" src="../../assets/2.ico" alt=""></span>
+            <div class="class-test" :style="{opacity:inputTest3}">请输入正确的班级名称</div>
           </div>
-          <div class="class-test" :style="{display:inputTest3}">请输入正确的班级名称</div>
           <div id="email">
             <span class="email">邮箱</span>
             <input class="inputEmail" v-model="input4Value" placeholder="请输入你的邮箱" type="text">
             <span><img class="icon1" :style="{display:inputIco1Email}" src="../../assets/1.ico" alt=""></span>
             <span><img class="icon2" :style="{display:inputIco2Email}" src="../../assets/2.ico" alt=""></span>
+            <div class="email-test" :style="{opacity:inputTest4}">请输入正确邮箱地址</div>
           </div>
-          <div class="email-test" :style="{display:inputTest4}">请输入正确邮箱地址</div>
           <div id="direction">
             <span class="direction">方向</span>
             <select class="choice">
@@ -209,18 +210,29 @@ watch(input4Value,(newValue)=>{
   }      
 }
 .container{
+  transform: translateY(60px);
+  background: linear-gradient(to bottom,#f6f6f6, #B0E0E6);
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   position: relative;
 }
-.join{
-  width: 100%;
+.join1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
   height: 100%;
-  opacity: 1;
+}
+.join2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
 }
 .main{
   position: absolute;
-  top: 40px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -238,136 +250,125 @@ watch(input4Value,(newValue)=>{
 .register{
   text-align: center;
   line-height: 50px;
-  color: #fff;
+  font-weight: 700;
+  color: #122021;
   font-size: 20px;
 }
 .register:hover{
   cursor: pointer;
 }
-.active{
-  font-size: 20px;
-  color: #2ea4bc;
-}
-.active span {
-  border-bottom: 3px solid #2ea4bc;
-  padding-bottom: 10px;
-}
 #name{
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
 }
 #name .name{
   display: inline-block;
   width: 50px;
-  font-size: 16px;
+  font-size: 15px;
   margin-left: -10px;
-  color: gray;
+  color: black;
 }
 #name .inputName{
   width: 70%;
   height: 35px;
   border-radius: 10px;
-  border: 0;
+  border: 2px solid #ccc;
   outline: none;
   padding-left: 6px;
   font-size: 12px;
 }
 .name-test{
-  width: 100%;
-  font-size: 12px;
-  margin-top: 8px;
+  font-size: 10px;
+  margin-top: 4px;
   color: red;
 }
 #number{
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
 }
 #number .number{
   display: inline-block;
   width: 50px;
-  font-size: 16px;
+  font-size: 15px;
   margin-left: -10px;
 }
 #number .inputNumber{
   width: 70%;
   height: 35px;
   border-radius: 10px;
-  border: 0;
+  border: 2px solid #ccc;
   outline: none;
   padding-left: 6px;
   font-size: 12px;
 }
 .number-test{
-  width: 100%;
-  font-size: 12px;
-  margin-top: 8px;
+  font-size: 10px;
+  margin-top: 4px;
   color: red;
 }
 #class{
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
 }
 #class .class{
   display: inline-block;
   width: 50px;
-  font-size: 16px;
+  font-size: 15px;
   margin-left: -10px;
 }
 #class .inputClass{
   width: 70%;
   height: 35px;
   border-radius: 10px;
-  border: 0;
+  border: 2px solid #ccc;
   outline: none;
   padding-left: 6px;
   font-size: 12px;
 }
 .class-test{
-  width: 100%;
-  font-size: 12px;
-  margin-top: 8px;
+  font-size: 10px;
+  margin-top: 4px;
   color: red;
 }
 #email{
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
 }
 #email .email{
   display: inline-block;
   width: 50px;
-  font-size: 16px;
+  font-size: 15px;
   margin-left: -10px;
 }
 #email .inputEmail{
   width: 70%;
   height: 35px;
   border-radius: 10px;
-  border: 0;
+  border: 2px solid #ccc;
   outline: none;
   padding-left: 6px;
   font-size: 12px;
 }
 .email-test{
-  width: 100%;
-  font-size: 12px;
-  margin-top: 8px;
+  font-size: 10px;
+  margin-top: 4px;
   color: red;
 }
 #direction{
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
 }
 #direction .direction{
   display: inline-block;
   width: 50px;
-  font-size: 16px;
-  margin-left: -15px;
+  font-size: 15px;
+  margin-left: -12px;
 }
 .choice{
   width: 70%;
   height: 35px;
   border-radius: 10px;
-  border: 0;
+  border: 2px solid #ccc;
   outline: none;
   padding-left: 6px;
   font-size: 12px;
@@ -379,14 +380,14 @@ watch(input4Value,(newValue)=>{
 #selfIntroduction .selfIntroduction{
   display: inline-block;
   width: 65px;
-  font-size: 14px;
+  font-size: 15px;
   margin-left: -25px;
   transform: translateY(-15px);
 }
 #selfIntroduction .inputSelfIntroduction{
   width: 70%;
   height: 40px;
-  border: 0;
+  border: 2px solid #ccc;
   outline: none;
   padding-left: 6px;
   padding-top: 6px;
@@ -394,22 +395,22 @@ watch(input4Value,(newValue)=>{
 }
 .button{
   position: relative;
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 25px;
-  color: #333333;
-  background-color: black;
+  font-size: 20px;
+  color: #21ebff;
+  background-color: #fff;
   border: 0;
   overflow: hidden;
   transition: .5s;
   -webkit-box-reflect: below 1px linear-gradient(transparent,#0003);
 }
 .button:hover{
-  background-color: #333333;
-  color: #ccc;
-  box-shadow: 0 0 50px #333333;
+  background-color: #21ebff;
+  color: #111;
+  box-shadow: 0 0 50px #21ebff;
   transition-delay: .5s;
 }
 .button::before{
@@ -419,8 +420,8 @@ watch(input4Value,(newValue)=>{
   left: 0;
   width: 10px;
   height: 10px;
-  border-left: 2px solid #ccc;
-  border-top: 2px solid #ccc;
+  border-left: 2px solid #21ebff;
+  border-top: 2px solid #21ebff;
   transition: .5s;
 }
 .button::after{
@@ -430,8 +431,8 @@ watch(input4Value,(newValue)=>{
   right: 0;
   width: 10px;
   height: 10px;
-  border-bottom: 2px solid #ccc;
-  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #21ebff;
+  border-right: 2px solid #21ebff;
   transition: .5s;
 }
 .button:hover::before,.button:hover::after{
@@ -440,12 +441,12 @@ watch(input4Value,(newValue)=>{
 }
 .icon1{
   position: absolute;
-  right: 40px;
-  top: 18px;
+  right: 50px;
+  top: 10px;
 }
 .icon2{
   position: absolute;
-  right: 40px;
-  top: 18px;
+  right: 50px;
+  top: 10px;
 }
 </style>
