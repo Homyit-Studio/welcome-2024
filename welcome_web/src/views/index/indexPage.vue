@@ -3,7 +3,7 @@
     <el-carousel height="65vh">
     <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
     <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
-    <el-carousel-item><img src="@/assets/three.jpg" alt=""></el-carousel-item>
+    <el-carousel-item><img src="@/assets/three.png" alt=""></el-carousel-item>
   </el-carousel>
     <div class="advatages">
     <div class="slogan">
@@ -43,18 +43,30 @@
   </div>
   <div class="projects">
       <div class="Title">Programs</div>
-       <div class="projects_items animate__animatedanimate__backInLeft">
-      <div class="img">
-        <img src="@/assets/财务处.png" alt="">
+       <div class="projects_items">
+      <div ref="animatedElement1" class="img animate__animated">
+        <div class="img1">
+          <img src="@/assets/财务处.png" alt="">
+        </div>
+        <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
       </div>
-      <div class="img">
+      <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s">
+        <div class="img1">
         <img src="@/assets/管理决策评价中心.png" alt="">
+        </div>
+        <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
       </div>
-      <div class="img">
+      <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s">
+        <div class="img1">
         <img src="@/assets/国教.png" alt="">
+        </div>
+        <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
       </div>
-      <div class="img">
+      <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s">
+        <div class="img1">
         <img src="@/assets/马院.png" alt="">
+        </div>
+        <a href="https://mar.jxnu.edu.cn/">江西师范大学马克思主义学院官网</a>
       </div>
   </div>
   </div>
@@ -62,6 +74,54 @@
 </template>
 <script>
   import 'animate.css'
+
+ export default {
+  name: 'AnimatedElement',
+
+  mounted() {
+    // 组件挂载后，可以在这里初始化IntersectionObserver
+    this.initIntersectionObserver();
+  },
+
+  methods: {
+    initIntersectionObserver() {
+      // 获取需要观察的元素，这里使用Vue的ref来获取DOM元素
+      const elements = [
+        this.$refs.animatedElement1,
+        this.$refs.animatedElement2,
+        this.$refs.animatedElement3,
+        this.$refs.animatedElement4
+      ];
+
+      // 创建一个IntersectionObserver实例
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 根据具体需求添加不同的动画类名
+            if (entry.target === elements[0]) {
+              entry.target.classList.add('animate__backInRight');
+            } else if (entry.target === elements[1]) {
+              entry.target.classList.add('animate__backInLeft');
+            } else if (entry.target === elements[2]) {
+              entry.target.classList.add('animate__backInRight');
+            } else if (entry.target === elements[3]) {
+              entry.target.classList.add('animate__backInLeft');
+            }
+            // 停止观察这个元素，因为动画已经触发
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      // 对每个动画元素开始观察
+      elements.forEach(element => {
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -86,22 +146,21 @@ a {
 }
 
 a:hover {
-	color: #a2cac2;	
+	color: #add0e7;	
 }
 
 
 a.btn {
 	display: inline-block;
-	color: #a2cac2;
-	font: bold 18px/24px 'Open Sans Condensed', sans-serif;
+	color: #add0e7;
 	font: bold 1.2rem 'Open Sans Condensed', sans-serif;
-	border: 2px solid #a2cac2;
+	border: 2px solid #add0e7;
 	padding: .5% 4% .5%;
 	margin-top: 47px;
 }
 
 a.btn:hover {
-	background-color: #a2cac2;
+	background-color: #add0e7;
 	color: #fff;
 }
 
@@ -203,7 +262,7 @@ a.btn:hover {
 }
 
 .Title {
-  padding-top: 90px;
+  margin: 50px 0px;
 	text-align: center;
 	color: #585858;
 	font: bold 29px 'Open Sans Condensed', sans-serif;
@@ -215,14 +274,32 @@ a.btn:hover {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  text-align: center;
 }
 
-.projects_items .img {
+.projects_items .img{
   width: 500px;
-  height: 400px;
+  height: 350px;
   margin: 25px;
   border-radius: 3%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects_items .img .img1 {
+  height: 90%;
+  width: 100%;
+}
+
+.projects_items .img a{
+  font: 400 14px 'Open Sans Condensed', sans-serif;
+  color: #585858;
+  display: block;
+  text-align: center;
+  line-height: 35px;
+}
+
+.projects_items .img a:hover{
+  color: #add0e7;
 }
 
 /* 响应式 */
@@ -232,6 +309,15 @@ a.btn:hover {
   }
   .box .ad .title {
     font-size: 25px;
+  }
+  .projects_items .img {
+    width: 300px;
+    height: 180px;
+    margin: 20px;
+  }
+  .projects_items .img a {
+    font-size: 10px;
+    line-height: 18px;
   }
 }  
   
@@ -254,6 +340,20 @@ a.btn:hover {
   }
   .slogan a.btn {
     margin-top: 25px;
+  }
+  .projects_items .img {
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+  }
+
+  .projects_items .img a {
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .Title {
+     margin: 5px 0px;
+     z-index: 100;
   }
 }  
 </style>

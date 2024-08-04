@@ -67,7 +67,7 @@
   left: -100%;  
   width: 100%;  
   height: 100%;  
-  background: linear-gradient(120deg, #2e9deb, #a29bfe);  
+  background: linear-gradient(120deg, #aac3d4, #9ebfd5);  
   transition: all 0.5s ease;  
   z-index: -1;  
   border-radius: 5px;  
@@ -78,13 +78,12 @@
 }  
   
 .guide .nav-link:hover {  
-  color: #ffffff;  
-  transform: translateY(-1px);  
+  color: #ffffff;    
 }  
   
 .guide .nav-link.router-link-active {  
   color: #ffffff;  
-  background: linear-gradient(120deg, #2e9deb, #a29bfe);  
+  background: linear-gradient(120deg, #aac3d4, #9ebfd5);  
 }  
   
 .guide .nav-link.router-link-active::before {  

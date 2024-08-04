@@ -30,7 +30,7 @@
   height: 180px;
   width: 100%;
   font-size: 15px;
-  background-color: #2e9deb;
+  background-color: #add0e7;
 }
 .img1 {
   height: 100px;
@@ -74,7 +74,7 @@
 @media (max-width: 768px) {  
   .buttom {
     font-size: 10px;
-    height: 120px;
+    height: 100px;
   }
 
   .img1 {
