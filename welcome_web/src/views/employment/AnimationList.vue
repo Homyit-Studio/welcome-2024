@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 
 onMounted(() => {
@@ -41,16 +41,36 @@ onMounted(() => {
             return;
         }
         let playGroundRect
-        let scrollY
+        let scrollY = ref(window.scrollY)
         let playGroundTop
         let playGroundBottom
         let reactiveData = 200
-        if (window.innerWidth <= 750) {
-            scrollY = window.scrollY;
+        if (window.innerWidth <= 400) {
+            //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
+            playGroundTop = 0;
+            //如上图3所示，结束距离，scrollEnd
+            playGroundBottom = 700;
+            reactiveData = 10
+        }
+        else if (400 < window.innerWidth && window.innerWidth <= 750) {
             //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
             playGroundTop = 0;
             //如上图3所示，结束距离，scrollEnd
             playGroundBottom = 300;
+            reactiveData = 10
+        }
+        else if (750 < window.innerWidth && window.innerWidth <= 970) {
+            //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
+            playGroundTop = 0;
+            //如上图3所示，结束距离，scrollEnd
+            playGroundBottom = 400;
+            reactiveData = 10
+        }
+        else if (970 < window.innerWidth && window.innerWidth <= 1200) {
+            //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
+            playGroundTop = 500;
+            //如上图3所示，结束距离，scrollEnd
+            playGroundBottom = 1500;
             reactiveData = 10
         }
         else {
@@ -139,6 +159,13 @@ onMounted(() => {
         updateAnimationMap();
         updateStyles();
     });
+    onUnmounted(() => {
+        window.removeEventListener('scroll', updateStyles);
+        window.removeEventListener('resize', () => {
+            updateAnimationMap();
+            updateStyles();
+        });
+    });
 }
 )
 
@@ -167,7 +194,7 @@ onMounted(() => {
             </div>
         </div>
     </div>
-    <div class="other-big">据不完全统计,约有1/5人还加入了以上大厂</div>
+    <div class="other-big">据不完全统计,约有1/5工作室成员加入了以上大厂</div>
     <div class="footer">STUDIO</div>
 </template>
 
@@ -192,6 +219,7 @@ html {
 .header,
 .footer {
     height: 250px;
+    margin-top: -50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +244,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #e6e6e6;
+    color: #9d9c9c;
     font-size: 5vmin;
     font-family: "Luckiest Guy";
     text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
@@ -227,7 +255,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #e6e6e6;
+    color: #7c7c7c;
     font-size: 4vmin;
     font-family: "Luckiest Guy";
     text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
@@ -239,7 +267,7 @@ html {
     margin-top: -70px;
     justify-content: center;
     align-items: center;
-    color: #e6e6e6;
+    color: #525252;
     font-size: 4vmin;
     font-family: "Luckiest Guy";
     text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
@@ -273,20 +301,27 @@ html {
     background-color: #5f5f5f;
 }
 
-/* 
-@media screen and (max-width:1036px) {
+
+@media screen and (max-width:1200px) {
 
     .playground {
-        height: 2500px;
+        height: 600px;
+    }
+
+    .animation-container {
+        position: sticky;
+        height: 550px;
+        top: 0;
     }
 
     .creater {
         height: 50px;
         display: flex;
+        margin-top: -50px;
         justify-content: center;
         align-items: center;
-        color: #e6e6e6;
-        font-size: 4vmin;
+        color: #9d9c9c;
+        font-size: 5vmin;
         font-family: "Luckiest Guy";
         text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
     }
@@ -294,15 +329,132 @@ html {
     .other {
         height: 50px;
         display: flex;
+        margin-top: 10px;
         justify-content: center;
         align-items: center;
-        color: #e6e6e6;
-        font-size: 3vmin;
+        color: #7c7c7c;
+        ;
+        font-size: 4vmin;
         font-family: "Luckiest Guy";
         text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
     }
 
-}*/
+
+
+    .header {
+        height: 250px;
+        display: flex;
+        margin-top: -20px;
+        justify-content: center;
+        align-items: center;
+        color: #e6e6e6;
+        font-size: 20vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .footer {
+        height: 250px;
+        display: flex;
+        margin-top: -20px;
+        justify-content: center;
+        align-items: center;
+        color: #e6e6e6;
+        font-size: 20vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .other-big {
+        height: 50px;
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+        color: #525252;
+        font-size: 4vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+
+
+}
+
+@media screen and (max-width:970px) {
+    .playground {
+        height: 300px;
+    }
+
+    .animation-container {
+        position: sticky;
+        height: 350px;
+        top: 0;
+    }
+
+    .creater {
+        height: 50px;
+        display: flex;
+        margin-top: -70px;
+        justify-content: center;
+        align-items: center;
+        color: #9d9c9c;
+        font-size: 5vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .other {
+        height: 50px;
+        display: flex;
+        margin-top: 0px;
+        justify-content: center;
+        align-items: center;
+        color: #7c7c7c;
+        ;
+        font-size: 4vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+
+
+    .header {
+        height: 250px;
+        display: flex;
+        margin-top: -20px;
+        justify-content: center;
+        align-items: center;
+        color: #e6e6e6;
+        font-size: 20vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .footer {
+        height: 250px;
+        display: flex;
+        margin-top: -20px;
+        justify-content: center;
+        align-items: center;
+        color: #e6e6e6;
+        font-size: 20vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .other-big {
+        height: 50px;
+        display: flex;
+        margin-top: 40px;
+        justify-content: center;
+        align-items: center;
+        color: #525252;
+        font-size: 4vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+}
 
 
 @media screen and (max-width:750px) {
@@ -312,8 +464,71 @@ html {
 
     .animation-container {
         position: sticky;
-        height: 30vh;
+        height: 350px;
         top: 0;
+    }
+
+    .creater {
+        height: 50px;
+        display: flex;
+        margin-top: -70px;
+        justify-content: center;
+        align-items: center;
+        color: #9d9c9c;
+        font-size: 5vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .other {
+        height: 50px;
+        display: flex;
+        margin-top: 0px;
+        justify-content: center;
+        align-items: center;
+        color: #7c7c7c;
+        ;
+        font-size: 4vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+
+
+    .header {
+        height: 250px;
+        display: flex;
+        margin-top: -20px;
+        justify-content: center;
+        align-items: center;
+        color: #e6e6e6;
+        font-size: 20vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .footer {
+        height: 250px;
+        display: flex;
+        margin-top: -20px;
+        justify-content: center;
+        align-items: center;
+        color: #e6e6e6;
+        font-size: 20vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    }
+
+    .other-big {
+        height: 50px;
+        display: flex;
+        margin-top: 0px;
+        justify-content: center;
+        align-items: center;
+        color: #525252;
+        font-size: 4vmin;
+        font-family: "Luckiest Guy";
+        text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
     }
 }
 
@@ -329,7 +544,7 @@ html {
         margin-top: -80px;
         justify-content: center;
         align-items: center;
-        color: #e6e6e6;
+        color: #9d9c9c;
         font-size: 5vmin;
         font-family: "Luckiest Guy";
         text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
@@ -341,7 +556,8 @@ html {
         margin-top: -10px;
         justify-content: center;
         align-items: center;
-        color: #e6e6e6;
+        color: #7c7c7c;
+        ;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
         text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
@@ -383,7 +599,7 @@ html {
         margin-top: 0px;
         justify-content: center;
         align-items: center;
-        color: #e6e6e6;
+        color: #525252;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
         text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;

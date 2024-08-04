@@ -1,81 +1,81 @@
 <template>
   <div class="main">
     <el-carousel height="65vh">
-    <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
-    <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
-    <el-carousel-item><img src="@/assets/three.png" alt=""></el-carousel-item>
-  </el-carousel>
+      <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
+      <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
+      <el-carousel-item><img src="@/assets/three.png" alt=""></el-carousel-item>
+    </el-carousel>
     <div class="advatages">
-    <div class="slogan">
-					Our Ideas Will Raise Your Programs Above the Expected <br>
-					<a href="javascript:;" class="btn">more</a>
-		</div>
-    <div class="box">
-      <div class="ad">
-        <h2 class="title">Consulting</h2>
-        <span class="change" style="background-color: #b0caa2;">
-          <a href="javascript:;" class="btn2">more</a>
-        </span>
-        <span class="unchange" style="background-color: #b0caa2;"></span>
+      <div class="slogan">
+        Our Ideas Will Raise Your Programs Above the Expected <br>
+        <a href="javascript:;" class="btn">more</a>
       </div>
-      <div class="ad">
-        <h2 class="title">Development</h2>
-        <span class="change" style="background-color: #caacc7;">
-          <a href="javascript:;" class="btn2">more</a>
-        </span>
-        <span class="unchange" style="background-color: #caacc7;"></span>
+      <div class="box">
+        <div class="ad">
+          <h2 class="title">Consulting</h2>
+          <span class="change" style="background-color: #b0caa2;">
+            <a href="javascript:;" class="btn2">more</a>
+          </span>
+          <span class="unchange" style="background-color: #b0caa2;"></span>
+        </div>
+        <div class="ad">
+          <h2 class="title">Development</h2>
+          <span class="change" style="background-color: #caacc7;">
+            <a href="javascript:;" class="btn2">more</a>
+          </span>
+          <span class="unchange" style="background-color: #caacc7;"></span>
+        </div>
+        <div class="ad">
+          <h2 class="title">Analysis</h2>
+          <span class="change" style="background-color: #caacb6;">
+            <a href="javascript:;" class="btn2">more</a>
+          </span>
+          <span class="unchange" style="background-color: #caacb6;"></span>
+        </div>
+        <div class="ad">
+          <h2 class="title">Itegration</h2>
+          <span class="change" style="background-color: #a2bbca;">
+            <a href="javascript:;" class="btn2">more</a>
+          </span>
+          <span class="unchange" style="background-color: #a2bbca;"></span>
+        </div>
       </div>
-      <div class="ad">
-        <h2 class="title">Analysis</h2>
-        <span class="change" style="background-color: #caacb6;">
-          <a href="javascript:;" class="btn2">more</a>
-        </span>
-        <span class="unchange" style="background-color: #caacb6;"></span>
-      </div>
-      <div class="ad">
-        <h2 class="title">Itegration</h2>
-        <span class="change" style="background-color: #a2bbca;">
-          <a href="javascript:;" class="btn2">more</a>
-        </span>
-        <span class="unchange" style="background-color: #a2bbca;"></span>
+    </div>
+    <div class="projects">
+      <div class="Title">Programs</div>
+      <div class="projects_items">
+        <div ref="animatedElement1" class="img animate__animated">
+          <div class="img1">
+            <img src="@/assets/财务处.png" alt="">
+          </div>
+          <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
+        </div>
+        <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s">
+          <div class="img1">
+            <img src="@/assets/管理决策评价中心.png" alt="">
+          </div>
+          <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
+        </div>
+        <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s">
+          <div class="img1">
+            <img src="@/assets/国教.png" alt="">
+          </div>
+          <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
+        </div>
+        <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s">
+          <div class="img1">
+            <img src="@/assets/马院.png" alt="">
+          </div>
+          <a href="https://mar.jxnu.edu.cn/">江西师范大学马克思主义学院官网</a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="projects">
-      <div class="Title">Programs</div>
-       <div class="projects_items">
-      <div ref="animatedElement1" class="img animate__animated">
-        <div class="img1">
-          <img src="@/assets/财务处.png" alt="">
-        </div>
-        <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
-      </div>
-      <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s">
-        <div class="img1">
-        <img src="@/assets/管理决策评价中心.png" alt="">
-        </div>
-        <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
-      </div>
-      <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s">
-        <div class="img1">
-        <img src="@/assets/国教.png" alt="">
-        </div>
-        <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
-      </div>
-      <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s">
-        <div class="img1">
-        <img src="@/assets/马院.png" alt="">
-        </div>
-        <a href="https://mar.jxnu.edu.cn/">江西师范大学马克思主义学院官网</a>
-      </div>
-  </div>
-  </div>
-  </div>
 </template>
 <script>
-  import 'animate.css'
+import 'animate.css'
 
- export default {
+export default {
   name: 'AnimatedElement',
 
   mounted() {
@@ -125,10 +125,10 @@
 </script>
 
 <style scoped>
-.main{
+.main {
   background-color: #f6f6f6;
-  box-sizing: border-box; 
-  padding-top: 60px; 
+  box-sizing: border-box;
+  padding-top: 60px;
 }
 
 img {
@@ -137,44 +137,44 @@ img {
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
-	outline: none;
-	transition: 0.5s ease;
-	-o-transition: 0.5s ease;
-	-webkit-transition: 0.5s ease;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
 }
 
 a:hover {
-	color: #add0e7;	
+  color: #add0e7;
 }
 
 
 a.btn {
-	display: inline-block;
-	color: #add0e7;
-	font: bold 1.2rem 'Open Sans Condensed', sans-serif;
-	border: 2px solid #add0e7;
-	padding: .5% 4% .5%;
-	margin-top: 47px;
+  display: inline-block;
+  color: #add0e7;
+  font: bold 1.2rem 'Open Sans Condensed', sans-serif;
+  border: 2px solid #add0e7;
+  padding: .5% 4% .5%;
+  margin-top: 47px;
 }
 
 a.btn:hover {
-	background-color: #add0e7;
-	color: #fff;
+  background-color: #add0e7;
+  color: #fff;
 }
 
 .slogan {
-	padding-top: 90px;
-	padding-bottom: 56px;
-	text-align: center;
-	color: #585858;
-	font: bold 29px 'Open Sans Condensed', sans-serif;
+  padding-top: 90px;
+  padding-bottom: 56px;
+  text-align: center;
+  color: #585858;
+  font: bold 29px 'Open Sans Condensed', sans-serif;
   line-height: 1.5;
 }
 
 .slogan a.btn {
-	margin-top: 42px;
+  margin-top: 42px;
 }
 
 .box {
@@ -202,22 +202,22 @@ a.btn:hover {
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
-	font: 300 30px 'Open Sans', sans-serif;
-	color: #000;
+  font: 300 30px 'Open Sans', sans-serif;
+  color: #000;
 }
 
-.box .ad .change {  
-  position: absolute;  
-  display: block;  
+.box .ad .change {
+  position: absolute;
+  display: block;
   text-align: center;
   bottom: 29.75%;
   height: 30%;
-  width: 100%;  
+  width: 100%;
   /* background-color: pink;   */
-  clip-path: polygon(0 100%, 100% 100%, 100% 0%); 
+  clip-path: polygon(0 100%, 100% 100%, 100% 0%);
   transition: clip-path 5s ease, height 2s ease, opacity .5s ease;
-  opacity: 1; 
-}  
+  opacity: 1;
+}
 
 .box .ad .change a.btn2 {
   position: absolute;
@@ -226,31 +226,35 @@ a.btn:hover {
   left: 22%;
   display: none;
   text-decoration: none;
-	color: inherit;
-	outline: none;
-	transition: 0.5s ease;
+  color: inherit;
+  outline: none;
+  transition: 0.5s ease;
   -o-transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
-	color: #fff;
-	font: bold 20px 'Open Sans Condensed', sans-serif;
-	border: 2px solid #fff;
-	padding: 2% 15% 2%;
-  opacity: 0; /* 初始时按钮是透明的 */  
-  transition: opacity 1s ease, transform 0.5s ease;  
-  transform: translateY(20px); 
+  color: #fff;
+  font: bold 20px 'Open Sans Condensed', sans-serif;
+  border: 2px solid #fff;
+  padding: 2% 15% 2%;
+  opacity: 0;
+  /* 初始时按钮是透明的 */
+  transition: opacity 1s ease, transform 0.5s ease;
+  transform: translateY(20px);
 }
 
-.box .ad:hover .change {  
-  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);  
-  height: 40%; 
+.box .ad:hover .change {
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+  height: 40%;
 }
 
 .box .ad:hover .change a.btn2 {
-    display: block;
-    display: block; /* 仍然需要设置为 block 以确保按钮占据空间 */  
-    opacity: 1; /* 按钮变为不透明 */  
-    transform: translateY(0); /* 按钮移回原位 */  
-  }
+  display: block;
+  display: block;
+  /* 仍然需要设置为 block 以确保按钮占据空间 */
+  opacity: 1;
+  /* 按钮变为不透明 */
+  transform: translateY(0);
+  /* 按钮移回原位 */
+}
 
 .box .ad .unchange {
   position: absolute;
@@ -263,9 +267,9 @@ a.btn:hover {
 
 .Title {
   margin: 50px 0px;
-	text-align: center;
-	color: #585858;
-	font: bold 29px 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  color: #585858;
+  font: bold 29px 'Open Sans Condensed', sans-serif;
 }
 
 /* programs */
@@ -277,7 +281,7 @@ a.btn:hover {
   text-align: center;
 }
 
-.projects_items .img{
+.projects_items .img {
   width: 500px;
   height: 350px;
   margin: 25px;
@@ -290,7 +294,7 @@ a.btn:hover {
   width: 100%;
 }
 
-.projects_items .img a{
+.projects_items .img a {
   font: 400 14px 'Open Sans Condensed', sans-serif;
   color: #585858;
   display: block;
@@ -298,49 +302,60 @@ a.btn:hover {
   line-height: 35px;
 }
 
-.projects_items .img a:hover{
+.projects_items .img a:hover {
   color: #add0e7;
 }
 
+
 /* 响应式 */
-@media (max-width: 1024px) {  
+@media (max-width: 1024px) {
   .slogan {
     font-size: 20px;
   }
+
   .box .ad .title {
     font-size: 25px;
   }
+
   .projects_items .img {
     width: 300px;
     height: 180px;
     margin: 20px;
   }
+
   .projects_items .img a {
     font-size: 10px;
     line-height: 18px;
   }
-}  
-  
-@media (max-width: 768px) {  
-  .slogan , .Title {
+}
+
+@media (max-width: 768px) {
+
+  .slogan,
+  .Title {
     font-size: 15px;
     padding-top: 50px;
     padding-bottom: 30px;
   }
+
   .box .ad {
     width: 130px;
     height: 200px;
     margin: 10px 25px;
   }
+
   .box .ad .title {
     font-size: 17px;
   }
+
   .box .ad .change a.btn2 {
     font-size: 12px;
   }
+
   .slogan a.btn {
     margin-top: 25px;
   }
+
   .projects_items .img {
     width: 350px;
     height: 200px;
@@ -351,9 +366,10 @@ a.btn:hover {
     font-size: 10px;
     line-height: 20px;
   }
+
   .Title {
-     margin: 5px 0px;
-     z-index: 100;
+    margin: 5px 0px;
+    z-index: 100;
   }
-}  
+}
 </style>
