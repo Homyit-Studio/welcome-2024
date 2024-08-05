@@ -275,15 +275,15 @@ a.btn:hover {
 /* programs */
 .projects_items {
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
 }
 
 .projects_items .img {
-  width: 500px;
-  height: 350px;
+  width: 580px;
+  height: 400px;
   margin: 25px;
   border-radius: 3%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
