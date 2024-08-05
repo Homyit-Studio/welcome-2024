@@ -8,7 +8,6 @@
         <input type="radio" name="slide" id="c1" checked>
         <label for="c1" class="card">
           <div class="row">
-            <div class="icon">1</div>
             <div class="description">
               <p>前端是演员和灯光师,利用HTML、CSS和JavaScript渲染页面,处理交互,确保用户体验流畅。灯光师（前端工程师）调整视觉效果,确保演出吸引人。</p>
             </div>
@@ -17,7 +16,6 @@
         <input type="radio" name="slide" id="c2">
         <label for="c2" class="card">
           <div class="row">
-            <div class="icon">2</div>
             <div class="description">
               <p>后端是导演和编剧,设计数据库、处理业务逻辑,确保系统正常运作,支持前端的请求响应。虽然用户看不到后端的工作,但它是整个系统运作的关键。</p>
             </div>
@@ -26,7 +24,6 @@
         <input type="radio" name="slide" id="c3">
         <label for="c3" class="card">
           <div class="row">
-            <div class="icon">3</div>
             <div class="description">
               <p>UI设计师负责产品的视觉效果,精心策划每个细节,营造完美氛围,让用户享受视觉上的愉悦。</p>
             </div>
@@ -108,10 +105,11 @@
     }
   
     .description p {
-      color: gray;
+      color: #585858;
       font-size: 13px;
       padding: 10px 7px 10px 0px;
       line-height: 1.8;
+      margin-left: 10%;
     }
     input {
       display: none;
@@ -144,6 +142,15 @@
     input:checked+label {
       width: 298px; 
     }
+    .container{
+      height: 298px;
+    }
+    .description p{
+      font-size: 12px;
+      padding-bottom: 30px;
+      height: 100px;
+      font-weight: 700;
+    }
     .card {
       width: 40px;
       border-radius: 0.5rem;
@@ -156,7 +163,8 @@
       margin: 8px;
     }
     .card>.row>.description {
-      width: 263px;
+      width: 280px;
+      height: 90px;
       opacity: 0;
     }
     input:checked+label .description {
@@ -164,21 +172,30 @@
       transform: translateY(0) !important;
     }
     .card[for="c1"] {
-      background-size: 298px 400px;
+      background-size: 298px 298px;
     }
   
     .card[for="c2"] {
-      background-size: 298px 400px;
+      background-size: 298px 298px;
     }
   
     .card[for="c3"] {
-      background-size: 298px 400px;
+      background-size: 298px 298px;
     }
 }    
 
 @media screen and (min-width:750px){
     input:checked+label {
       width: 588px; 
+    }
+    .container{
+      height: 588px;
+    }
+    .description p{
+      font-size: 18px;
+      padding-bottom: 30px;
+      height: 120px;
+      font-weight: 700;
     }
     .card {
       width: 79px;
@@ -193,6 +210,8 @@
     }
     .card>.row>.description {
       width: 519px;
+      height: 120px;
+      margin-bottom: 20px;
       opacity: 0;
     }
     input:checked+label .description {
@@ -200,35 +219,40 @@
       transform: translateY(0) !important;
     }
     .card[for="c1"] {
-      background-size: 588px 400px;
+      background-size: 588px 588px;
     }
   
     .card[for="c2"] {
-      background-size: 588px 400px;
+      background-size: 588px 588px;
     }
   
     .card[for="c3"] {
-      background-size: 588px 400px;
+      background-size: 588px 588px;
     }  
 }      
 
 @media screen and (min-width:1200px){
     input:checked+label {
-      width: 941px; 
+      width: 800px; 
+    }
+    .container{
+      height: 800px;
+    }
+    .description p{
+      font-size: 22px;
+      padding-bottom: 30px;
+      height: 150px;
+      font-weight: 700;
     }
     .card {
       width: 126px;
       border-radius: 0.7rem;
       margin: 0 6px;
     }
-    .card>.row>.icon {
-      width: 79px;
-      height: 40px;
-      border-radius: 50%;
-      margin: 8px;
-    }
     .card>.row>.description {
-      width: 830px;
+      width: 705px;
+      height: 150px;
+      margin-bottom: 30px;
       opacity: 0;
     }
     input:checked+label .description {
@@ -236,15 +260,15 @@
       transform: translateY(0) !important;
     }
     .card[for="c1"] {
-      background-size: 941px 400px;
+      background-size: 800px 800px;
     }
   
     .card[for="c2"] {
-      background-size: 941px 400px;
+      background-size: 800px 800px;
     }
   
     .card[for="c3"] {
-      background-size: 941px 400px;
+      background-size: 800px 800px;
     }  
 }
 </style>
