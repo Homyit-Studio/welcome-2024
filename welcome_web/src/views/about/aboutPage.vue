@@ -1,4 +1,6 @@
 <script setup>
+import DevelopMent from '@/components/DevelopMent.vue';
+
 </script>
 
 <template>

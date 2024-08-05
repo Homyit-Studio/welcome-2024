@@ -1,5 +1,13 @@
-<script setup>
-
+<script>
+export default {
+  methods: {
+    refreshPage(){
+      setTimeout(()=>{
+        this.$router.go(0)
+      },10)
+    }
+  },
+}
 </script>  
   
 <template>
@@ -11,7 +19,7 @@
       <router-link to="/index" class="nav-link">Index</router-link>
       <router-link to="/about" class="nav-link">About</router-link>
       <router-link to="/employment" class="nav-link">Employment</router-link>
-      <router-link to="/join" class="nav-link">Join</router-link>
+      <router-link to="/join" class="nav-link" @click="refreshPage">Join</router-link>
     </div>
   </div>
 </template>  
