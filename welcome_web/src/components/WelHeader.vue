@@ -32,7 +32,7 @@
 
   .header .img {
     width: 13%;
-    padding-left: 2%;
+    padding: 1% 0% 1% 3% ;
   }
 
   .header .img img {

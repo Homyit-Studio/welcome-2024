@@ -1,9 +1,9 @@
 <template>
   <div class="main">
     <el-carousel height="90vh">
-      <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
-      <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
-      <el-carousel-item><img src="@/assets/three.png" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="@/assets/one.png" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="@/assets/two.jpg" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="@/assets/three.png" alt=""></el-carousel-item>
     </el-carousel>
     <!-- <el-carousel height="65vh">
       <el-carousel-item v-for="(image, index) in images" :key="index">
@@ -359,16 +359,15 @@ a.btn:hover {
 @media (max-width: 768px) {
   ::v-deep .el-carousel{
     height: 50vh !important;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    overflow: hidden; 
   }
-  ::v-deep .el-carousel__item img {
-    max-width: 100%; 
-    max-height: 100%;
-    object-fit: cover;
-}
+  .index{
+    width: 100%;
+    height: 50vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
   .slogan,
   .Title {
     font-size: 15px;

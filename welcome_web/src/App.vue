@@ -11,7 +11,7 @@
       <router-view></router-view>
     </div>
     <div class="buttom_wrap">
-      <!-- <WelButtom></WelButtom> -->
+      <WelButtom></WelButtom>
     </div>
   </div>
 </template>

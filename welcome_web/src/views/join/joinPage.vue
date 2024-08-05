@@ -441,7 +441,7 @@ const handleSubmit = async () => {
 .container{
   transform: translateY(60px);
   width: 100%;
-  height: 1080px;
+  height: 100vh;
   position: relative;
   margin-bottom: 60px;
   background: url(../../assets/join.jpg) no-repeat;
