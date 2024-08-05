@@ -1,10 +1,13 @@
 <script setup>
-import zhangxuelong from './zhangxuelong.vue'
+import beer from './beer.vue'
+import zhangxuelong from './zhangxuelong.vue';
 </script>
 
 <template>
-    <zhangxuelong></zhangxuelong>
-    <DevelopMent></DevelopMent>
+    <div style="background-color:#f6f6f6">
+        <beer></beer>
+        <!-- <DevelopMent></DevelopMent> -->
+    </div>
 </template>
 
 <style scoped></style>
