@@ -440,11 +440,9 @@ const handleSubmit = async () => {
 }
 .container{
   transform: translateY(60px);
-  /* background: linear-gradient(to bottom,#f6f6f6, #B0E0E6); */
   width: 100%;
   height: 1080px;
   position: relative;
-  margin-top: 20px;
   margin-bottom: 60px;
   background: url(../../assets/join.jpg) no-repeat;
 }
