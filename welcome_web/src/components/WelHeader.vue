@@ -16,7 +16,8 @@
   </div>
 </template>  
   
-<style scoped>  .header {
+<style scoped>  
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,10 +106,6 @@
   }
 
   @media (max-width: 768px) {
-    .header {
-      height: 50px;
-    }
-
     .header .img {
       width: 20%;
       padding-left: 0;

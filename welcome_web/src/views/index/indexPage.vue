@@ -44,25 +44,25 @@
     <div class="projects">
       <div class="Title">Programs</div>
       <div class="projects_items">
-        <div ref="animatedElement1" class="img animate__animated">
+        <div ref="animatedElement1" class="img animate__animated animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/财务处.png" alt="">
           </div>
           <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
         </div>
-        <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s">
+        <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/管理决策评价中心.png" alt="">
           </div>
           <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
         </div>
-        <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s">
+        <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/国教.png" alt="">
           </div>
           <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
         </div>
-        <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s">
+        <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/马院.png" alt="">
           </div>
@@ -99,13 +99,13 @@ export default {
           if (entry.isIntersecting) {
             // 根据具体需求添加不同的动画类名
             if (entry.target === elements[0]) {
-              entry.target.classList.add('animate__backInRight');
+              entry.target.classList.add('animate__fadeInRight');
             } else if (entry.target === elements[1]) {
-              entry.target.classList.add('animate__backInLeft');
+              entry.target.classList.add('animate__fadeInLeft');
             } else if (entry.target === elements[2]) {
-              entry.target.classList.add('animate__backInRight');
+              entry.target.classList.add('animate__fadeInRight');
             } else if (entry.target === elements[3]) {
-              entry.target.classList.add('animate__backInLeft');
+              entry.target.classList.add('animate__fadeInLeft');
             }
             // 停止观察这个元素，因为动画已经触发
             observer.unobserve(entry.target);
