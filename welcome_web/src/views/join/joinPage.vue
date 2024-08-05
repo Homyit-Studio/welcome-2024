@@ -10,7 +10,7 @@ const inputIco2Name = ref('none')
 // 1.创建响应式变量来存储name测试的值
 const inputTest1 = ref(0)
 // 1.定义name的正则表达式
-const rules1 = /^[\u4e00-\u9fa5]{2,4}$/
+const rules1 = /.+/
 // 1.监听name变化
 watch(input1Value,(newValue)=>{
     if (rules1.test(newValue)) {
@@ -32,7 +32,7 @@ const inputIco2Number = ref('none')
 // 2.创建响应式变量来存储number测试的值
 const inputTest2 = ref(0)
 // 2.定义number的正则表达式
-const rules2 = /^2024\d{8}$/
+const rules2 = /^\d{12}$/
 // 2.监听number变化
 watch(input2Value,(newValue)=>{
     if (rules2.test(newValue)) {
@@ -58,7 +58,7 @@ const inputIco2Class = ref('none')
 // 3.创建响应式变量来存储Class测试的值
 const inputTest3 = ref(0)
 // 3.定义Class的正则表达式
-const rules3 = /^[\u4e00-\u9fa5]+[\d]+班$/
+const rules3 = /.+/
 // 3.监听Class变化
 watch(input3Value,(newValue)=>{
     if (rules3.test(newValue)) {
@@ -84,7 +84,7 @@ const inputIco2Email = ref('none')
 // 4.创建响应式变量来存储Email测试的值
 const inputTest4 = ref(0)
 // 4.定义Email的正则表达式
-const rules4 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+const rules4 = /.+/
 // 4.监听Email变化
 watch(input4Value,(newValue)=>{
     if (rules4.test(newValue)) {
@@ -106,6 +106,10 @@ watch(input4Value,(newValue)=>{
 const handleSubmit = async () => {
   if(!input1Value.value || !input2Value.value || !input3Value.value || !input4Value.value){
     alert('请输入完整的信息')
+    return
+  }
+  if(inputTest1.value === 1 || inputTest2.value === 1 || inputTest3.value === 1 || inputTest4.value === 1){
+    alert('请输入正确的信息')
     return
   }
   const postData = {
@@ -147,7 +151,7 @@ const handleSubmit = async () => {
             <input class="inputNumber" v-model="input2Value" placeholder="请输入你的学号" type="text">
             <span><img class="icon1" :style="{display:inputIco1Number}" src="../../assets/1.ico" alt=""></span>
             <span><img class="icon2" :style="{display:inputIco2Number}" src="../../assets/2.ico" alt=""></span>
-            <div class="number-test" :style="{opacity:inputTest2}">学号应以2024开头,共12位</div>
+            <div class="number-test" :style="{opacity:inputTest2}">学号应该共12位</div>
           </div>
           <div id="class">
             <span class="class">班级</span>
@@ -651,12 +655,12 @@ const handleSubmit = async () => {
 #selfIntroduction .selfIntroduction{
   position: absolute;
   top: 20px;
-  left: 17px;
+  left: 40px;
   color: black;
   display: inline-block;
-  width: 65px;
+  width: 30px;
   font-size: 15px;
-  transform: translateY(-15px);
+  transform: translateY(-22px);
 }
 #selfIntroduction .inputSelfIntroduction{
   position: absolute;
@@ -721,12 +725,16 @@ const handleSubmit = async () => {
 }
 .icon1{
   position: absolute;
+  width: 20px;
+  height: 20px;
   right: 12%;
-  top: 5px;
+  top: 8px;
 }
 .icon2{
   position: absolute;
+  width: 20px;
+  height: 20px;
   right: 12%;
-  top: 5px;
+  top: 8px;
 }
 </style>
