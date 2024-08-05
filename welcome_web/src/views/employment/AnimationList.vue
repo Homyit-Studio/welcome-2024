@@ -229,7 +229,7 @@ html {
 }
 
 .playground {
-    height: 1400px;
+    height: 1600px;
 }
 
 .animation-container {
