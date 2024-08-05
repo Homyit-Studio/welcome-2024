@@ -127,11 +127,7 @@ export default {
 <style scoped>
 .main {
   background-color: #f6f6f6;
-<<<<<<< HEAD
-  box-sizing: border-box;
-=======
   box-sizing: border-box; 
->>>>>>> 5a2de23 (about first)
   padding-top: 60px;
 }
 
@@ -286,8 +282,8 @@ a.btn:hover {
 }
 
 .projects_items .img {
-  width: 500px;
-  height: 350px;
+  width: 580px;
+  height: 400px;
   margin: 25px;
   border-radius: 3%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

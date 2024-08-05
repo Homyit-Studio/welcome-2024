@@ -127,6 +127,8 @@ const handleSubmit = async () => {
 
 <template>
   <div class="container">
+    <img class="left animate__animated animate__fadeInRight animate__slow 1s" src="../../assets/join-left.png" alt="">
+    <img class="right animate__animated animate__fadeInLeft animate__slow 1s" src="../../assets/join-right.png" alt="">
     <div class="main">
       <form method="post" @submit.prevent="handleSubmit">
         <div class="top">
@@ -189,63 +191,274 @@ const handleSubmit = async () => {
 @media screen and (min-width:320px){
   .main{
     width: 240px;
-  }      
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}      
 }
 @media screen and (min-width:360px){
   .main{
     width: 270px;
   }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 135px;
+  height: 135px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 135px;
+  height: 135px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}
 }      
 @media screen and (min-width:375px){
   .main{
     width: 282px;
-  }     
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 140px;
+  height: 140px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}     
 }      
 @media screen and (min-width:390px){
   .main{
     width: 294px;
-  }      
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 146px;
+  height: 146px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 146px;
+  height: 146px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}      
 }
 @media screen and (min-width:405px){
   .main{
     width: 306px;
-  }      
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 152px;
+  height: 152px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 152px;
+  height: 152px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}      
 }
 @media screen and (min-width:420px){
   .main{
     width: 318px;
-  }      
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 157px;
+  height: 157px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 157px;
+  height: 157px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}      
 }
 @media screen and (min-width:480px){
   .main{
     width: 360px;
-  }      
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+}      
 }
 @media screen and (min-width:540px){
   .main{
     width: 405px;
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 202px;
+  height: 202px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 202px;
+  height: 202px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+  }      
+}
+@media screen and (min-width:750px){
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 281px;
+  height: 281px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 281px;
+  height: 281px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+  }      
+}
+@media screen and (min-width:970px){
+  .main{
+    width: 405px;
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 364px;
+  height: 364px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 364px;
+  height: 364px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
+  }      
+}
+@media screen and (min-width:1120px){
+  .main{
+    width: 405px;
+  }
+  .left{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 420px;
+  height: 420px;
+  }
+  .right{
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 420px;
+  height: 420px;
+  }
+  img{
+  width: 100%;
+  height: 100%;
   }      
 }
 .container{
   transform: translateY(60px);
   /* background: linear-gradient(to bottom,#f6f6f6, #B0E0E6); */
   width: 100%;
-  height: 70vh;
+  height: 1080px;
   position: relative;
   margin-top: 20px;
   margin-bottom: 60px;
+  background: url(../../assets/join.jpg) no-repeat;
 }
 .main{
   position: relative;
   margin: 0 auto;
   height: 470px;
-  transform: translateY(77px);
+  transform: translateY(140px);
   text-align: center;
   border-radius: 25px;
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: rgba(255,255,255, .5);
-  box-shadow: 10px 10px 20px rgba(25,0,0, .8);
+  box-shadow: 10px 10px 20px rgba(25,0,0, .5);
 }
 .top{
   position: absolute;
@@ -267,6 +480,7 @@ const handleSubmit = async () => {
 #name{
   position: absolute;
   top: 55px;
+  left: -5%;
   position: relative;
 }
 #name .name{
@@ -301,6 +515,7 @@ const handleSubmit = async () => {
 #number{
   position: absolute;
   top: 110px;
+  left: -5%;
   position: relative;
 }
 #number .number{
@@ -335,6 +550,7 @@ const handleSubmit = async () => {
 #class{
   position: absolute;
   top: 170px;
+  left: -5%;
   position: relative;
 }
 #class .class{
@@ -369,6 +585,7 @@ const handleSubmit = async () => {
 #email{
   position: absolute;
   top: 230px;
+  left: -5%;
   position: relative;
 }
 #email .email{
@@ -403,6 +620,7 @@ const handleSubmit = async () => {
 #direction{
   position: absolute;
   top: 290px;
+  left: -5%;
   position: relative;
 }
 #direction .direction{
@@ -429,12 +647,13 @@ const handleSubmit = async () => {
 #selfIntroduction{
   position: absolute;
   top: 350px;
+  left: -5%;
   position: relative;
 }
 #selfIntroduction .selfIntroduction{
   position: absolute;
   top: 20px;
-  left: 13px;
+  left: 17px;
   color: black;
   display: inline-block;
   width: 65px;

@@ -76,11 +76,10 @@ onMounted(() => {
         else {
             //拿到蓝色部分的矩形区域
             playGroundRect = playGround.getBoundingClientRect();
-            scrollY = window.scrollY;
             //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
-            playGroundTop = playGroundRect.top + scrollY;
+            playGroundTop = playGroundRect.top + scrollY.value;
             //如上图3所示，结束距离，scrollEnd
-            playGroundBottom = playGroundRect.bottom + scrollY - window.innerHeight;
+            playGroundBottom = playGroundRect.bottom + scrollY.value - window.innerHeight;
             reactiveData = 10
         }
         //方块的矩形区域

@@ -1,5 +1,22 @@
-<script>
+<script setup>
+import {ref,onMounted} from 'vue' 
 
+// 定义多个ref
+const node1 = ref(null)
+const node2 = ref(null)
+const node3 = ref(null)
+const node4 = ref(null)
+// 点击事件处理函数
+const changeColor = (node) => {
+  console.log('Node clicked',node.value)
+  if(node.value){
+    node.value.style.backgroundColor = '#fff !important'
+  }
+}
+onMounted(()=>{
+  console.log('Node1:',node1.value)
+  
+})
 </script>
 
 <template>
@@ -7,24 +24,20 @@
       <div class="devlopHeader">
         <h2>发展历程</h2>
         <div class="progress-bar">
-          <div class="node">
-            <div class="txt">起点</div>
-            <router-link to=""></router-link>
+          <div class="node" ref="node1" @click="() => changeColor(node1)">
+            <div class="txt">创立</div>
           </div>
           <div class="line"></div>
-          <div class="node">
+          <div class="node" ref="node2" @click="() => changeColor(node2)">
             <div class="txt">环境</div>
-            <router-link to=""></router-link>
           </div>
           <div class="line"></div>
-          <div class="node">
+          <div class="node" ref="node3" @click="() => changeColor(node3)">
             <div class="txt">成就</div>
-            <router-link to=""></router-link>
           </div>
           <div class="line"></div>
-          <div class="node">
+          <div class="node" ref="node4" @click="() => changeColor(node4)">
             <div class="txt">培养新能量</div>
-            <router-link to=""></router-link>
           </div>
         </div>
       </div>
@@ -71,14 +84,14 @@
   float: left;
   position: relative;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background-color: #ccc;
   cursor: pointer;
 }
 
 .progress-bar .line {
   float: left;
   height: 2px;
-  background: rgba(255, 255, 255, 0.5);
+  background-color: #fff;
   width: 140px;
   margin-top: 11px;
 }
@@ -90,6 +103,7 @@
   text-align: center;
   left: 50%;
   margin-left: -100px;
+  color: #fff;
 }
 
 .progress-bar .node a {
