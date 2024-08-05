@@ -278,7 +278,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 80%;
     aspect-ratio: 2/1;
     border-radius: 10px;
     display: grid;
@@ -288,14 +288,14 @@ html {
 }
 
 .list-item {
-    width: 90%;
+    width: 70%;
     aspect-ratio: 1/1;
     background-color: #5f5f5f;
     border-radius: 10px;
 }
 
 .list-item img {
-    width: 90%;
+    width: 80%;
     margin: 40px 5px;
     background-color: #5f5f5f;
 }
@@ -535,6 +535,34 @@ html {
 @media screen and (max-width:450px) {
     .playground {
         height: 300px;
+    }
+
+    .list {
+        position: absolute;
+        background-color: #5f5f5f;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        aspect-ratio: 2/1;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        place-items: center;
+    }
+
+    .list-item {
+        width: 80%;
+        aspect-ratio: 1/1;
+        background-color: #5f5f5f;
+        border-radius: 10px;
+    }
+
+    .list-item img {
+        width: 90%;
+        margin: 40px 5px;
+        background-color: #5f5f5f;
     }
 
     .creater {

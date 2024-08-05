@@ -1,68 +1,73 @@
 <template>
   <div class="main">
-    <el-carousel height="65vh">
-      <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
-      <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
-      <el-carousel-item><img src="@/assets/three.png" alt=""></el-carousel-item>
+    <el-carousel height="90vh">
+      <el-carousel-item class="index"><img src="@/assets/one.png" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="@/assets/two.jpg" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="@/assets/three.png" alt=""></el-carousel-item>
     </el-carousel>
+    <!-- <el-carousel height="65vh">
+      <el-carousel-item v-for="(image, index) in images" :key="index">
+        <img :src="image.path" alt="">
+      </el-carousel-item>
+   </el-carousel> -->
     <div class="advatages">
       <div class="slogan">
         Our Ideas Will Raise Your Programs Above the Expected <br>
-        <a href="javascript:;" class="btn">more</a>
+        <a href="javascript:;" @click="goToJoinPage" class="btn">JOIN</a>
       </div>
       <div class="box">
         <div class="ad">
           <h2 class="title">Consulting</h2>
           <span class="change" style="background-color: #b0caa2;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #b0caa2;"></span>
         </div>
         <div class="ad">
           <h2 class="title">Development</h2>
           <span class="change" style="background-color: #caacc7;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #caacc7;"></span>
         </div>
         <div class="ad">
           <h2 class="title">Analysis</h2>
           <span class="change" style="background-color: #caacb6;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #caacb6;"></span>
         </div>
         <div class="ad">
           <h2 class="title">Itegration</h2>
           <span class="change" style="background-color: #a2bbca;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #a2bbca;"></span>
         </div>
       </div>
     </div>
     <div class="projects">
-      <div class="Title">Programs</div>
+      <div class="Title">Our Programs</div>
       <div class="projects_items">
-        <div ref="animatedElement1" class="img animate__animated">
+        <div ref="animatedElement1" class="img animate__animated animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/财务处.png" alt="">
           </div>
           <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
         </div>
-        <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s">
+        <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/管理决策评价中心.png" alt="">
           </div>
           <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
         </div>
-        <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s">
+        <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/国教.png" alt="">
           </div>
           <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
         </div>
-        <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s">
+        <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
             <img src="@/assets/马院.png" alt="">
           </div>
@@ -74,13 +79,21 @@
 </template>
 <script>
 import 'animate.css'
+// import axios from 'axios'
 
 export default {
   name: 'AnimatedElement',
-
+  // ---------------
+  // data() {
+  //   return {
+  //     images: []  // 用来存储从后端获取的图片信息
+  //   };
+  // },
+  // ---------------
   mounted() {
     // 组件挂载后，可以在这里初始化IntersectionObserver
     this.initIntersectionObserver();
+    // this.fetchImages();  // 在组件加载时调用获取图片的方法
   },
 
   methods: {
@@ -99,13 +112,13 @@ export default {
           if (entry.isIntersecting) {
             // 根据具体需求添加不同的动画类名
             if (entry.target === elements[0]) {
-              entry.target.classList.add('animate__backInRight');
+              entry.target.classList.add('animate__fadeInRight');
             } else if (entry.target === elements[1]) {
-              entry.target.classList.add('animate__backInLeft');
+              entry.target.classList.add('animate__fadeInLeft');
             } else if (entry.target === elements[2]) {
-              entry.target.classList.add('animate__backInRight');
+              entry.target.classList.add('animate__fadeInRight');
             } else if (entry.target === elements[3]) {
-              entry.target.classList.add('animate__backInLeft');
+              entry.target.classList.add('animate__fadeInLeft');
             }
             // 停止观察这个元素，因为动画已经触发
             observer.unobserve(entry.target);
@@ -119,7 +132,20 @@ export default {
           observer.observe(element);
         }
       });
+    },
+     goToJoinPage() {
+      this.$router.push({ path: '/join' }); 
     }
+    // -----------------------
+//      async fetchImages() {
+//        try {
+//          const response = await axios.get('/url');  // 发送GET请求到后端API接口
+//          this.images = response.data;  // 将返回的图片数据存储到images数组中
+//       } catch (error) {
+//          console.error('获取失败', error);
+//       }
+// }
+    // -----------------------
   }
 };
 </script>
@@ -163,6 +189,7 @@ a.btn:hover {
   background-color: #add0e7;
   color: #fff;
 }
+
 
 .slogan {
   padding-top: 90px;
@@ -330,7 +357,17 @@ a.btn:hover {
 }
 
 @media (max-width: 768px) {
-
+  ::v-deep .el-carousel{
+    height: 50vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 50vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
   .slogan,
   .Title {
     font-size: 15px;

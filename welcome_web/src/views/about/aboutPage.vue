@@ -1,12 +1,14 @@
 <script setup>
-import beer from './beer.vue'
-import zhangxuelong from './zhangxuelong.vue';
+import DevelopMent from '@/components/DevelopMent.vue';
+import game from './game.vue'
 </script>
-
+  
+  
 <template>
     <div style="background-color:#f6f6f6">
-        <beer></beer>
-        <!-- <DevelopMent></DevelopMent> -->
+        <game></game>
+        <studyClass></studyClass>
+        <DevelopMent></DevelopMent>
     </div>
 </template>
 

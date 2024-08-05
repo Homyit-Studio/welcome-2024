@@ -1,1742 +1,1748 @@
 <script setup>
-
+import { ref } from 'vue'
+let inputDiv
 </script>  
 
-<template>
+<template type="html">
     <div class="game">
         <label for="">
             <form>
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
-                <input type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+                <input :id="inputDiv" type="radio" name="selection">
+
+                <button type="button" class="info">Info</button>
+                <div class="instructions">
+                    <p>Both Players take turns choosing a piece which the other player must then place on the board. A
+                        player wins by placing a piece on the board which forms a horizontal, vertical, or diagonal row of
+                        four pieces, all of which have a common attribute (all short or tall, all circle or square, all
+                        light or dark, all solid on top or hole on top).</p>
+                    <div class="close">Click anywhere to close info.</div>
+                </div>
+                <div class="lineup">
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                    <div class="piece">
+                        <div class="bottom"></div>
+                        <div class="middle"></div>
+                        <div class="top"> </div>
+                    </div>
+                </div>
+                <div class="board">
+                    <input :id="inputDiv" class="r1c1 square short dark hole" type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square tall light hole " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square short light hole " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square tall dark hole " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square short dark solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square tall light solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square short light solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 square tall dark solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round short dark solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round tall light solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round short light solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round tall dark solid " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round short dark hole " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round tall light hole " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round short light hole " type="radio" name="r1c1">
+                    <input :id="inputDiv" class="r1c1 round tall dark hole " type="radio" name="r1c1">
+                    <div class="space r1c1">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r1c2 square short dark hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square tall light hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square short light hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square tall dark hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square short dark solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square tall light solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square short light solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 square tall dark solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round short dark solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round tall light solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round short light solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round tall dark solid " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round short dark hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round tall light hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round short light hole " type="radio" name="r1c2">
+                    <input :id="inputDiv" class="r1c2 round tall dark hole " type="radio" name="r1c2">
+                    <div class="space r1c2">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r1c3 square short dark hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square tall light hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square short light hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square tall dark hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square short dark solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square tall light solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square short light solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 square tall dark solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round short dark solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round tall light solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round short light solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round tall dark solid " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round short dark hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round tall light hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round short light hole " type="radio" name="r1c3">
+                    <input :id="inputDiv" class="r1c3 round tall dark hole " type="radio" name="r1c3">
+                    <div class="space r1c3">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r1c4 square short dark hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square tall light hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square short light hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square tall dark hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square short dark solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square tall light solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square short light solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 square tall dark solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round short dark solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round tall light solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round short light solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round tall dark solid " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round short dark hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round tall light hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round short light hole " type="radio" name="r1c4">
+                    <input :id="inputDiv" class="r1c4 round tall dark hole " type="radio" name="r1c4">
+                    <div class="space r1c4">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r2c1 square short dark hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square tall light hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square short light hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square tall dark hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square short dark solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square tall light solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square short light solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 square tall dark solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round short dark solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round tall light solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round short light solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round tall dark solid " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round short dark hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round tall light hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round short light hole " type="radio" name="r2c1">
+                    <input :id="inputDiv" class="r2c1 round tall dark hole " type="radio" name="r2c1">
+                    <div class="space r2c1">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r2c2 square short dark hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square tall light hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square short light hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square tall dark hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square short dark solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square tall light solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square short light solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 square tall dark solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round short dark solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round tall light solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round short light solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round tall dark solid " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round short dark hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round tall light hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round short light hole " type="radio" name="r2c2">
+                    <input :id="inputDiv" class="r2c2 round tall dark hole " type="radio" name="r2c2">
+                    <div class="space r2c2">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r2c3 square short dark hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square tall light hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square short light hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square tall dark hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square short dark solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square tall light solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square short light solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 square tall dark solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round short dark solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round tall light solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round short light solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round tall dark solid " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round short dark hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round tall light hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round short light hole " type="radio" name="r2c3">
+                    <input :id="inputDiv" class="r2c3 round tall dark hole " type="radio" name="r2c3">
+                    <div class="space r2c3">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r2c4 square short dark hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square tall light hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square short light hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square tall dark hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square short dark solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square tall light solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square short light solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 square tall dark solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round short dark solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round tall light solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round short light solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round tall dark solid " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round short dark hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round tall light hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round short light hole " type="radio" name="r2c4">
+                    <input :id="inputDiv" class="r2c4 round tall dark hole " type="radio" name="r2c4">
+                    <div class="space r2c4">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r3c1 square short dark hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square tall light hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square short light hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square tall dark hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square short dark solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square tall light solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square short light solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 square tall dark solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round short dark solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round tall light solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round short light solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round tall dark solid " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round short dark hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round tall light hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round short light hole " type="radio" name="r3c1">
+                    <input :id="inputDiv" class="r3c1 round tall dark hole " type="radio" name="r3c1">
+                    <div class="space r3c1">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r3c2 square short dark hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square tall light hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square short light hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square tall dark hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square short dark solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square tall light solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square short light solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 square tall dark solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round short dark solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round tall light solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round short light solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round tall dark solid " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round short dark hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round tall light hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round short light hole " type="radio" name="r3c2">
+                    <input :id="inputDiv" class="r3c2 round tall dark hole " type="radio" name="r3c2">
+                    <div class="space r3c2">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r3c3 square short dark hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square tall light hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square short light hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square tall dark hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square short dark solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square tall light solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square short light solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 square tall dark solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round short dark solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round tall light solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round short light solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round tall dark solid " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round short dark hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round tall light hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round short light hole " type="radio" name="r3c3">
+                    <input :id="inputDiv" class="r3c3 round tall dark hole " type="radio" name="r3c3">
+                    <div class="space r3c3">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r3c4 square short dark hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square tall light hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square short light hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square tall dark hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square short dark solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square tall light solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square short light solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 square tall dark solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round short dark solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round tall light solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round short light solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round tall dark solid " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round short dark hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round tall light hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round short light hole " type="radio" name="r3c4">
+                    <input :id="inputDiv" class="r3c4 round tall dark hole " type="radio" name="r3c4">
+                    <div class="space r3c4">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r4c1 square short dark hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square tall light hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square short light hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square tall dark hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square short dark solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square tall light solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square short light solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 square tall dark solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round short dark solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round tall light solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round short light solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round tall dark solid " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round short dark hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round tall light hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round short light hole " type="radio" name="r4c1">
+                    <input :id="inputDiv" class="r4c1 round tall dark hole " type="radio" name="r4c1">
+                    <div class="space r4c1">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r4c2 square short dark hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square tall light hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square short light hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square tall dark hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square short dark solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square tall light solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square short light solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 square tall dark solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round short dark solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round tall light solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round short light solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round tall dark solid " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round short dark hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round tall light hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round short light hole " type="radio" name="r4c2">
+                    <input :id="inputDiv" class="r4c2 round tall dark hole " type="radio" name="r4c2">
+                    <div class="space r4c2">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r4c3 square short dark hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square tall light hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square short light hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square tall dark hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square short dark solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square tall light solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square short light solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 square tall dark solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round short dark solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round tall light solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round short light solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round tall dark solid " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round short dark hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round tall light hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round short light hole " type="radio" name="r4c3">
+                    <input :id="inputDiv" class="r4c3 round tall dark hole " type="radio" name="r4c3">
+                    <div class="space r4c3">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <input :id="inputDiv" class="r4c4 square short dark hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square tall light hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square short light hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square tall dark hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square short dark solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square tall light solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square short light solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 square tall dark solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round short dark solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round tall light solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round short light solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round tall dark solid " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round short dark hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round tall light hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round short light hole " type="radio" name="r4c4">
+                    <input :id="inputDiv" class="r4c4 round tall dark hole " type="radio" name="r4c4">
+                    <div class="space r4c4">
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                        <div class="piece">
+                            <div class="bottom"></div>
+                            <div class="middle"></div>
+                            <div class="top"> </div>
+                        </div>
+                    </div>
+                    <div class="game-end">
+                        <div class="text">Player <span class="winner"></span> wins!</div>
+                    </div>
+                    <div class="directions">
+                        <div class="select">Player <span class="winner"></span><br>Select a piece</div>
+                        <div class="place">Player <span class="turn"></span><br>Place your piece</div>
+                    </div>
+                    <div class="caps">
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                    </div>
+                    <div class="caps2">
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                        <div class="cap"></div>
+                    </div>
+                    <h1>Quarto</h1>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
         </label>
-        <button type="button" class="info">Info</button>
-        <div class="instructions">
-            <p>Both Players take turns choosing a piece which the other player must then place on the board. A
-                player wins by placing a piece on the board which forms a horizontal, vertical, or diagonal row of
-                four pieces, all of which have a common attribute (all short or tall, all circle or square, all
-                light or dark, all solid on top or hole on top).</p>
-            <div class="close">Click anywhere to close info.</div>
-        </div>
-        <div class="lineup">
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-            <div class="piece">
-                <div class="bottom"></div>
-                <div class="middle"></div>
-                <div class="top"> </div>
-            </div>
-        </div>
-        <div class="board">
-            <input class="r1c1 square short dark hole" type="radio" name="r1c1">
-            <input class="r1c1 square tall light hole" type="radio" name="r1c1">
-            <input class="r1c1 square short light hole" type="radio" name="r1c1">
-            <input class="r1c1 square tall dark hole" type="radio" name="r1c1">
-            <input class="r1c1 square short dark solid" type="radio" name="r1c1">
-            <input class="r1c1 square tall light solid" type="radio" name="r1c1">
-            <input class="r1c1 square short light solid" type="radio" name="r1c1">
-            <input class="r1c1 square tall dark solid" type="radio" name="r1c1">
-            <input class="r1c1 round short dark solid" type="radio" name="r1c1">
-            <input class="r1c1 round tall light solid" type="radio" name="r1c1">
-            <input class="r1c1 round short light solid" type="radio" name="r1c1">
-            <input class="r1c1 round tall dark solid" type="radio" name="r1c1">
-            <input class="r1c1 round short dark hole" type="radio" name="r1c1">
-            <input class="r1c1 round tall light hole" type="radio" name="r1c1">
-            <input class="r1c1 round short light hole" type="radio" name="r1c1">
-            <input class="r1c1 round tall dark hole" type="radio" name="r1c1">
-            <div class="space r1c1">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r1c2 square short dark hole" type="radio" name="r1c2">
-            <input class="r1c2 square tall light hole" type="radio" name="r1c2">
-            <input class="r1c2 square short light hole" type="radio" name="r1c2">
-            <input class="r1c2 square tall dark hole" type="radio" name="r1c2">
-            <input class="r1c2 square short dark solid" type="radio" name="r1c2">
-            <input class="r1c2 square tall light solid" type="radio" name="r1c2">
-            <input class="r1c2 square short light solid" type="radio" name="r1c2">
-            <input class="r1c2 square tall dark solid" type="radio" name="r1c2">
-            <input class="r1c2 round short dark solid" type="radio" name="r1c2">
-            <input class="r1c2 round tall light solid" type="radio" name="r1c2">
-            <input class="r1c2 round short light solid" type="radio" name="r1c2">
-            <input class="r1c2 round tall dark solid" type="radio" name="r1c2">
-            <input class="r1c2 round short dark hole" type="radio" name="r1c2">
-            <input class="r1c2 round tall light hole" type="radio" name="r1c2">
-            <input class="r1c2 round short light hole" type="radio" name="r1c2">
-            <input class="r1c2 round tall dark hole" type="radio" name="r1c2">
-            <div class="space r1c2">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r1c3 square short dark hole" type="radio" name="r1c3">
-            <input class="r1c3 square tall light hole" type="radio" name="r1c3">
-            <input class="r1c3 square short light hole" type="radio" name="r1c3">
-            <input class="r1c3 square tall dark hole" type="radio" name="r1c3">
-            <input class="r1c3 square short dark solid" type="radio" name="r1c3">
-            <input class="r1c3 square tall light solid" type="radio" name="r1c3">
-            <input class="r1c3 square short light solid" type="radio" name="r1c3">
-            <input class="r1c3 square tall dark solid" type="radio" name="r1c3">
-            <input class="r1c3 round short dark solid" type="radio" name="r1c3">
-            <input class="r1c3 round tall light solid" type="radio" name="r1c3">
-            <input class="r1c3 round short light solid" type="radio" name="r1c3">
-            <input class="r1c3 round tall dark solid" type="radio" name="r1c3">
-            <input class="r1c3 round short dark hole" type="radio" name="r1c3">
-            <input class="r1c3 round tall light hole" type="radio" name="r1c3">
-            <input class="r1c3 round short light hole" type="radio" name="r1c3">
-            <input class="r1c3 round tall dark hole" type="radio" name="r1c3">
-            <div class="space r1c3">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r1c4 square short dark hole" type="radio" name="r1c4">
-            <input class="r1c4 square tall light hole" type="radio" name="r1c4">
-            <input class="r1c4 square short light hole" type="radio" name="r1c4">
-            <input class="r1c4 square tall dark hole" type="radio" name="r1c4">
-            <input class="r1c4 square short dark solid" type="radio" name="r1c4">
-            <input class="r1c4 square tall light solid" type="radio" name="r1c4">
-            <input class="r1c4 square short light solid" type="radio" name="r1c4">
-            <input class="r1c4 square tall dark solid" type="radio" name="r1c4">
-            <input class="r1c4 round short dark solid" type="radio" name="r1c4">
-            <input class="r1c4 round tall light solid" type="radio" name="r1c4">
-            <input class="r1c4 round short light solid" type="radio" name="r1c4">
-            <input class="r1c4 round tall dark solid" type="radio" name="r1c4">
-            <input class="r1c4 round short dark hole" type="radio" name="r1c4">
-            <input class="r1c4 round tall light hole" type="radio" name="r1c4">
-            <input class="r1c4 round short light hole" type="radio" name="r1c4">
-            <input class="r1c4 round tall dark hole" type="radio" name="r1c4">
-            <div class="space r1c4">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r2c1 square short dark hole" type="radio" name="r2c1">
-            <input class="r2c1 square tall light hole" type="radio" name="r2c1">
-            <input class="r2c1 square short light hole" type="radio" name="r2c1">
-            <input class="r2c1 square tall dark hole" type="radio" name="r2c1">
-            <input class="r2c1 square short dark solid" type="radio" name="r2c1">
-            <input class="r2c1 square tall light solid" type="radio" name="r2c1">
-            <input class="r2c1 square short light solid" type="radio" name="r2c1">
-            <input class="r2c1 square tall dark solid" type="radio" name="r2c1">
-            <input class="r2c1 round short dark solid" type="radio" name="r2c1">
-            <input class="r2c1 round tall light solid" type="radio" name="r2c1">
-            <input class="r2c1 round short light solid" type="radio" name="r2c1">
-            <input class="r2c1 round tall dark solid" type="radio" name="r2c1">
-            <input class="r2c1 round short dark hole" type="radio" name="r2c1">
-            <input class="r2c1 round tall light hole" type="radio" name="r2c1">
-            <input class="r2c1 round short light hole" type="radio" name="r2c1">
-            <input class="r2c1 round tall dark hole" type="radio" name="r2c1">
-            <div class="space r2c1">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r2c2 square short dark hole" type="radio" name="r2c2">
-            <input class="r2c2 square tall light hole" type="radio" name="r2c2">
-            <input class="r2c2 square short light hole" type="radio" name="r2c2">
-            <input class="r2c2 square tall dark hole" type="radio" name="r2c2">
-            <input class="r2c2 square short dark solid" type="radio" name="r2c2">
-            <input class="r2c2 square tall light solid" type="radio" name="r2c2">
-            <input class="r2c2 square short light solid" type="radio" name="r2c2">
-            <input class="r2c2 square tall dark solid" type="radio" name="r2c2">
-            <input class="r2c2 round short dark solid" type="radio" name="r2c2">
-            <input class="r2c2 round tall light solid" type="radio" name="r2c2">
-            <input class="r2c2 round short light solid" type="radio" name="r2c2">
-            <input class="r2c2 round tall dark solid" type="radio" name="r2c2">
-            <input class="r2c2 round short dark hole" type="radio" name="r2c2">
-            <input class="r2c2 round tall light hole" type="radio" name="r2c2">
-            <input class="r2c2 round short light hole" type="radio" name="r2c2">
-            <input class="r2c2 round tall dark hole" type="radio" name="r2c2">
-            <div class="space r2c2">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r2c3 square short dark hole" type="radio" name="r2c3">
-            <input class="r2c3 square tall light hole" type="radio" name="r2c3">
-            <input class="r2c3 square short light hole" type="radio" name="r2c3">
-            <input class="r2c3 square tall dark hole" type="radio" name="r2c3">
-            <input class="r2c3 square short dark solid" type="radio" name="r2c3">
-            <input class="r2c3 square tall light solid" type="radio" name="r2c3">
-            <input class="r2c3 square short light solid" type="radio" name="r2c3">
-            <input class="r2c3 square tall dark solid" type="radio" name="r2c3">
-            <input class="r2c3 round short dark solid" type="radio" name="r2c3">
-            <input class="r2c3 round tall light solid" type="radio" name="r2c3">
-            <input class="r2c3 round short light solid" type="radio" name="r2c3">
-            <input class="r2c3 round tall dark solid" type="radio" name="r2c3">
-            <input class="r2c3 round short dark hole" type="radio" name="r2c3">
-            <input class="r2c3 round tall light hole" type="radio" name="r2c3">
-            <input class="r2c3 round short light hole" type="radio" name="r2c3">
-            <input class="r2c3 round tall dark hole" type="radio" name="r2c3">
-            <div class="space r2c3">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r2c4 square short dark hole" type="radio" name="r2c4">
-            <input class="r2c4 square tall light hole" type="radio" name="r2c4">
-            <input class="r2c4 square short light hole" type="radio" name="r2c4">
-            <input class="r2c4 square tall dark hole" type="radio" name="r2c4">
-            <input class="r2c4 square short dark solid" type="radio" name="r2c4">
-            <input class="r2c4 square tall light solid" type="radio" name="r2c4">
-            <input class="r2c4 square short light solid" type="radio" name="r2c4">
-            <input class="r2c4 square tall dark solid" type="radio" name="r2c4">
-            <input class="r2c4 round short dark solid" type="radio" name="r2c4">
-            <input class="r2c4 round tall light solid" type="radio" name="r2c4">
-            <input class="r2c4 round short light solid" type="radio" name="r2c4">
-            <input class="r2c4 round tall dark solid" type="radio" name="r2c4">
-            <input class="r2c4 round short dark hole" type="radio" name="r2c4">
-            <input class="r2c4 round tall light hole" type="radio" name="r2c4">
-            <input class="r2c4 round short light hole" type="radio" name="r2c4">
-            <input class="r2c4 round tall dark hole" type="radio" name="r2c4">
-            <div class="space r2c4">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r3c1 square short dark hole" type="radio" name="r3c1">
-            <input class="r3c1 square tall light hole" type="radio" name="r3c1">
-            <input class="r3c1 square short light hole" type="radio" name="r3c1">
-            <input class="r3c1 square tall dark hole" type="radio" name="r3c1">
-            <input class="r3c1 square short dark solid" type="radio" name="r3c1">
-            <input class="r3c1 square tall light solid" type="radio" name="r3c1">
-            <input class="r3c1 square short light solid" type="radio" name="r3c1">
-            <input class="r3c1 square tall dark solid" type="radio" name="r3c1">
-            <input class="r3c1 round short dark solid" type="radio" name="r3c1">
-            <input class="r3c1 round tall light solid" type="radio" name="r3c1">
-            <input class="r3c1 round short light solid" type="radio" name="r3c1">
-            <input class="r3c1 round tall dark solid" type="radio" name="r3c1">
-            <input class="r3c1 round short dark hole" type="radio" name="r3c1">
-            <input class="r3c1 round tall light hole" type="radio" name="r3c1">
-            <input class="r3c1 round short light hole" type="radio" name="r3c1">
-            <input class="r3c1 round tall dark hole" type="radio" name="r3c1">
-            <div class="space r3c1">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r3c2 square short dark hole" type="radio" name="r3c2">
-            <input class="r3c2 square tall light hole" type="radio" name="r3c2">
-            <input class="r3c2 square short light hole" type="radio" name="r3c2">
-            <input class="r3c2 square tall dark hole" type="radio" name="r3c2">
-            <input class="r3c2 square short dark solid" type="radio" name="r3c2">
-            <input class="r3c2 square tall light solid" type="radio" name="r3c2">
-            <input class="r3c2 square short light solid" type="radio" name="r3c2">
-            <input class="r3c2 square tall dark solid" type="radio" name="r3c2">
-            <input class="r3c2 round short dark solid" type="radio" name="r3c2">
-            <input class="r3c2 round tall light solid" type="radio" name="r3c2">
-            <input class="r3c2 round short light solid" type="radio" name="r3c2">
-            <input class="r3c2 round tall dark solid" type="radio" name="r3c2">
-            <input class="r3c2 round short dark hole" type="radio" name="r3c2">
-            <input class="r3c2 round tall light hole" type="radio" name="r3c2">
-            <input class="r3c2 round short light hole" type="radio" name="r3c2">
-            <input class="r3c2 round tall dark hole" type="radio" name="r3c2">
-            <div class="space r3c2">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r3c3 square short dark hole" type="radio" name="r3c3">
-            <input class="r3c3 square tall light hole" type="radio" name="r3c3">
-            <input class="r3c3 square short light hole" type="radio" name="r3c3">
-            <input class="r3c3 square tall dark hole" type="radio" name="r3c3">
-            <input class="r3c3 square short dark solid" type="radio" name="r3c3">
-            <input class="r3c3 square tall light solid" type="radio" name="r3c3">
-            <input class="r3c3 square short light solid" type="radio" name="r3c3">
-            <input class="r3c3 square tall dark solid" type="radio" name="r3c3">
-            <input class="r3c3 round short dark solid" type="radio" name="r3c3">
-            <input class="r3c3 round tall light solid" type="radio" name="r3c3">
-            <input class="r3c3 round short light solid" type="radio" name="r3c3">
-            <input class="r3c3 round tall dark solid" type="radio" name="r3c3">
-            <input class="r3c3 round short dark hole" type="radio" name="r3c3">
-            <input class="r3c3 round tall light hole" type="radio" name="r3c3">
-            <input class="r3c3 round short light hole" type="radio" name="r3c3">
-            <input class="r3c3 round tall dark hole" type="radio" name="r3c3">
-            <div class="space r3c3">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r3c4 square short dark hole" type="radio" name="r3c4">
-            <input class="r3c4 square tall light hole" type="radio" name="r3c4">
-            <input class="r3c4 square short light hole" type="radio" name="r3c4">
-            <input class="r3c4 square tall dark hole" type="radio" name="r3c4">
-            <input class="r3c4 square short dark solid" type="radio" name="r3c4">
-            <input class="r3c4 square tall light solid" type="radio" name="r3c4">
-            <input class="r3c4 square short light solid" type="radio" name="r3c4">
-            <input class="r3c4 square tall dark solid" type="radio" name="r3c4">
-            <input class="r3c4 round short dark solid" type="radio" name="r3c4">
-            <input class="r3c4 round tall light solid" type="radio" name="r3c4">
-            <input class="r3c4 round short light solid" type="radio" name="r3c4">
-            <input class="r3c4 round tall dark solid" type="radio" name="r3c4">
-            <input class="r3c4 round short dark hole" type="radio" name="r3c4">
-            <input class="r3c4 round tall light hole" type="radio" name="r3c4">
-            <input class="r3c4 round short light hole" type="radio" name="r3c4">
-            <input class="r3c4 round tall dark hole" type="radio" name="r3c4">
-            <div class="space r3c4">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r4c1 square short dark hole" type="radio" name="r4c1">
-            <input class="r4c1 square tall light hole" type="radio" name="r4c1">
-            <input class="r4c1 square short light hole" type="radio" name="r4c1">
-            <input class="r4c1 square tall dark hole" type="radio" name="r4c1">
-            <input class="r4c1 square short dark solid" type="radio" name="r4c1">
-            <input class="r4c1 square tall light solid" type="radio" name="r4c1">
-            <input class="r4c1 square short light solid" type="radio" name="r4c1">
-            <input class="r4c1 square tall dark solid" type="radio" name="r4c1">
-            <input class="r4c1 round short dark solid" type="radio" name="r4c1">
-            <input class="r4c1 round tall light solid" type="radio" name="r4c1">
-            <input class="r4c1 round short light solid" type="radio" name="r4c1">
-            <input class="r4c1 round tall dark solid" type="radio" name="r4c1">
-            <input class="r4c1 round short dark hole" type="radio" name="r4c1">
-            <input class="r4c1 round tall light hole" type="radio" name="r4c1">
-            <input class="r4c1 round short light hole" type="radio" name="r4c1">
-            <input class="r4c1 round tall dark hole" type="radio" name="r4c1">
-            <div class="space r4c1">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r4c2 square short dark hole" type="radio" name="r4c2">
-            <input class="r4c2 square tall light hole" type="radio" name="r4c2">
-            <input class="r4c2 square short light hole" type="radio" name="r4c2">
-            <input class="r4c2 square tall dark hole" type="radio" name="r4c2">
-            <input class="r4c2 square short dark solid" type="radio" name="r4c2">
-            <input class="r4c2 square tall light solid" type="radio" name="r4c2">
-            <input class="r4c2 square short light solid" type="radio" name="r4c2">
-            <input class="r4c2 square tall dark solid" type="radio" name="r4c2">
-            <input class="r4c2 round short dark solid" type="radio" name="r4c2">
-            <input class="r4c2 round tall light solid" type="radio" name="r4c2">
-            <input class="r4c2 round short light solid" type="radio" name="r4c2">
-            <input class="r4c2 round tall dark solid" type="radio" name="r4c2">
-            <input class="r4c2 round short dark hole" type="radio" name="r4c2">
-            <input class="r4c2 round tall light hole" type="radio" name="r4c2">
-            <input class="r4c2 round short light hole" type="radio" name="r4c2">
-            <input class="r4c2 round tall dark hole" type="radio" name="r4c2">
-            <div class="space r4c2">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r4c3 square short dark hole" type="radio" name="r4c3">
-            <input class="r4c3 square tall light hole" type="radio" name="r4c3">
-            <input class="r4c3 square short light hole" type="radio" name="r4c3">
-            <input class="r4c3 square tall dark hole" type="radio" name="r4c3">
-            <input class="r4c3 square short dark solid" type="radio" name="r4c3">
-            <input class="r4c3 square tall light solid" type="radio" name="r4c3">
-            <input class="r4c3 square short light solid" type="radio" name="r4c3">
-            <input class="r4c3 square tall dark solid" type="radio" name="r4c3">
-            <input class="r4c3 round short dark solid" type="radio" name="r4c3">
-            <input class="r4c3 round tall light solid" type="radio" name="r4c3">
-            <input class="r4c3 round short light solid" type="radio" name="r4c3">
-            <input class="r4c3 round tall dark solid" type="radio" name="r4c3">
-            <input class="r4c3 round short dark hole" type="radio" name="r4c3">
-            <input class="r4c3 round tall light hole" type="radio" name="r4c3">
-            <input class="r4c3 round short light hole" type="radio" name="r4c3">
-            <input class="r4c3 round tall dark hole" type="radio" name="r4c3">
-            <div class="space r4c3">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <input class="r4c4 square short dark hole" type="radio" name="r4c4">
-            <input class="r4c4 square tall light hole" type="radio" name="r4c4">
-            <input class="r4c4 square short light hole" type="radio" name="r4c4">
-            <input class="r4c4 square tall dark hole" type="radio" name="r4c4">
-            <input class="r4c4 square short dark solid" type="radio" name="r4c4">
-            <input class="r4c4 square tall light solid" type="radio" name="r4c4">
-            <input class="r4c4 square short light solid" type="radio" name="r4c4">
-            <input class="r4c4 square tall dark solid" type="radio" name="r4c4">
-            <input class="r4c4 round short dark solid" type="radio" name="r4c4">
-            <input class="r4c4 round tall light solid" type="radio" name="r4c4">
-            <input class="r4c4 round short light solid" type="radio" name="r4c4">
-            <input class="r4c4 round tall dark solid" type="radio" name="r4c4">
-            <input class="r4c4 round short dark hole" type="radio" name="r4c4">
-            <input class="r4c4 round tall light hole" type="radio" name="r4c4">
-            <input class="r4c4 round short light hole" type="radio" name="r4c4">
-            <input class="r4c4 round tall dark hole" type="radio" name="r4c4">
-            <div class="space r4c4">
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-                <div class="piece">
-                    <div class="bottom"></div>
-                    <div class="middle"></div>
-                    <div class="top"> </div>
-                </div>
-            </div>
-            <div class="game-end">
-                <div class="text">Player <span class="winner"></span> wins!</div>
-            </div>
-            <div class="directions">
-                <div class="select">Player <span class="winner"></span><br>Select a piece</div>
-                <div class="place">Player <span class="turn"></span><br>Place your piece</div>
-            </div>
-            <div class="caps">
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-            </div>
-            <div class="caps2">
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-                <div class="cap"></div>
-            </div>
-            <h1>Quarto</h1>
-            <button type="reset">Reset</button>
-        </div>
-        </form>
     </div>
 </template>  
 
 <style scoped>
+label {
+    padding-top: 60px;
+}
+
 .game {
     outline: none;
     counter-reset: turn 1 winner 2;
-    height: 500px;
+    height: 560px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -1840,10 +1846,10 @@ button.info:focus~.board .directions {
 .instructions::before {
     content: "";
     position: absolute;
-    left: -9999px;
-    right: -9999px;
-    top: -9999px;
-    bottom: -9999px;
+    left: -100px;
+    right: -100px;
+    top: -100px;
+    bottom: -100px;
 }
 
 .instructions .close {
@@ -7502,7 +7508,7 @@ input[name=selection]:focus~.board .place,
     .game {
         outline: none;
         counter-reset: turn 1 winner 2;
-        height: 250px;
+        height: 300px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -7602,15 +7608,6 @@ input[name=selection]:focus~.board .place,
         visibility: hidden;
         opacity: 0;
         transition: 500ms;
-    }
-
-    .instructions::before {
-        content: "";
-        position: absolute;
-        left: -9999px;
-        right: -9999px;
-        top: -9999px;
-        bottom: -9999px;
     }
 
     .instructions .close {
@@ -7945,7 +7942,6 @@ input[name=selection]:focus~.board .place,
         align-items: center;
         justify-content: center;
     }
-
 
     /* 更改实时选择 */
     .directions {
