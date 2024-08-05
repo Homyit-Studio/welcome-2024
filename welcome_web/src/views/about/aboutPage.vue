@@ -1,10 +1,8 @@
 <script setup>
-import zhangxuelong from './zhangxuelong.vue'
 </script>
 
 <template>
-    <zhangxuelong></zhangxuelong>
-    <DevelopMent></DevelopMent>
+    <studyClass></studyClass>
 </template>
 
 <style scoped></style>
