@@ -1,48 +1,53 @@
 <template>
   <div class="main">
-    <el-carousel height="65vh">
+    <el-carousel height="90vh">
       <el-carousel-item><img src="@/assets/one.png" alt=""></el-carousel-item>
       <el-carousel-item><img src="@/assets/two.jpg" alt=""></el-carousel-item>
       <el-carousel-item><img src="@/assets/three.png" alt=""></el-carousel-item>
     </el-carousel>
+    <!-- <el-carousel height="65vh">
+      <el-carousel-item v-for="(image, index) in images" :key="index">
+        <img :src="image.path" alt="">
+      </el-carousel-item>
+   </el-carousel> -->
     <div class="advatages">
       <div class="slogan">
         Our Ideas Will Raise Your Programs Above the Expected <br>
-        <a href="javascript:;" class="btn">more</a>
+        <a href="javascript:;" @click="goToJoinPage" class="btn">JOIN</a>
       </div>
       <div class="box">
         <div class="ad">
           <h2 class="title">Consulting</h2>
           <span class="change" style="background-color: #b0caa2;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #b0caa2;"></span>
         </div>
         <div class="ad">
           <h2 class="title">Development</h2>
           <span class="change" style="background-color: #caacc7;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #caacc7;"></span>
         </div>
         <div class="ad">
           <h2 class="title">Analysis</h2>
           <span class="change" style="background-color: #caacb6;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #caacb6;"></span>
         </div>
         <div class="ad">
           <h2 class="title">Itegration</h2>
           <span class="change" style="background-color: #a2bbca;">
-            <a href="javascript:;" class="btn2">more</a>
+            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
           </span>
           <span class="unchange" style="background-color: #a2bbca;"></span>
         </div>
       </div>
     </div>
     <div class="projects">
-      <div class="Title">Programs</div>
+      <div class="Title">Our Programs</div>
       <div class="projects_items">
         <div ref="animatedElement1" class="img animate__animated animate__fast	200ms">
           <div class="img1">
@@ -74,13 +79,21 @@
 </template>
 <script>
 import 'animate.css'
+// import axios from 'axios'
 
 export default {
   name: 'AnimatedElement',
-
+  // ---------------
+  // data() {
+  //   return {
+  //     images: []  // 用来存储从后端获取的图片信息
+  //   };
+  // },
+  // ---------------
   mounted() {
     // 组件挂载后，可以在这里初始化IntersectionObserver
     this.initIntersectionObserver();
+    // this.fetchImages();  // 在组件加载时调用获取图片的方法
   },
 
   methods: {
@@ -119,7 +132,20 @@ export default {
           observer.observe(element);
         }
       });
+    },
+     goToJoinPage() {
+      this.$router.push({ path: '/join' }); 
     }
+    // -----------------------
+//      async fetchImages() {
+//        try {
+//          const response = await axios.get('/url');  // 发送GET请求到后端API接口
+//          this.images = response.data;  // 将返回的图片数据存储到images数组中
+//       } catch (error) {
+//          console.error('获取失败', error);
+//       }
+// }
+    // -----------------------
   }
 };
 </script>
@@ -163,6 +189,7 @@ a.btn:hover {
   background-color: #add0e7;
   color: #fff;
 }
+
 
 .slogan {
   padding-top: 90px;
@@ -330,7 +357,18 @@ a.btn:hover {
 }
 
 @media (max-width: 768px) {
-
+  ::v-deep .el-carousel{
+    height: 50vh !important;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+  }
+  ::v-deep .el-carousel__item img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: cover;
+}
   .slogan,
   .Title {
     font-size: 15px;
