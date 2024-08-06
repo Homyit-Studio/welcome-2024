@@ -126,6 +126,7 @@
     
     .card[for="c1"] {
       background: url('./src/assets/about1.jpg') no-repeat;
+      object-fit: cover;
       background-size: 600px 400px;
     }
   
@@ -138,12 +139,12 @@
       background: url('./src/assets/about3.jpg') no-repeat;
       background-size: 600px 400px;
     }
-@media screen and (min-width:380px){
+@media screen and (min-width:370px){
     input:checked+label {
-      width: 298px; 
+      width: 283px; 
     }
     .container{
-      height: 298px;
+      height: 283px;
     }
     .description p{
       font-size: 12px;
@@ -152,7 +153,7 @@
       font-weight: 700;
     }
     .card {
-      width: 40px;
+      width: 39px;
       border-radius: 0.5rem;
       margin: 0 2px;
     }
@@ -163,8 +164,8 @@
       margin: 8px;
     }
     .card>.row>.description {
-      width: 280px;
-      height: 90px;
+      width: 272px;
+      height: 88px;
       opacity: 0;
     }
     input:checked+label .description {
@@ -172,15 +173,15 @@
       transform: translateY(0) !important;
     }
     .card[for="c1"] {
-      background-size: 298px 298px;
+      background-size: 283px 283px;
     }
   
     .card[for="c2"] {
-      background-size: 298px 298px;
+      background-size: 283px 283px;
     }
   
     .card[for="c3"] {
-      background-size: 298px 298px;
+      background-size: 283px 283px;
     }
 }    
 
