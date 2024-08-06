@@ -39,8 +39,10 @@ export default {
   }
 
   .header .img {
-    width: 13%;
-    padding: 1% 0% 1% 3% ;
+    width: 130px;
+    height: 45px;
+    margin-left: 5%;
+    margin-top: 7.5px;
   }
 
   .header .img img {
@@ -101,10 +103,6 @@ export default {
 
   /* 响应式 */
   @media (max-width: 1024px) {
-    .header .img {
-      width: 15%;
-      padding-left: 1%;
-    }
 
     .guide .nav-link {
       margin: 0 10px;
@@ -114,20 +112,33 @@ export default {
   }
 
   @media (max-width: 768px) {
-    .header .img {
-      width: 20%;
-      padding-left: 0;
-    }
-
-    .header .img img {
-      height: 40px;
-      /* 限制logo图片高度，避免过大 */
-    }
 
     .guide .nav-link {
       margin: 0 5px;
       padding: 5px 10px;
       font-size: 13px;
     }
+  }
+  @media (max-width: 480px) {
+    .header .img {
+    width: 70px;
+    height: 45px;
+    margin-left: 1%;
+    margin-top: 20px;
+  }
+  .guide .nav-link {
+    margin: 0 3px;
+  }
+  }
+  @media (max-width: 350px) {
+    .header .img {
+    width: 60px;
+    height: 45px;
+    margin-left: 1%;
+    margin-top: 22px;
+  }
+  .guide .nav-link {
+    margin: 0 2px;
+  }
   }
 </style>

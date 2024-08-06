@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 let inputDiv
 </script>  
 
@@ -7508,7 +7508,7 @@ input[name=selection]:focus~.board .place,
     .game {
         outline: none;
         counter-reset: turn 1 winner 2;
-        height: 300px;
+        height: 350px;
         width: 100%;
         display: flex;
         align-items: center;

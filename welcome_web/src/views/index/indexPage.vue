@@ -1,77 +1,77 @@
 <template>
   <div class="main">
     <el-carousel height="90vh">
-      <el-carousel-item class="index"><img src="@/assets/one.png" alt=""></el-carousel-item>
-      <el-carousel-item class="index"><img src="@/assets/two.jpg" alt=""></el-carousel-item>
-      <el-carousel-item class="index"><img src="@/assets/three.png" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="../../assets/one.png" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="../../assets/two.jpg" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="../../assets/three.png" alt=""></el-carousel-item>
     </el-carousel>
     <!-- <el-carousel height="65vh">
-      <el-carousel-item v-for="(image, index) in images" :key="index">
+      <el-carousel-item v-for="(image, id) in images" :key="id">
         <img :src="image.path" alt="">
       </el-carousel-item>
    </el-carousel> -->
     <div class="advatages">
       <div class="slogan">
-        Our Ideas Will Raise Your Programs Above the Expected <br>
+        加入Homyit,锻炼综合能力!<br>
         <a href="javascript:;" @click="goToJoinPage" class="btn">JOIN</a>
       </div>
       <div class="box">
         <div class="ad">
-          <h2 class="title">Consulting</h2>
-          <span class="change" style="background-color: #b0caa2;">
-            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
+          <h2 class="title">协商</h2>
+          <span class="change1" style="background-color: #b0caa2;"></span>
+          <span class="unchange1" style="background-color: #b0caa2;">
+             <a href="javascript:;" class="btn2">10%</a>
           </span>
-          <span class="unchange" style="background-color: #b0caa2;"></span>
         </div>
         <div class="ad">
-          <h2 class="title">Development</h2>
-          <span class="change" style="background-color: #caacc7;">
-            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
+          <h2 class="title">技术</h2>
+          <span class="change3" style="background-color: #caacb6;"></span>
+          <span class="unchange3" style="background-color: #caacb6;">
+            <a href="javascript:;" class="btn2">60%</a>
           </span>
-          <span class="unchange" style="background-color: #caacc7;"></span>
         </div>
         <div class="ad">
-          <h2 class="title">Analysis</h2>
-          <span class="change" style="background-color: #caacb6;">
-            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
+          <h2 class="title">合作</h2>
+          <span class="change4" style="background-color: #a2bbca;"></span>
+          <span class="unchange4" style="background-color: #a2bbca;">
+            <a href="javascript:;" class="btn2">10%</a>
           </span>
-          <span class="unchange" style="background-color: #caacb6;"></span>
         </div>
-        <div class="ad">
-          <h2 class="title">Itegration</h2>
-          <span class="change" style="background-color: #a2bbca;">
-            <a href="javascript:;" @click="goToJoinPage" class="btn2">JOIN</a>
+         <div class="ad">
+          <h2 class="title">发展</h2>
+          <span class="change2" style="background-color: #caacc7;"></span>
+          <span class="unchange2" style="background-color: #caacc7;">
+             <a href="javascript:;" class="btn2">20%</a>
           </span>
-          <span class="unchange" style="background-color: #a2bbca;"></span>
         </div>
       </div>
     </div>
     <div class="projects">
-      <div class="Title">Our Programs</div>
+      <div class="Title">我们的项目</div>
       <div class="projects_items">
         <div ref="animatedElement1" class="img animate__animated animate__fast	200ms">
           <div class="img1">
-            <img src="@/assets/财务处.png" alt="">
+            <img src="../../assets/财务处.png" alt="">
           </div>
-          <a href="https://sis.jxnu.edu.cn/">江西师范大学财务处官网</a>
+          <a href="https://sis.jxnu.edu.cn/" target="_blank">江西师范大学财务处官网</a>
         </div>
         <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
-            <img src="@/assets/管理决策评价中心.png" alt="">
+            <img src="../../assets/管理决策评价中心.png" alt="">
           </div>
-          <a href="https://gljcpj.jxnu.edu.cn/">江西师范大学管理决策评价研究中心官网</a>
+          <a href="https://gljcpj.jxnu.edu.cn/" target="_blank">江西师范大学管理决策评价研究中心官网</a>
         </div>
         <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s animate__fast	200ms">
           <div class="img1">
-            <img src="@/assets/国教.png" alt="">
+            <img src="../../assets/国教.png" alt="">
           </div>
-          <a href="https://sis.jxnu.edu.cn/">江西师范大学国际教育学院官网</a>
+          <a href="https://sis.jxnu.edu.cn/" target="_blank">江西师范大学国际教育学院官网</a>
         </div>
         <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
-            <img src="@/assets/马院.png" alt="">
+            <img src="../../assets/马院.png" alt="">
           </div>
-          <a href="https://mar.jxnu.edu.cn/">江西师范大学马克思主义学院官网</a>
+          <a href="https://mar.jxnu.edu.cn/" target="_blank">江西师范大学马克思主义学院官网</a>
         </div>
       </div>
     </div>
@@ -79,21 +79,21 @@
 </template>
 <script>
 import 'animate.css'
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: 'AnimatedElement',
   // ---------------
-  // data() {
-  //   return {
-  //     images: []  // 用来存储从后端获取的图片信息
-  //   };
-  // },
+  data() {
+    return {
+      images: []  // 用来存储从后端获取的图片信息
+    };
+  },
   // ---------------
   mounted() {
     // 组件挂载后，可以在这里初始化IntersectionObserver
     this.initIntersectionObserver();
-    // this.fetchImages();  // 在组件加载时调用获取图片的方法
+    this.fetchImages();  // 在组件加载时调用获取图片的方法
   },
 
   methods: {
@@ -139,16 +139,16 @@ export default {
       setTimeout(()=>{
         this.$router.go(0)
       },10)
-    }
+    },
     // -----------------------
-//      async fetchImages() {
-//        try {
-//          const response = await axios.get('/url');  // 发送GET请求到后端API接口
-//          this.images = response.data;  // 将返回的图片数据存储到images数组中
-//       } catch (error) {
-//          console.error('获取失败', error);
-//       }
-// }
+     async fetchImages() {
+       try {
+         const response = await axios.get('/getallimages');  // 发送GET请求到后端API接口
+         this.images = response.data;  // 将返回的图片数据存储到images数组中
+      } catch (error) {
+         console.error('获取失败', error);
+      }
+}
     // -----------------------
   }
 };
@@ -194,8 +194,15 @@ a.btn:hover {
   color: #fff;
 }
 
+.index img{
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+}
 
 .slogan {
+  letter-spacing: 0.1em;
   padding-top: 90px;
   padding-bottom: 56px;
   text-align: center;
@@ -236,29 +243,12 @@ a.btn:hover {
   font: 300 30px 'Open Sans', sans-serif;
   color: #000;
 }
-
-.box .ad .change {
+.box .ad a.btn2 {
   position: absolute;
-  display: block;
+  bottom: 50px;
   text-align: center;
-  bottom: 29.75%;
-  height: 30%;
-  width: 100%;
-  /* background-color: pink;   */
-  clip-path: polygon(0 100%, 100% 100%, 100% 0%);
-  transition: clip-path 5s ease, height 2s ease, opacity .5s ease;
-  opacity: 1;
-}
-
-.box .ad .change a.btn2 {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  left: 22%;
+  left: 25%;
   display: none;
-  text-decoration: none;
-  color: inherit;
-  outline: none;
   transition: 0.5s ease;
   -o-transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
@@ -267,35 +257,89 @@ a.btn:hover {
   border: 2px solid #fff;
   padding: 2% 15% 2%;
   opacity: 0;
-  /* 初始时按钮是透明的 */
   transition: opacity 1s ease, transform 0.5s ease;
   transform: translateY(20px);
+  text-decoration: none;
+  /* cursor: pointer;  */
+}
+.box .ad:hover a.btn2 {
+  display: block;
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.box .ad .change1,.box .ad .change4 {
+  position: absolute;
+  display: block;
+  text-align: center;
+  bottom: 4.65%;
+  height: 30%;
+  width: 100%;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0%);
+  transition: clip-path 5s ease, height 2s ease, opacity .5s ease;
+  opacity: 1;
 }
 
-.box .ad:hover .change {
+.box .ad:hover .change1,.box .ad:hover .change4{
   clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
   height: 40%;
 }
 
-.box .ad:hover .change a.btn2 {
-  display: block;
-  display: block;
-  /* 仍然需要设置为 block 以确保按钮占据空间 */
-  opacity: 1;
-  /* 按钮变为不透明 */
-  transform: translateY(0);
-  /* 按钮移回原位 */
-}
-
-.box .ad .unchange {
+.box .ad .unchange1,.box .ad .unchange4 {
   position: absolute;
   display: block;
   bottom: 0;
+  width: 100%;
+  height: 5%;
+}
+.box .ad .change2 {
+  position: absolute;
+  display: block;
+  text-align: center;
+  bottom: 14.65%;
   height: 30%;
   width: 100%;
-  /* background-color: pink; */
+  clip-path: polygon(0 100%, 100% 100%, 100% 0%);
+  transition: clip-path 5s ease, height 2s ease, opacity .5s ease;
+  opacity: 1;
 }
 
+.box .ad:hover .change2 {
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+  height: 40%;
+}
+
+.box .ad .unchange2 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+}
+.box .ad .change3 {
+  position: absolute;
+  display: block;
+  text-align: center;
+  bottom: 29.6%;
+  height: 30%;
+  width: 100%;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0%);
+  transition: clip-path 5s ease, height 2s ease, opacity .5s ease;
+  opacity: 1;
+}
+
+.box .ad:hover .change3 {
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+  height: 45%;
+}
+
+.box .ad .unchange3 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+}
 .Title {
   margin: 50px 0px;
   text-align: center;
@@ -339,7 +383,44 @@ a.btn:hover {
 
 
 /* 响应式 */
+@media (max-width: 1400px) {
+  ::v-deep .el-carousel{
+    height: 80vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 80vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  ::v-deep .el-carousel{
+    height: 65vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 65vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
+}
 @media (max-width: 1024px) {
+  ::v-deep .el-carousel{
+    height: 55vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 55vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
   .slogan {
     font-size: 20px;
   }
@@ -359,14 +440,27 @@ a.btn:hover {
     line-height: 18px;
   }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   ::v-deep .el-carousel{
     height: 50vh !important;
   }
   .index{
     width: 100%;
     height: 50vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  ::v-deep .el-carousel{
+    height: 40vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 40vh;
   }
   .index img{
     width: 100%;
@@ -389,7 +483,7 @@ a.btn:hover {
     font-size: 17px;
   }
 
-  .box .ad .change a.btn2 {
+  .box .ad a.btn2 {
     font-size: 12px;
   }
 
@@ -413,4 +507,31 @@ a.btn:hover {
     z-index: 100;
   }
 }
+@media (max-width: 650px) {
+  ::v-deep .el-carousel{
+    height: 30vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 30vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 480px) {
+   ::v-deep .el-carousel{
+    height: 28vh !important;
+  }
+  .index{
+    width: 100%;
+    height: 28vh;
+  }
+  .index img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
 </style>

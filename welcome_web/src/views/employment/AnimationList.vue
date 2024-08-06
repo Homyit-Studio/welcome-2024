@@ -41,7 +41,7 @@ onMounted(() => {
             return;
         }
         let playGroundRect
-        let scrollY = ref(window.scrollY)
+        // let scrollY = ref(window.scrollY)
         let playGroundTop
         let playGroundBottom
         let reactiveData = 200
@@ -75,7 +75,7 @@ onMounted(() => {
         }
         else {
             //拿到蓝色部分的矩形区域
-            playGroundRect = playGround.getBoundingClientRect();
+            // playGroundRect = playGround.getBoundingClientRect();
             //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
             playGroundTop = 600;
             //如上图3所示，结束距离，scrollEnd
@@ -218,7 +218,7 @@ html {
 .header,
 .footer {
     height: 250px;
-    margin-top: -50px;
+    margin-top: -20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,6 +252,7 @@ html {
 .other {
     height: 50px;
     display: flex;
+     margin-top: 50px;
     justify-content: center;
     align-items: center;
     color: #7c7c7c;
@@ -263,7 +264,7 @@ html {
 .other-big {
     height: 50px;
     display: flex;
-    margin-top: -70px;
+    margin-top: 10px;
     justify-content: center;
     align-items: center;
     color: #525252;
@@ -328,11 +329,10 @@ html {
     .other {
         height: 50px;
         display: flex;
-        margin-top: 10px;
+        margin-top: 20px;
         justify-content: center;
         align-items: center;
         color: #7c7c7c;
-        ;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
         text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
@@ -355,7 +355,7 @@ html {
     .footer {
         height: 250px;
         display: flex;
-        margin-top: -20px;
+        margin-top: 20px;
         justify-content: center;
         align-items: center;
         color: #e6e6e6;
@@ -367,7 +367,7 @@ html {
     .other-big {
         height: 50px;
         display: flex;
-        margin-top: 10px;
+        margin-top: 60px;
         justify-content: center;
         align-items: center;
         color: #525252;
@@ -394,7 +394,7 @@ html {
     .creater {
         height: 50px;
         display: flex;
-        margin-top: -70px;
+        margin-top: 10px;
         justify-content: center;
         align-items: center;
         color: #9d9c9c;
@@ -406,7 +406,7 @@ html {
     .other {
         height: 50px;
         display: flex;
-        margin-top: 0px;
+        margin-top: 50px;
         justify-content: center;
         align-items: center;
         color: #7c7c7c;
@@ -521,7 +521,7 @@ html {
     .other-big {
         height: 50px;
         display: flex;
-        margin-top: 0px;
+        margin-top: 20px;
         justify-content: center;
         align-items: center;
         color: #525252;
