@@ -33,4 +33,7 @@ public class Result {
     public static Result error(CodeEnum codeEnum){
         return new Result(codeEnum.getCode(), codeEnum.getMessage(), false);
     }
+    public static Result exception(CodeEnum codeEnum){
+        return new Result(codeEnum.getCode(), codeEnum.getMessage(), false);
+    }
 }

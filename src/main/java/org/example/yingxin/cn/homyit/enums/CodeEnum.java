@@ -30,7 +30,8 @@ public enum CodeEnum {
     UPDATE_SUCCESS(903,"修改成功"),
     UPLOAD_SUCCESS(904,"图片上传成功"),
     GETIMAGES_SUCCESS(905,"获取图片成功"),
-    GETDATA_SUCCESS(906,"获取地图数据成功");
+    GETDATA_SUCCESS(906,"获取地图数据成功"),
+    SYSTEM_UNKNOW_ERR(999,"未知错误" );
     private Integer code;
     private String message;
 
