@@ -127,11 +127,11 @@ function initChart() {
     //开始配置
     let option = {
         //标题以及副标题
-        title: {
-            text: '就业分布',
-            subtext: 'Homyit Studio',
-            left: 'center'
-        },
+        // title: {
+        //     text: '就业分布',
+        //     subtext: 'Homyit Studio',
+        //     left: 'center'
+        // },
         //配置浮动框
         tooltip: [{
             // triggerOn: 'click',//点击才会出现提示框
@@ -332,7 +332,7 @@ function initChart() {
 
 <style scoped>
 .marg {
-    padding-top: 60px;
+    padding-top: 0px;
 }
 
 #chinaMap {
