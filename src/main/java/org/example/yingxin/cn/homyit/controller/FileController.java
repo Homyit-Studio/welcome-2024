@@ -29,11 +29,12 @@ public class FileController {
     @Autowired
     private ImagesMapper imagesMapper;
 
-    @PostMapping("/upload/{imagename}")
+    @PostMapping("/upload")
     @ResponseBody
-    public String upload(MultipartFile file,@PathVariable String imagename) throws IOException, InterruptedException {
+    public String upload(@RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
 
-        String fileExt = FileUtils.getExtName(Objects.requireNonNull(file.getOriginalFilename()));
+        String imageName = file.getOriginalFilename();
+        String fileExt = FileUtils.getExtName(Objects.requireNonNull(imageName));
 
         String module = "";
 
@@ -51,7 +52,7 @@ public class FileController {
         System.out.println("返回地址:" + url);
         //一次性上传多张的时候最好加上这个
         //Thread.sleep(500);
-        imagesMapper.insertimage(imagename, url);
+        imagesMapper.insertimage(imageName, url);
         return url;
     }
 }

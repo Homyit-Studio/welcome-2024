@@ -24,4 +24,5 @@ mybatis:
   mapper-locations: org/example/yinxin/cn/homyit/mapper/*.xml
 upload:
   path: /home/answer/ui/images/
+#  path:  D:\test\
   reUrl:  https://img.abmy.online/images/
