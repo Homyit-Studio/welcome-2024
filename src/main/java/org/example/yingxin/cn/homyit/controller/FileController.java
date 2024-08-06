@@ -2,7 +2,9 @@ package org.example.yingxin.cn.homyit.controller;
 
 import org.example.yingxin.cn.homyit.Until.FileUtils;
 import org.example.yingxin.cn.homyit.config.UploadConfig;
+import org.example.yingxin.cn.homyit.enums.CodeEnum;
 import org.example.yingxin.cn.homyit.mapper.ImagesMapper;
+import org.example.yingxin.cn.homyit.pojo.Result;
 import org.example.yingxin.cn.homyit.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,11 +31,12 @@ public class FileController {
     @Autowired
     private ImagesMapper imagesMapper;
 
-    @PostMapping("/upload/{imagename}")
+    @PostMapping("/upload")
     @ResponseBody
-    public String upload(MultipartFile file,@PathVariable String imagename) throws IOException, InterruptedException {
+    public Result upload(@RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
 
-        String fileExt = FileUtils.getExtName(Objects.requireNonNull(file.getOriginalFilename()));
+        String imageName = file.getOriginalFilename();
+        String fileExt = FileUtils.getExtName(Objects.requireNonNull(imageName));
 
         String module = "";
 
@@ -51,7 +54,7 @@ public class FileController {
         System.out.println("返回地址:" + url);
         //一次性上传多张的时候最好加上这个
         //Thread.sleep(500);
-        imagesMapper.insertimage(imagename, url);
-        return url;
+        imagesMapper.insertimage(imageName, url);
+        return Result.success(CodeEnum.UPLOAD_SUCCESS,url);
     }
 }

@@ -27,7 +27,10 @@ public enum CodeEnum {
     INSERT_XUEHAO_NULL(802,"学号不能为空"),
     BAOMING_SUCCESSS( 901,"报名成功"),
     DOWNLOAD_SUCCESS(902,"下载成功"),
-    UPDATE_SUCCESS(903,"修改成功");
+    UPDATE_SUCCESS(903,"修改成功"),
+    UPLOAD_SUCCESS(904,"图片上传成功"),
+    GETIMAGES_SUCCESS(905,"获取图片成功"),
+    GETDATA_SUCCESS(906,"获取地图数据成功");
     private Integer code;
     private String message;
 

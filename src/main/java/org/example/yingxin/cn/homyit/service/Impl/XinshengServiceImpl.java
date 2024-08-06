@@ -29,7 +29,7 @@ public class XinshengServiceImpl implements XinshengService {
     }
     @Override
     public void delect(Xinsheng xinsheng){
-        xingxinshengMapper.delete(xinsheng.getName() ,xinsheng.getXuehao(),xinsheng.getBanji());
+        xingxinshengMapper.delete(xinsheng.getId());
     }
     @Override
     public void insert(Xinsheng xinsheng){

@@ -7,10 +7,7 @@ import org.example.yingxin.cn.homyit.service.BaomingService;
 import org.example.yingxin.cn.homyit.service.XinshengService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.mail.internet.AddressException;
 import java.io.UnsupportedEncodingException;
@@ -22,7 +19,7 @@ public class BaomingConteoller {
     private BaomingService baomingService;
     @Autowired
     private XinshengService xinshengService;
-    @GetMapping("/baoming")
+    @PostMapping("/baoming")
     @ResponseBody
     public Result baoming(@RequestBody Xinsheng  xinsheng)throws AddressException, UnsupportedEncodingException {
 

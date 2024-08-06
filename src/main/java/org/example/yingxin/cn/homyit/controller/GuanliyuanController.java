@@ -6,6 +6,7 @@ import org.example.yingxin.cn.homyit.enums.CodeEnum;
 import org.example.yingxin.cn.homyit.pojo.Guanliyuan;
 import org.example.yingxin.cn.homyit.pojo.Result;
 
+import org.example.yingxin.cn.homyit.pojo.Select;
 import org.example.yingxin.cn.homyit.pojo.Xinsheng;
 import org.example.yingxin.cn.homyit.service.GuanliyuanService;
 import org.example.yingxin.cn.homyit.service.XinshengService;
@@ -53,10 +54,12 @@ public class GuanliyuanController {
     @Autowired
     private XinshengService xinshengService;
 
-    @GetMapping("/selectall/{page}")
+    @GetMapping("/selectall")
     @ResponseBody
-    public List<Xinsheng> selecrall(@PathVariable Integer page, @RequestBody Xinsheng xinsheng) {
+    public List<Xinsheng> selecrall( @RequestBody Select select) {
         Integer pagesize = 10;
+        Integer page = (select.getPage()-1)*10;
+        Xinsheng xinsheng = new Xinsheng(select.getId(),select.getName(),select.getXuehao(),select.getBanji(),select.getFangxiang(),select.getYouxiang(),null);
         List<Xinsheng> selectall = xinshengService.select(xinsheng, page, pagesize);
         return selectall;
     }

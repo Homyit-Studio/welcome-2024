@@ -24,6 +24,9 @@ public class Result {
     public static Result success(Object data){
         return new Result(CodeEnum.SUCCESS.getCode(), CodeEnum.SUCCESS.getMessage(), data);
     }
+    public static Result success(CodeEnum codeEnum,Object data){
+        return new Result(codeEnum.getCode(), codeEnum.getMessage(), data);
+    }
     public static Result success(CodeEnum codeEnum){
         return new Result(codeEnum.getCode(), codeEnum.getMessage(), true);
     }
