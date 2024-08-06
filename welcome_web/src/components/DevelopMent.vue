@@ -2,11 +2,19 @@
 import 'animate.css'
 export default {
   name: 'AnimatedElement',
+  data() {
+    return {
+      activeTab: 'link1' // 默认第一个标签为活动状态
+    };
+  },
   mounted() {
     // 组件挂载后，可以在这里初始化IntersectionObserver
     this.initIntersectionObserver();
   },
   methods: {
+    setActive(tab) {
+      this.activeTab = tab; // 设置当前活动标签为点击的标签
+    },
     initIntersectionObserver() {
       // 获取需要观察的元素，这里使用Vue的ref来获取DOM元素
       const elements = [
@@ -54,24 +62,28 @@ export default {
         <div class="progress-bar">
           <div class="node">
             <div class="txt ">创立</div>
+            <a href="#section1" @click="setActive('link1')" :class="{ 'active': activeTab === 'link1' }"></a>
           </div>
           <div class="line"></div>
-          <div class="node" ref="node2" @click="() => changeColor(node2)">
+          <div class="node" ref="node2">
             <div class="txt">环境</div>
+            <a href="#section2" @click="setActive('link2')" :class="{ 'active': activeTab === 'link2' }"></a>
           </div>
           <div class="line"></div>
-          <div class="node" ref="node3" @click="() => changeColor(node3)">
+          <div class="node" ref="node3">
             <div class="txt">成就</div>
+            <a href="#section3" @click="setActive('link3')" :class="{ 'active': activeTab === 'link3' }"></a>
           </div>
           <div class="line"></div>
-          <div class="node" ref="node4" @click="() => changeColor(node4)">
+          <div class="node" ref="node4">
             <div class="txt">培养新能量</div>
+            <a href="#section4" @click="setActive('link4')" :class="{ 'active': activeTab === 'link4' }"></a>
           </div>
         </div>
       </div>
       <div class="contents">
         <div class="start">
-          <div class="title">创立</div>
+          <div class="title" id="section1">创立</div>
           <div class="set">
             <img src="@/assets/2020.jpg" alt="">
             <div ref="animatedElement1" class="words1 animate__animated">
@@ -83,7 +95,7 @@ export default {
           </div>
         </div>
         <div class="enviroment">
-          <div class="title">环境</div>
+          <div class="title" id="section2">环境</div>
           <div class="around">
             <img src="@/assets/工作室环境.jpg" alt="">
             <div ref="animatedElement2" class="words2 animate__animated">
@@ -94,7 +106,7 @@ export default {
           </div>
         </div>
         <div class="success">
-          <div class="title">成就</div>
+          <div class="title" id="section3">成就</div>
           <div class="win">
             <img src="@/assets/获奖情况.jpg" alt="">
             <div ref="animatedElement3" class="words3 animate__animated">
@@ -106,7 +118,7 @@ export default {
         </div>
         <div class="new">
            <div class="title">培养新能量</div>
-           <div class="cultivate">
+           <div class="cultivate" id="section4">
             <img src="@/assets/新生培训.jpg" alt="">
             <div ref="animatedElement4" class="words4 animate__animated">
               宏奕工作室积极吸纳新鲜血液,工作室重视对新成员的培训和技能提升。
@@ -155,6 +167,19 @@ export default {
   position: relative;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
+}
+
+.progress-bar .node a {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+}
+
+.progress-bar .node .active {
+  background-color: #fff;
 }
 
 .progress-bar .line {
@@ -335,6 +360,13 @@ export default {
   height: 18.5px;
 }
 
+.progress-bar .node a {
+  width: 14.5px;
+  height: 14.5px;
+  top: 2px;
+  left: 2px;
+}
+
 .progress-bar .line {
   width: 21%;
   margin-top: 8px;
@@ -496,7 +528,12 @@ export default {
   width: 18.5px;
   height: 18.5px;
 }
-
+.progress-bar .node a {
+  width: 14.5px;
+  height: 14.5px;
+  top: 2px;
+  left: 2px;
+}
 .progress-bar .line {
   width: 19.5%;
   margin-top: 8px;
