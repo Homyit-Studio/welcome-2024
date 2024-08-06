@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .main {
   padding-top: 60px;
 }
