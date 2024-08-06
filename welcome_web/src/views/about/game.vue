@@ -1,28 +1,32 @@
-<script setup>
-// import { ref } from 'vue'
-let inputDiv
-</script>  
 
 <template type="html">
+    <div style="padding-top:60px" ></div>
+    <h2 >前端互动小游戏</h2>
+  <div class="name">
+     <div>这是由前端技术code出的趣味游戏，名为四型数独</div>
+     <div>点击info查看游戏详情</div>
+     <div>code游戏原作者为Mike Golus</div>
+  </div>
     <div class="game">
+       
         <label for="">
             <form>
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
-                <input :id="inputDiv" type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
+                <input type="radio" name="selection">
 
                 <button type="button" class="info">Info</button>
                 <div class="instructions">
@@ -115,22 +119,22 @@ let inputDiv
                     </div>
                 </div>
                 <div class="board">
-                    <input :id="inputDiv" class="r1c1 square short dark hole" type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square tall light hole " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square short light hole " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square tall dark hole " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square short dark solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square tall light solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square short light solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 square tall dark solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round short dark solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round tall light solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round short light solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round tall dark solid " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round short dark hole " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round tall light hole " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round short light hole " type="radio" name="r1c1">
-                    <input :id="inputDiv" class="r1c1 round tall dark hole " type="radio" name="r1c1">
+                    <input class="r1c1 square short dark hole" type="radio" name="r1c1">
+                    <input class="r1c1 square tall light hole " type="radio" name="r1c1">
+                    <input class="r1c1 square short light hole " type="radio" name="r1c1">
+                    <input class="r1c1 square tall dark hole " type="radio" name="r1c1">
+                    <input class="r1c1 square short dark solid " type="radio" name="r1c1">
+                    <input class="r1c1 square tall light solid " type="radio" name="r1c1">
+                    <input class="r1c1 square short light solid " type="radio" name="r1c1">
+                    <input class="r1c1 square tall dark solid " type="radio" name="r1c1">
+                    <input class="r1c1 round short dark solid " type="radio" name="r1c1">
+                    <input class="r1c1 round tall light solid " type="radio" name="r1c1">
+                    <input class="r1c1 round short light solid " type="radio" name="r1c1">
+                    <input class="r1c1 round tall dark solid " type="radio" name="r1c1">
+                    <input class="r1c1 round short dark hole " type="radio" name="r1c1">
+                    <input class="r1c1 round tall light hole " type="radio" name="r1c1">
+                    <input class="r1c1 round short light hole " type="radio" name="r1c1">
+                    <input class="r1c1 round tall dark hole " type="radio" name="r1c1">
                     <div class="space r1c1">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -213,22 +217,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r1c2 square short dark hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square tall light hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square short light hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square tall dark hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square short dark solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square tall light solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square short light solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 square tall dark solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round short dark solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round tall light solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round short light solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round tall dark solid " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round short dark hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round tall light hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round short light hole " type="radio" name="r1c2">
-                    <input :id="inputDiv" class="r1c2 round tall dark hole " type="radio" name="r1c2">
+                    <input class="r1c2 square short dark hole " type="radio" name="r1c2">
+                    <input class="r1c2 square tall light hole " type="radio" name="r1c2">
+                    <input class="r1c2 square short light hole " type="radio" name="r1c2">
+                    <input class="r1c2 square tall dark hole " type="radio" name="r1c2">
+                    <input class="r1c2 square short dark solid " type="radio" name="r1c2">
+                    <input class="r1c2 square tall light solid " type="radio" name="r1c2">
+                    <input class="r1c2 square short light solid " type="radio" name="r1c2">
+                    <input class="r1c2 square tall dark solid " type="radio" name="r1c2">
+                    <input class="r1c2 round short dark solid " type="radio" name="r1c2">
+                    <input class="r1c2 round tall light solid " type="radio" name="r1c2">
+                    <input class="r1c2 round short light solid " type="radio" name="r1c2">
+                    <input class="r1c2 round tall dark solid " type="radio" name="r1c2">
+                    <input class="r1c2 round short dark hole " type="radio" name="r1c2">
+                    <input class="r1c2 round tall light hole " type="radio" name="r1c2">
+                    <input class="r1c2 round short light hole " type="radio" name="r1c2">
+                    <input class="r1c2 round tall dark hole " type="radio" name="r1c2">
                     <div class="space r1c2">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -311,22 +315,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r1c3 square short dark hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square tall light hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square short light hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square tall dark hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square short dark solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square tall light solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square short light solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 square tall dark solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round short dark solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round tall light solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round short light solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round tall dark solid " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round short dark hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round tall light hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round short light hole " type="radio" name="r1c3">
-                    <input :id="inputDiv" class="r1c3 round tall dark hole " type="radio" name="r1c3">
+                    <input class="r1c3 square short dark hole " type="radio" name="r1c3">
+                    <input class="r1c3 square tall light hole " type="radio" name="r1c3">
+                    <input class="r1c3 square short light hole " type="radio" name="r1c3">
+                    <input class="r1c3 square tall dark hole " type="radio" name="r1c3">
+                    <input class="r1c3 square short dark solid " type="radio" name="r1c3">
+                    <input class="r1c3 square tall light solid " type="radio" name="r1c3">
+                    <input class="r1c3 square short light solid " type="radio" name="r1c3">
+                    <input class="r1c3 square tall dark solid " type="radio" name="r1c3">
+                    <input class="r1c3 round short dark solid " type="radio" name="r1c3">
+                    <input class="r1c3 round tall light solid " type="radio" name="r1c3">
+                    <input class="r1c3 round short light solid " type="radio" name="r1c3">
+                    <input class="r1c3 round tall dark solid " type="radio" name="r1c3">
+                    <input class="r1c3 round short dark hole " type="radio" name="r1c3">
+                    <input class="r1c3 round tall light hole " type="radio" name="r1c3">
+                    <input class="r1c3 round short light hole " type="radio" name="r1c3">
+                    <input class="r1c3 round tall dark hole " type="radio" name="r1c3">
                     <div class="space r1c3">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -409,22 +413,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r1c4 square short dark hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square tall light hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square short light hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square tall dark hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square short dark solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square tall light solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square short light solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 square tall dark solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round short dark solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round tall light solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round short light solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round tall dark solid " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round short dark hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round tall light hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round short light hole " type="radio" name="r1c4">
-                    <input :id="inputDiv" class="r1c4 round tall dark hole " type="radio" name="r1c4">
+                    <input class="r1c4 square short dark hole " type="radio" name="r1c4">
+                    <input class="r1c4 square tall light hole " type="radio" name="r1c4">
+                    <input class="r1c4 square short light hole " type="radio" name="r1c4">
+                    <input class="r1c4 square tall dark hole " type="radio" name="r1c4">
+                    <input class="r1c4 square short dark solid " type="radio" name="r1c4">
+                    <input class="r1c4 square tall light solid " type="radio" name="r1c4">
+                    <input class="r1c4 square short light solid " type="radio" name="r1c4">
+                    <input class="r1c4 square tall dark solid " type="radio" name="r1c4">
+                    <input class="r1c4 round short dark solid " type="radio" name="r1c4">
+                    <input class="r1c4 round tall light solid " type="radio" name="r1c4">
+                    <input class="r1c4 round short light solid " type="radio" name="r1c4">
+                    <input class="r1c4 round tall dark solid " type="radio" name="r1c4">
+                    <input class="r1c4 round short dark hole " type="radio" name="r1c4">
+                    <input class="r1c4 round tall light hole " type="radio" name="r1c4">
+                    <input class="r1c4 round short light hole " type="radio" name="r1c4">
+                    <input class="r1c4 round tall dark hole " type="radio" name="r1c4">
                     <div class="space r1c4">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -507,22 +511,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r2c1 square short dark hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square tall light hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square short light hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square tall dark hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square short dark solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square tall light solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square short light solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 square tall dark solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round short dark solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round tall light solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round short light solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round tall dark solid " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round short dark hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round tall light hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round short light hole " type="radio" name="r2c1">
-                    <input :id="inputDiv" class="r2c1 round tall dark hole " type="radio" name="r2c1">
+                    <input class="r2c1 square short dark hole " type="radio" name="r2c1">
+                    <input class="r2c1 square tall light hole " type="radio" name="r2c1">
+                    <input class="r2c1 square short light hole " type="radio" name="r2c1">
+                    <input class="r2c1 square tall dark hole " type="radio" name="r2c1">
+                    <input class="r2c1 square short dark solid " type="radio" name="r2c1">
+                    <input class="r2c1 square tall light solid " type="radio" name="r2c1">
+                    <input class="r2c1 square short light solid " type="radio" name="r2c1">
+                    <input class="r2c1 square tall dark solid " type="radio" name="r2c1">
+                    <input class="r2c1 round short dark solid " type="radio" name="r2c1">
+                    <input class="r2c1 round tall light solid " type="radio" name="r2c1">
+                    <input class="r2c1 round short light solid " type="radio" name="r2c1">
+                    <input class="r2c1 round tall dark solid " type="radio" name="r2c1">
+                    <input class="r2c1 round short dark hole " type="radio" name="r2c1">
+                    <input class="r2c1 round tall light hole " type="radio" name="r2c1">
+                    <input class="r2c1 round short light hole " type="radio" name="r2c1">
+                    <input class="r2c1 round tall dark hole " type="radio" name="r2c1">
                     <div class="space r2c1">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -605,22 +609,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r2c2 square short dark hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square tall light hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square short light hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square tall dark hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square short dark solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square tall light solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square short light solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 square tall dark solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round short dark solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round tall light solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round short light solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round tall dark solid " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round short dark hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round tall light hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round short light hole " type="radio" name="r2c2">
-                    <input :id="inputDiv" class="r2c2 round tall dark hole " type="radio" name="r2c2">
+                    <input class="r2c2 square short dark hole " type="radio" name="r2c2">
+                    <input class="r2c2 square tall light hole " type="radio" name="r2c2">
+                    <input class="r2c2 square short light hole " type="radio" name="r2c2">
+                    <input class="r2c2 square tall dark hole " type="radio" name="r2c2">
+                    <input class="r2c2 square short dark solid " type="radio" name="r2c2">
+                    <input class="r2c2 square tall light solid " type="radio" name="r2c2">
+                    <input class="r2c2 square short light solid " type="radio" name="r2c2">
+                    <input class="r2c2 square tall dark solid " type="radio" name="r2c2">
+                    <input class="r2c2 round short dark solid " type="radio" name="r2c2">
+                    <input class="r2c2 round tall light solid " type="radio" name="r2c2">
+                    <input class="r2c2 round short light solid " type="radio" name="r2c2">
+                    <input class="r2c2 round tall dark solid " type="radio" name="r2c2">
+                    <input class="r2c2 round short dark hole " type="radio" name="r2c2">
+                    <input class="r2c2 round tall light hole " type="radio" name="r2c2">
+                    <input class="r2c2 round short light hole " type="radio" name="r2c2">
+                    <input class="r2c2 round tall dark hole " type="radio" name="r2c2">
                     <div class="space r2c2">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -703,22 +707,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r2c3 square short dark hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square tall light hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square short light hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square tall dark hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square short dark solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square tall light solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square short light solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 square tall dark solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round short dark solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round tall light solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round short light solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round tall dark solid " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round short dark hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round tall light hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round short light hole " type="radio" name="r2c3">
-                    <input :id="inputDiv" class="r2c3 round tall dark hole " type="radio" name="r2c3">
+                    <input class="r2c3 square short dark hole " type="radio" name="r2c3">
+                    <input class="r2c3 square tall light hole " type="radio" name="r2c3">
+                    <input class="r2c3 square short light hole " type="radio" name="r2c3">
+                    <input class="r2c3 square tall dark hole " type="radio" name="r2c3">
+                    <input class="r2c3 square short dark solid " type="radio" name="r2c3">
+                    <input class="r2c3 square tall light solid " type="radio" name="r2c3">
+                    <input class="r2c3 square short light solid " type="radio" name="r2c3">
+                    <input class="r2c3 square tall dark solid " type="radio" name="r2c3">
+                    <input class="r2c3 round short dark solid " type="radio" name="r2c3">
+                    <input class="r2c3 round tall light solid " type="radio" name="r2c3">
+                    <input class="r2c3 round short light solid " type="radio" name="r2c3">
+                    <input class="r2c3 round tall dark solid " type="radio" name="r2c3">
+                    <input class="r2c3 round short dark hole " type="radio" name="r2c3">
+                    <input class="r2c3 round tall light hole " type="radio" name="r2c3">
+                    <input class="r2c3 round short light hole " type="radio" name="r2c3">
+                    <input class="r2c3 round tall dark hole " type="radio" name="r2c3">
                     <div class="space r2c3">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -801,22 +805,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r2c4 square short dark hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square tall light hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square short light hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square tall dark hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square short dark solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square tall light solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square short light solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 square tall dark solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round short dark solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round tall light solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round short light solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round tall dark solid " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round short dark hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round tall light hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round short light hole " type="radio" name="r2c4">
-                    <input :id="inputDiv" class="r2c4 round tall dark hole " type="radio" name="r2c4">
+                    <input class="r2c4 square short dark hole " type="radio" name="r2c4">
+                    <input class="r2c4 square tall light hole " type="radio" name="r2c4">
+                    <input class="r2c4 square short light hole " type="radio" name="r2c4">
+                    <input class="r2c4 square tall dark hole " type="radio" name="r2c4">
+                    <input class="r2c4 square short dark solid " type="radio" name="r2c4">
+                    <input class="r2c4 square tall light solid " type="radio" name="r2c4">
+                    <input class="r2c4 square short light solid " type="radio" name="r2c4">
+                    <input class="r2c4 square tall dark solid " type="radio" name="r2c4">
+                    <input class="r2c4 round short dark solid " type="radio" name="r2c4">
+                    <input class="r2c4 round tall light solid " type="radio" name="r2c4">
+                    <input class="r2c4 round short light solid " type="radio" name="r2c4">
+                    <input class="r2c4 round tall dark solid " type="radio" name="r2c4">
+                    <input class="r2c4 round short dark hole " type="radio" name="r2c4">
+                    <input class="r2c4 round tall light hole " type="radio" name="r2c4">
+                    <input class="r2c4 round short light hole " type="radio" name="r2c4">
+                    <input class="r2c4 round tall dark hole " type="radio" name="r2c4">
                     <div class="space r2c4">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -899,22 +903,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r3c1 square short dark hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square tall light hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square short light hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square tall dark hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square short dark solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square tall light solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square short light solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 square tall dark solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round short dark solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round tall light solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round short light solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round tall dark solid " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round short dark hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round tall light hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round short light hole " type="radio" name="r3c1">
-                    <input :id="inputDiv" class="r3c1 round tall dark hole " type="radio" name="r3c1">
+                    <input class="r3c1 square short dark hole " type="radio" name="r3c1">
+                    <input class="r3c1 square tall light hole " type="radio" name="r3c1">
+                    <input class="r3c1 square short light hole " type="radio" name="r3c1">
+                    <input class="r3c1 square tall dark hole " type="radio" name="r3c1">
+                    <input class="r3c1 square short dark solid " type="radio" name="r3c1">
+                    <input class="r3c1 square tall light solid " type="radio" name="r3c1">
+                    <input class="r3c1 square short light solid " type="radio" name="r3c1">
+                    <input class="r3c1 square tall dark solid " type="radio" name="r3c1">
+                    <input class="r3c1 round short dark solid " type="radio" name="r3c1">
+                    <input class="r3c1 round tall light solid " type="radio" name="r3c1">
+                    <input class="r3c1 round short light solid " type="radio" name="r3c1">
+                    <input class="r3c1 round tall dark solid " type="radio" name="r3c1">
+                    <input class="r3c1 round short dark hole " type="radio" name="r3c1">
+                    <input class="r3c1 round tall light hole " type="radio" name="r3c1">
+                    <input class="r3c1 round short light hole " type="radio" name="r3c1">
+                    <input class="r3c1 round tall dark hole " type="radio" name="r3c1">
                     <div class="space r3c1">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -997,22 +1001,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r3c2 square short dark hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square tall light hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square short light hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square tall dark hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square short dark solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square tall light solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square short light solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 square tall dark solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round short dark solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round tall light solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round short light solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round tall dark solid " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round short dark hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round tall light hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round short light hole " type="radio" name="r3c2">
-                    <input :id="inputDiv" class="r3c2 round tall dark hole " type="radio" name="r3c2">
+                    <input class="r3c2 square short dark hole " type="radio" name="r3c2">
+                    <input class="r3c2 square tall light hole " type="radio" name="r3c2">
+                    <input class="r3c2 square short light hole " type="radio" name="r3c2">
+                    <input class="r3c2 square tall dark hole " type="radio" name="r3c2">
+                    <input class="r3c2 square short dark solid " type="radio" name="r3c2">
+                    <input class="r3c2 square tall light solid " type="radio" name="r3c2">
+                    <input class="r3c2 square short light solid " type="radio" name="r3c2">
+                    <input class="r3c2 square tall dark solid " type="radio" name="r3c2">
+                    <input class="r3c2 round short dark solid " type="radio" name="r3c2">
+                    <input class="r3c2 round tall light solid " type="radio" name="r3c2">
+                    <input class="r3c2 round short light solid " type="radio" name="r3c2">
+                    <input class="r3c2 round tall dark solid " type="radio" name="r3c2">
+                    <input class="r3c2 round short dark hole " type="radio" name="r3c2">
+                    <input class="r3c2 round tall light hole " type="radio" name="r3c2">
+                    <input class="r3c2 round short light hole " type="radio" name="r3c2">
+                    <input class="r3c2 round tall dark hole " type="radio" name="r3c2">
                     <div class="space r3c2">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1095,22 +1099,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r3c3 square short dark hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square tall light hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square short light hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square tall dark hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square short dark solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square tall light solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square short light solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 square tall dark solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round short dark solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round tall light solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round short light solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round tall dark solid " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round short dark hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round tall light hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round short light hole " type="radio" name="r3c3">
-                    <input :id="inputDiv" class="r3c3 round tall dark hole " type="radio" name="r3c3">
+                    <input class="r3c3 square short dark hole " type="radio" name="r3c3">
+                    <input class="r3c3 square tall light hole " type="radio" name="r3c3">
+                    <input class="r3c3 square short light hole " type="radio" name="r3c3">
+                    <input class="r3c3 square tall dark hole " type="radio" name="r3c3">
+                    <input class="r3c3 square short dark solid " type="radio" name="r3c3">
+                    <input class="r3c3 square tall light solid " type="radio" name="r3c3">
+                    <input class="r3c3 square short light solid " type="radio" name="r3c3">
+                    <input class="r3c3 square tall dark solid " type="radio" name="r3c3">
+                    <input class="r3c3 round short dark solid " type="radio" name="r3c3">
+                    <input class="r3c3 round tall light solid " type="radio" name="r3c3">
+                    <input class="r3c3 round short light solid " type="radio" name="r3c3">
+                    <input class="r3c3 round tall dark solid " type="radio" name="r3c3">
+                    <input class="r3c3 round short dark hole " type="radio" name="r3c3">
+                    <input class="r3c3 round tall light hole " type="radio" name="r3c3">
+                    <input class="r3c3 round short light hole " type="radio" name="r3c3">
+                    <input class="r3c3 round tall dark hole " type="radio" name="r3c3">
                     <div class="space r3c3">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1193,22 +1197,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r3c4 square short dark hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square tall light hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square short light hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square tall dark hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square short dark solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square tall light solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square short light solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 square tall dark solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round short dark solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round tall light solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round short light solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round tall dark solid " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round short dark hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round tall light hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round short light hole " type="radio" name="r3c4">
-                    <input :id="inputDiv" class="r3c4 round tall dark hole " type="radio" name="r3c4">
+                    <input class="r3c4 square short dark hole " type="radio" name="r3c4">
+                    <input class="r3c4 square tall light hole " type="radio" name="r3c4">
+                    <input class="r3c4 square short light hole " type="radio" name="r3c4">
+                    <input class="r3c4 square tall dark hole " type="radio" name="r3c4">
+                    <input class="r3c4 square short dark solid " type="radio" name="r3c4">
+                    <input class="r3c4 square tall light solid " type="radio" name="r3c4">
+                    <input class="r3c4 square short light solid " type="radio" name="r3c4">
+                    <input class="r3c4 square tall dark solid " type="radio" name="r3c4">
+                    <input class="r3c4 round short dark solid " type="radio" name="r3c4">
+                    <input class="r3c4 round tall light solid " type="radio" name="r3c4">
+                    <input class="r3c4 round short light solid " type="radio" name="r3c4">
+                    <input class="r3c4 round tall dark solid " type="radio" name="r3c4">
+                    <input class="r3c4 round short dark hole " type="radio" name="r3c4">
+                    <input class="r3c4 round tall light hole " type="radio" name="r3c4">
+                    <input class="r3c4 round short light hole " type="radio" name="r3c4">
+                    <input class="r3c4 round tall dark hole " type="radio" name="r3c4">
                     <div class="space r3c4">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1291,22 +1295,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r4c1 square short dark hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square tall light hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square short light hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square tall dark hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square short dark solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square tall light solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square short light solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 square tall dark solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round short dark solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round tall light solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round short light solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round tall dark solid " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round short dark hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round tall light hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round short light hole " type="radio" name="r4c1">
-                    <input :id="inputDiv" class="r4c1 round tall dark hole " type="radio" name="r4c1">
+                    <input class="r4c1 square short dark hole " type="radio" name="r4c1">
+                    <input class="r4c1 square tall light hole " type="radio" name="r4c1">
+                    <input class="r4c1 square short light hole " type="radio" name="r4c1">
+                    <input class="r4c1 square tall dark hole " type="radio" name="r4c1">
+                    <input class="r4c1 square short dark solid " type="radio" name="r4c1">
+                    <input class="r4c1 square tall light solid " type="radio" name="r4c1">
+                    <input class="r4c1 square short light solid " type="radio" name="r4c1">
+                    <input class="r4c1 square tall dark solid " type="radio" name="r4c1">
+                    <input class="r4c1 round short dark solid " type="radio" name="r4c1">
+                    <input class="r4c1 round tall light solid " type="radio" name="r4c1">
+                    <input class="r4c1 round short light solid " type="radio" name="r4c1">
+                    <input class="r4c1 round tall dark solid " type="radio" name="r4c1">
+                    <input class="r4c1 round short dark hole " type="radio" name="r4c1">
+                    <input class="r4c1 round tall light hole " type="radio" name="r4c1">
+                    <input class="r4c1 round short light hole " type="radio" name="r4c1">
+                    <input class="r4c1 round tall dark hole " type="radio" name="r4c1">
                     <div class="space r4c1">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1389,22 +1393,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r4c2 square short dark hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square tall light hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square short light hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square tall dark hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square short dark solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square tall light solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square short light solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 square tall dark solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round short dark solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round tall light solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round short light solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round tall dark solid " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round short dark hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round tall light hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round short light hole " type="radio" name="r4c2">
-                    <input :id="inputDiv" class="r4c2 round tall dark hole " type="radio" name="r4c2">
+                    <input class="r4c2 square short dark hole " type="radio" name="r4c2">
+                    <input class="r4c2 square tall light hole " type="radio" name="r4c2">
+                    <input class="r4c2 square short light hole " type="radio" name="r4c2">
+                    <input class="r4c2 square tall dark hole " type="radio" name="r4c2">
+                    <input class="r4c2 square short dark solid " type="radio" name="r4c2">
+                    <input class="r4c2 square tall light solid " type="radio" name="r4c2">
+                    <input class="r4c2 square short light solid " type="radio" name="r4c2">
+                    <input class="r4c2 square tall dark solid " type="radio" name="r4c2">
+                    <input class="r4c2 round short dark solid " type="radio" name="r4c2">
+                    <input class="r4c2 round tall light solid " type="radio" name="r4c2">
+                    <input class="r4c2 round short light solid " type="radio" name="r4c2">
+                    <input class="r4c2 round tall dark solid " type="radio" name="r4c2">
+                    <input class="r4c2 round short dark hole " type="radio" name="r4c2">
+                    <input class="r4c2 round tall light hole " type="radio" name="r4c2">
+                    <input class="r4c2 round short light hole " type="radio" name="r4c2">
+                    <input class="r4c2 round tall dark hole " type="radio" name="r4c2">
                     <div class="space r4c2">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1487,22 +1491,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r4c3 square short dark hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square tall light hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square short light hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square tall dark hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square short dark solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square tall light solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square short light solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 square tall dark solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round short dark solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round tall light solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round short light solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round tall dark solid " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round short dark hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round tall light hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round short light hole " type="radio" name="r4c3">
-                    <input :id="inputDiv" class="r4c3 round tall dark hole " type="radio" name="r4c3">
+                    <input class="r4c3 square short dark hole " type="radio" name="r4c3">
+                    <input class="r4c3 square tall light hole " type="radio" name="r4c3">
+                    <input class="r4c3 square short light hole " type="radio" name="r4c3">
+                    <input class="r4c3 square tall dark hole " type="radio" name="r4c3">
+                    <input class="r4c3 square short dark solid " type="radio" name="r4c3">
+                    <input class="r4c3 square tall light solid " type="radio" name="r4c3">
+                    <input class="r4c3 square short light solid " type="radio" name="r4c3">
+                    <input class="r4c3 square tall dark solid " type="radio" name="r4c3">
+                    <input class="r4c3 round short dark solid " type="radio" name="r4c3">
+                    <input class="r4c3 round tall light solid " type="radio" name="r4c3">
+                    <input class="r4c3 round short light solid " type="radio" name="r4c3">
+                    <input class="r4c3 round tall dark solid " type="radio" name="r4c3">
+                    <input class="r4c3 round short dark hole " type="radio" name="r4c3">
+                    <input class="r4c3 round tall light hole " type="radio" name="r4c3">
+                    <input class="r4c3 round short light hole " type="radio" name="r4c3">
+                    <input class="r4c3 round tall dark hole " type="radio" name="r4c3">
                     <div class="space r4c3">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1585,22 +1589,22 @@ let inputDiv
                             <div class="top"> </div>
                         </div>
                     </div>
-                    <input :id="inputDiv" class="r4c4 square short dark hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square tall light hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square short light hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square tall dark hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square short dark solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square tall light solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square short light solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 square tall dark solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round short dark solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round tall light solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round short light solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round tall dark solid " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round short dark hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round tall light hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round short light hole " type="radio" name="r4c4">
-                    <input :id="inputDiv" class="r4c4 round tall dark hole " type="radio" name="r4c4">
+                    <input class="r4c4 square short dark hole " type="radio" name="r4c4">
+                    <input class="r4c4 square tall light hole " type="radio" name="r4c4">
+                    <input class="r4c4 square short light hole " type="radio" name="r4c4">
+                    <input class="r4c4 square tall dark hole " type="radio" name="r4c4">
+                    <input class="r4c4 square short dark solid " type="radio" name="r4c4">
+                    <input class="r4c4 square tall light solid " type="radio" name="r4c4">
+                    <input class="r4c4 square short light solid " type="radio" name="r4c4">
+                    <input class="r4c4 square tall dark solid " type="radio" name="r4c4">
+                    <input class="r4c4 round short dark solid " type="radio" name="r4c4">
+                    <input class="r4c4 round tall light solid " type="radio" name="r4c4">
+                    <input class="r4c4 round short light solid " type="radio" name="r4c4">
+                    <input class="r4c4 round tall dark solid " type="radio" name="r4c4">
+                    <input class="r4c4 round short dark hole " type="radio" name="r4c4">
+                    <input class="r4c4 round tall light hole " type="radio" name="r4c4">
+                    <input class="r4c4 round short light hole " type="radio" name="r4c4">
+                    <input class="r4c4 round tall dark hole " type="radio" name="r4c4">
                     <div class="space r4c4">
                         <div class="piece">
                             <div class="bottom"></div>
@@ -1732,9 +1736,20 @@ let inputDiv
             </form>
         </label>
     </div>
+    <div style="padding-top:0px" ></div>
 </template>  
 
 <style scoped>
+.name{
+    position:absolute;
+    color:#f1f1f1;
+}
+h2{
+ margin: 50px 0px;
+  text-align: center;
+  color: #585858;
+  font: bold 20px 'Open Sans Condensed', sans-serif;
+}
 label {
     padding-top: 60px;
 }
