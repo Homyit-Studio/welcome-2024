@@ -77,9 +77,9 @@ onMounted(() => {
             //拿到蓝色部分的矩形区域
             playGroundRect = playGround.getBoundingClientRect();
             //如上图2所示，计算出的该触发动画的滚动值 也就是scrollStart值
-            playGroundTop = playGroundRect.top + scrollY.value;
+            playGroundTop = 600;
             //如上图3所示，结束距离，scrollEnd
-            playGroundBottom = playGroundRect.bottom + scrollY.value - window.innerHeight;
+            playGroundBottom = 2000;
             reactiveData = 10
         }
         //方块的矩形区域
@@ -193,7 +193,7 @@ onMounted(() => {
             </div>
         </div>
     </div>
-    <div class="other-big">据不完全统计,约有1/5工作室成员加入了以上大厂</div>
+    <div class="other-big">据不完全统计,还有约1/5工作室成员加入了以上大厂</div>
     <div class="footer">STUDIO</div>
 </template>
 
@@ -229,7 +229,7 @@ html {
 }
 
 .playground {
-    height: 1600px;
+    height: 1400px;
 }
 
 .animation-container {
@@ -246,7 +246,7 @@ html {
     color: #9d9c9c;
     font-size: 5vmin;
     font-family: "Luckiest Guy";
-    text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    text-shadow: 1px -1px #c1c1c1, -1px 1px #737373, -10px 10px 10px #4b4b4b80;
 }
 
 .other {
@@ -257,7 +257,7 @@ html {
     color: #7c7c7c;
     font-size: 4vmin;
     font-family: "Luckiest Guy";
-    text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    text-shadow: 1px -1px #c1c1c1, -1px 1px #999, -10px 10px 10px #80808080;
 }
 
 .other-big {
@@ -269,7 +269,7 @@ html {
     color: #525252;
     font-size: 4vmin;
     font-family: "Luckiest Guy";
-    text-shadow: 1px -1px #fff, -1px 1px #999, -10px 10px 10px #80808080;
+    text-shadow: 1px -1px #757575, -1px 1px #5a5a5a, -10px 10px 10px #43434380;
 }
 
 .list {
@@ -278,7 +278,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
+    width: 80%;
     aspect-ratio: 2/1;
     border-radius: 10px;
     display: grid;
@@ -288,14 +288,14 @@ html {
 }
 
 .list-item {
-    width: 60%;
+    width: 70%;
     aspect-ratio: 1/1;
     background-color: #5f5f5f;
     border-radius: 10px;
 }
 
 .list-item img {
-    width: 90%;
+    width: 80%;
     margin: 40px 5px;
     background-color: #5f5f5f;
 }
@@ -535,6 +535,34 @@ html {
 @media screen and (max-width:450px) {
     .playground {
         height: 300px;
+    }
+
+    .list {
+        position: absolute;
+        background-color: #5f5f5f;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        aspect-ratio: 2/1;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        place-items: center;
+    }
+
+    .list-item {
+        width: 80%;
+        aspect-ratio: 1/1;
+        background-color: #5f5f5f;
+        border-radius: 10px;
+    }
+
+    .list-item img {
+        width: 90%;
+        margin: 40px 5px;
+        background-color: #5f5f5f;
     }
 
     .creater {

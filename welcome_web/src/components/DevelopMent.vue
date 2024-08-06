@@ -1,22 +1,50 @@
-<script setup>
-import {ref,onMounted} from 'vue' 
+<script>
+import 'animate.css'
+export default {
+  name: 'AnimatedElement',
+  mounted() {
+    // 组件挂载后，可以在这里初始化IntersectionObserver
+    this.initIntersectionObserver();
+  },
+  methods: {
+    initIntersectionObserver() {
+      // 获取需要观察的元素，这里使用Vue的ref来获取DOM元素
+      const elements = [
+        this.$refs.animatedElement1,
+        this.$refs.animatedElement2,
+        this.$refs.animatedElement3,
+        this.$refs.animatedElement4
+      ];
 
-// 定义多个ref
-const node1 = ref(null)
-const node2 = ref(null)
-const node3 = ref(null)
-const node4 = ref(null)
-// 点击事件处理函数
-const changeColor = (node) => {
-  console.log('Node clicked',node.value)
-  if(node.value){
-    node.value.style.backgroundColor = '#fff !important'
+      // 创建一个IntersectionObserver实例
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 根据具体需求添加不同的动画类名
+            if (entry.target === elements[0]) {
+              entry.target.classList.add('animate__fadeInRight');
+            } else if (entry.target === elements[1]) {
+              entry.target.classList.add('animate__fadeInLeft');
+            } else if (entry.target === elements[2]) {
+              entry.target.classList.add('animate__fadeInRight');
+            } else if (entry.target === elements[3]) {
+              entry.target.classList.add('animate__fadeInLeft');
+            }
+            // 停止观察这个元素，因为动画已经触发
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      // 对每个动画元素开始观察
+      elements.forEach(element => {
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }
   }
-}
-onMounted(()=>{
-  console.log('Node1:',node1.value)
-  
-})
+};
 </script>
 
 <template>
@@ -46,7 +74,7 @@ onMounted(()=>{
           <div class="title">创立</div>
           <div class="set">
             <img src="@/assets/2020.jpg" alt="">
-            <div class="words1">
+            <div ref="animatedElement1" class="words1 animate__animated">
               宏奕工作室成立于2013年9月,是在江西师范大学计算机信息工程学院各领导、
               老师的大力支持下迅速成长起来的学生自主研发的工作室。该工作室致力于Web开发,以社团的模式传承,
               在12级创始人王宏凯及十余名长老员共同努力下本着“有爱同行,踏实求新”的侠客情怀,
@@ -58,7 +86,7 @@ onMounted(()=>{
           <div class="title">环境</div>
           <div class="around">
             <img src="@/assets/工作室环境.jpg" alt="">
-            <div class="words2">
+            <div ref="animatedElement2" class="words2 animate__animated">
               工作室致力于打造舒适温馨的学习环境,24h空调、饮用水不间断供应,内设冰箱等实用设备,
               为成员解决自习室短缺等问题，营造踏实努力的学习氛围。
               在这里，你有志同道合的好伙伴陪你一起学习，有什么问题也可以询问学长学姐！
@@ -69,7 +97,7 @@ onMounted(()=>{
           <div class="title">成就</div>
           <div class="win">
             <img src="@/assets/获奖情况.jpg" alt="">
-            <div class="words3">
+            <div ref="animatedElement3" class="words3 animate__animated">
               从2013年9月工作室成立至今,宏奕工作室也会参加部分web开发赛事,同样在一些赛事中也取得了较好成绩。
               同时，宏奕工作室也会外包商业项目和外包/协助学院老师开发项目，包括美院外包项目-毕业方向辅导小程序,
               我们学校的请假助手和宿舍管理与分配小程序。
@@ -80,7 +108,7 @@ onMounted(()=>{
            <div class="title">培养新能量</div>
            <div class="cultivate">
             <img src="@/assets/新生培训.jpg" alt="">
-            <div class="words4">
+            <div ref="animatedElement4" class="words4 animate__animated">
               宏奕工作室积极吸纳新鲜血液,工作室重视对新成员的培训和技能提升。
               通过组织培训、技术分享等活动帮助新成员快速适应工作环境,并掌握必要的技术和工具。
               这些培训不仅仅局限于技术层面,还包括团队协作、沟通能力以及解决问题的能力,全面提升新成员的综合素质。
