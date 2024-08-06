@@ -138,6 +138,45 @@
       background: url('./src/assets/about3.jpg') no-repeat;
       background-size: 600px 400px;
     }
+@media screen and (min-width:350px){
+    input:checked+label {
+      width: 274px; 
+    }
+    .container{
+      height: 274px;
+    }
+    .description p{
+      font-size: 11px;
+      padding-bottom: 30px;
+      height: 92px;
+      font-weight: 700;
+    }
+    .card {
+      width: 37px;
+      border-radius: 0.5rem;
+      margin: 0 2px;
+    }
+    .card>.row>.description {
+      width: 258px;
+      height: 83px;
+      opacity: 0;
+    }
+    input:checked+label .description {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .card[for="c1"] {
+      background-size: 274px 274px;
+    }
+  
+    .card[for="c2"] {
+      background-size: 274px 274px;
+    }
+  
+    .card[for="c3"] {
+      background-size: 274px 274px;
+    }
+}    
 @media screen and (min-width:380px){
     input:checked+label {
       width: 298px; 
@@ -183,7 +222,84 @@
       background-size: 298px 298px;
     }
 }    
-
+@media screen and (min-width:420px){
+    input:checked+label {
+      width: 329px; 
+    }
+    .container{
+      height: 329px;
+    }
+    .description p{
+      font-size: 12px;
+      padding-bottom: 30px;
+      height: 110px;
+      font-weight: 700;
+    }
+    .card {
+      width: 44px;
+      border-radius: 0.5rem;
+      margin: 0 2px;
+    }
+    .card>.row>.description {
+      width: 309px;
+      height: 99px;
+      opacity: 0;
+    }
+    input:checked+label .description {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .card[for="c1"] {
+      background-size: 329px 329px;
+    }
+  
+    .card[for="c2"] {
+      background-size: 329px 329px;
+    }
+  
+    .card[for="c3"] {
+      background-size: 329px 329px;
+    }
+}
+@media screen and (min-width:460px){
+    input:checked+label {
+      width: 360px; 
+    }
+    .container{
+      height: 360px;
+    }
+    .description p{
+      font-size: 12px;
+      padding-bottom: 30px;
+      height: 121px;
+      font-weight: 700;
+    }
+    .card {
+      width: 48px;
+      border-radius: 0.5rem;
+      margin: 0 2px;
+    }
+    .card>.row>.description {
+      width: 339px;
+      height: 109px;
+      opacity: 0;
+    }
+    input:checked+label .description {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .card[for="c1"] {
+      background-size: 360px 360px;
+    }
+  
+    .card[for="c2"] {
+      background-size: 360px 360px;
+    }
+  
+    .card[for="c3"] {
+      background-size: 360px 360px;
+    }
+}
 @media screen and (min-width:750px){
     input:checked+label {
       width: 588px; 
