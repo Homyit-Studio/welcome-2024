@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.yingxin.cn.homyit.mapper.XinshengMapper">
+    <select id="select" resultType="org.example.yingxin.cn.homyit.pojo.Xinsheng">
+        select *
+        from tb_xinsheng
+        <where>
+            <if test="id != null">
+                id =#{id}
+            </if>
+            <if test="name != null and name!=''">
+                and name like concat("%",#{name},"%")
+            </if>
+            <if test="xuehao!=null and  xuehao!=''">
+                and xuehao=#{xuehao}
+            </if>
+            <if test="banji!=null and  banji!=''">
+                and banji=#{banji}
+            </if>
+            <if test="fangxiang!=null and  fangxiang!=''">
+                and fangxiang=#{fangxiang}
+            </if>
+        </where>
+        order by id ASC
+        limit #{page},#{pagesize}
+
+    </select>
+
+</mapper>
