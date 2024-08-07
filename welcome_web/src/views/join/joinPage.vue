@@ -29,6 +29,7 @@ onMounted(() => {
   });
 });
 
+const message = ref('')
 // alert弹出警告
 const currentAlert = ref('')
 
@@ -162,9 +163,16 @@ const handleSubmit = async () => {
   }
   try{
     const response = await axios.post('/api/baoming',postData)
-    currentAlert.value = 'success'
     console.log(response.data)
-    
+    if(response.data.code===901){
+      currentAlert.value = 'success'
+      console.log(response.data)
+      setTimeout(()=>{window.location.reload()},500)
+    }else{
+      currentAlert.value = 'requestFailed'
+      message.value = response.data.desc
+      setTimeout(()=>{window.location.reload()},500)
+    }
   }catch(error){
     currentAlert.value = 'requestFailed'
     console.error(error)
@@ -201,7 +209,7 @@ const handleSubmit = async () => {
         v-if="currentAlert === 'requestFailed'"
         title="Error alert"
         type="error"
-        description="提交失败,请稍后再试"
+        :description="message"
         show-icon
         class="custom-alert"
       />

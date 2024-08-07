@@ -51,25 +51,25 @@
       <div class="projects_items">
         <div ref="animatedElement1" class="img animate__animated animate__fast	200ms">
           <div class="img1">
-            <img src="../../assets/财务处.png" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/cai_20240807172115.png" alt="">
           </div>
           <a href="https://sis.jxnu.edu.cn/" target="_blank">江西师范大学财务处官网</a>
         </div>
         <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
-            <img src="../../assets/管理决策评价中心.png" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/guan_20240807172110.png" alt="">
           </div>
           <a href="https://gljcpj.jxnu.edu.cn/" target="_blank">江西师范大学管理决策评价研究中心官网</a>
         </div>
         <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s animate__fast	200ms">
           <div class="img1">
-            <img src="../../assets/国教.png" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/guo_20240807172120.png" alt="">
           </div>
           <a href="https://sis.jxnu.edu.cn/" target="_blank">江西师范大学国际教育学院官网</a>
         </div>
         <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s animate__fast	200ms">
           <div class="img1">
-            <img src="../../assets/马院.png" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/ma_20240807172102.png" alt="">
           </div>
           <a href="https://mar.jxnu.edu.cn/" target="_blank">江西师范大学马克思主义学院官网</a>
         </div>
@@ -346,6 +346,9 @@ a.btn:hover {
 }
 
 /* programs */
+.projects {
+  overflow: hidden;
+}
 .projects_items {
   display: flex;
   align-content: center;

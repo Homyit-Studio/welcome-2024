@@ -13,7 +13,7 @@
       邮政编码:330022
     </div>
     <div class="logo">
-        <img src="../assets/homyit_logo.png" alt="" class="img2">
+        <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_20240807172529.png" alt="" class="img2">
     </div>
   </div>
 </template>

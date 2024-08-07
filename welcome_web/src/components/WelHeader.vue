@@ -4,7 +4,7 @@
 <template>
   <div class="header">
     <div class="img">
-      <img src="@/assets/homyit_logo.png" alt="Logo">
+      <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_20240807172529.png" alt="Logo">
     </div>
     <div class="guide">
       <router-link to="/index" class="nav-link">Home</router-link>
