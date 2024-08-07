@@ -21,6 +21,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+<<<<<<< HEAD
   devServer:{
     host:'8.136.124.250', // IP地址
     port:8080,   // 端口号
@@ -34,6 +35,17 @@ export default defineConfig({
         pathRewrite:{
           '^/api':''  // 假如我们的地址是 /api/member/getToken 会转化为 /member/getToken
         }
+=======
+  devServer: {
+    host: '8.136.124.250',
+    port: 5173,
+    proxy: {
+      '/api': {
+        target: 'http://8.136.124.250:8080',
+        changeOrigin: true,
+        ws: true,
+        secure: true,
+>>>>>>> 5825ca0cd23c06ccd507eb1999ed84747cb7dcff
       }
     }
   }

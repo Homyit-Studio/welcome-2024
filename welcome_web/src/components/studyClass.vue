@@ -38,7 +38,6 @@
 .main {
   padding-top: 60px;
 }
-
 * {
       box-sizing: border-box;
       margin: 0;
@@ -389,4 +388,8 @@
       background-size: 700px 700px;
     }  
 }
+<<<<<<< HEAD
  </style>
+=======
+</style>
+>>>>>>> 5825ca0cd23c06ccd507eb1999ed84747cb7dcff
