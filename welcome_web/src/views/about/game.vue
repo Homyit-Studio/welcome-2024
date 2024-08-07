@@ -1,14 +1,9 @@
 
 <template type="html">
-    <div style="padding-top:60px" ></div>
-    <h2 >前端互动小游戏</h2>
-  <div class="name">
-     <div>这是由前端技术code出的趣味游戏，名为四型数独</div>
-     <div>点击info查看游戏详情</div>
-     <div>code游戏原作者为Mike Golus</div>
-  </div>
+    <div class="slogan">四型数独-体验由前端code出的游戏</div>
+     <div class="slogan1">----点击消息查看游戏详情</div>
+  <!-- </div> -->
     <div class="game">
-       
         <label for="">
             <form>
                 <input type="radio" name="selection">
@@ -28,13 +23,10 @@
                 <input type="radio" name="selection">
                 <input type="radio" name="selection">
 
-                <button type="button" class="info">Info</button>
+                <button type="button" class="info">信息</button>
                 <div class="instructions">
-                    <p>Both Players take turns choosing a piece which the other player must then place on the board. A
-                        player wins by placing a piece on the board which forms a horizontal, vertical, or diagonal row of
-                        four pieces, all of which have a common attribute (all short or tall, all circle or square, all
-                        light or dark, all solid on top or hole on top).</p>
-                    <div class="close">Click anywhere to close info.</div>
+                    <p>两名玩家轮流选择一枚棋子，另一名玩家必须将其放置在棋盘上。玩家通过在棋盘上放置一枚棋子，形成一行四枚具有共同属性（所有都为短或高，所有都为圆形或方形，所有都为浅色或深色，所有顶部实心或顶部有孔）的棋子，以此获胜。</p>
+                    <div class="close">点击任意地方关闭提示</div>
                 </div>
                 <div class="lineup">
                     <div class="piece">
@@ -1691,8 +1683,8 @@
                         <div class="text">Player <span class="winner"></span> wins!</div>
                     </div>
                     <div class="directions">
-                        <div class="select">Player <span class="winner"></span><br>Select a piece</div>
-                        <div class="place">Player <span class="turn"></span><br>Place your piece</div>
+                        <div class="select">玩家 <span class="winner"></span><br>请选择棋子</div>
+                        <div class="place">玩家 <span class="turn"></span><br>请放置棋子</div>
                     </div>
                     <div class="caps">
                         <div class="cap"></div>
@@ -1731,7 +1723,9 @@
                         <div class="cap"></div>
                     </div>
                     <h1>Quarto</h1>
-                    <button type="reset">Reset</button>
+                    <button type="reset">
+                        重开
+                    </button>
                 </div>
             </form>
         </label>
@@ -1740,9 +1734,24 @@
 </template>  
 
 <style scoped>
-.name{
-    position:absolute;
-    color:#f1f1f1;
+.slogan {
+  letter-spacing: 0.1em;
+  padding-top: 90px;
+  padding-bottom: 6px;
+  text-align: center;
+  color: #585858;
+  font: bold 29px 'Open Sans Condensed', sans-serif;
+  line-height: 1.5;
+}
+
+.slogan1 {
+  letter-spacing: 1px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+  text-align: center;
+  color: #656565;
+  font: bold 20px 'Open Sans Condensed', sans-serif;
+  line-height: 1.5;
 }
 h2{
  margin: 50px 0px;
@@ -7519,7 +7528,20 @@ input[name=selection]:focus~.board .place,
 
 
 @media screen and (max-width:860px) {
-
+    .slogan{
+        font-size: 15px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    .slogan1 {
+        letter-spacing: 0.5px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+        text-align: center;
+        color: #656565;
+        font: bold 10px 'Open Sans Condensed', sans-serif;
+        line-height: 1.5;
+    }
     .game {
         outline: none;
         counter-reset: turn 1 winner 2;

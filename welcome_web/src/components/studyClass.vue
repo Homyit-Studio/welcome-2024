@@ -3,6 +3,7 @@
 
 <template>
   <div class="main">
+    <p class="p" style="text-align:center; font-size:25px;margin-top:-20px;margin-bottom: 20px;font-weight: bold;">方向介绍</p>
     <div class="wrapper">
       <div class="container">
         <input type="radio" name="slide" id="c1" checked>
@@ -59,7 +60,6 @@
       justify-content: start;
       overflow-x: auto;
     }
-  
     .card {
       flex: 0 0 auto;
       width: 80px;
