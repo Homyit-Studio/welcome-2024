@@ -1,15 +1,15 @@
 <template>
   <div class="main">
     <!-- <el-carousel height="90vh">
-      <el-carousel-item class="index"><img src="../../assets/one.png" alt=""></el-carousel-item>
       <el-carousel-item class="index"><img src="../../assets/two.jpg" alt=""></el-carousel-item>
+      <el-carousel-item class="index"><img src="../../assets/one.png" alt=""></el-carousel-item>
       <el-carousel-item class="index"><img src="../../assets/three.png" alt=""></el-carousel-item>
     </el-carousel> -->
-    <el-carousel height="90vh">
+    <!-- <el-carousel height="90vh">
       <el-carousel-item v-for="(image, id) in images" :key="id">
         <img :src="image.path" alt="">
       </el-carousel-item>
-   </el-carousel>
+   </el-carousel> -->
     <div class="advatages">
       <div class="slogan">
         加入Homyit,锻炼综合能力!<br>
@@ -135,15 +135,7 @@ export default {
     },
      goToJoinPage() {
       this.$router.push({ path: '/join' })
-<<<<<<< HEAD
-    }
-=======
-
-      setTimeout(()=>{
-        this.$router.go(0)
-      },10)
     },
->>>>>>> 5825ca0cd23c06ccd507eb1999ed84747cb7dcff
     // -----------------------
      async fetchImages() {
        try {

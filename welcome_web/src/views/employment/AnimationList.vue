@@ -193,7 +193,8 @@ onMounted(() => {
             </div>
         </div>
     </div>
-    <div class="other-big">据不完全统计,还有约1/5工作室成员加入了以上大厂</div>
+    <div class="other-big">据不完全统计</div>
+    <div class="other-big1">还有约1/5工作室成员加入了以上大厂</div>
     <div class="footer">STUDIO</div>
 </template>
 
@@ -239,34 +240,48 @@ html {
 }
 
 .creater {
+     letter-spacing: 0.1em;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #add0e7;
+    color: #000000;
     font-size: 5vmin;
     font-family: "Luckiest Guy";
 }
 
 .other {
+     letter-spacing: 0.1em;
     height: 50px;
     display: flex;
      margin-top: 50px;
     justify-content: center;
     align-items: center;
-    color: #add0e7;
+    color: #000000;
     font-size: 4vmin;
     font-family: "Luckiest Guy";
 
 }
 
 .other-big {
+     letter-spacing: 0.1em;
     height: 50px;
     display: flex;
     margin-top: 100px;
     justify-content: center;
     align-items: center;
-    color: #add0e7;
+    color: #000000;
+    font-size: 4vmin;
+    font-family: "Luckiest Guy";
+}
+.other-big1 {
+    letter-spacing: 0.1em;
+    height: 50px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
     font-size: 4vmin;
     font-family: "Luckiest Guy";
 }
@@ -313,23 +328,25 @@ html {
     }
 
     .creater {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
-        margin-top: -50px;
+        margin-top: -26px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 5vmin;
         font-family: "Luckiest Guy";
     }
 
     .other {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 20px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -361,12 +378,13 @@ html {
     }
 
     .other-big {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 60px;
         justify-content: center;
         align-items: center;
-        color: #525252;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -387,23 +405,25 @@ html {
     }
 
     .creater {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 10px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 5vmin;
         font-family: "Luckiest Guy";
     }
 
     .other {
+         letter-spacing: 0.1em;
         height: 80px;
         display: flex;
         margin-top: 10px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -411,7 +431,7 @@ html {
 
 
     .header {
-        height: 250px;
+        height: 300px;
         display: flex;
         margin-top: -20px;
         justify-content: center;
@@ -435,12 +455,13 @@ html {
     }
 
     .other-big {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 40px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -459,23 +480,25 @@ html {
     }
 
     .creater {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: -70px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 5vmin;
         font-family: "Luckiest Guy";
     }
 
     .other {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 0px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -507,12 +530,13 @@ html {
     }
 
     .other-big {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 20px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -553,23 +577,25 @@ html {
     }
 
     .creater {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: -80px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 5vmin;
         font-family: "Luckiest Guy";
     }
 
     .other {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: -10px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
@@ -593,7 +619,7 @@ html {
     }
 
     .footer {
-        height: 250px;
+        height: 125px;
         display: flex;
         margin-top: -20px;
         justify-content: center;
@@ -605,12 +631,13 @@ html {
     }
 
     .other-big {
+         letter-spacing: 0.1em;
         height: 50px;
         display: flex;
         margin-top: 0px;
         justify-content: center;
         align-items: center;
-        color: #add0e7;
+        color: #000000;
         font-size: 4vmin;
         font-family: "Luckiest Guy";
     }
