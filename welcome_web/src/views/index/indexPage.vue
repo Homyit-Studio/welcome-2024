@@ -140,9 +140,9 @@ export default {
      async fetchImages() {
        try {
          const response = await axios.get('/api/getallimages');  // 发送GET请求到后端API接口
-         console.log(response)
+        //  console.log(response)
          this.images = response.data.data;  // 将返回的图片数据存储到images数组中
-         console.log(this.images)
+        //  console.log(this.images)
       } catch (error) {
          console.error('获取失败', error);
       }
