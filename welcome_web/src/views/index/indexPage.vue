@@ -135,10 +135,6 @@ export default {
     },
      goToJoinPage() {
       this.$router.push({ path: '/join' })
-
-      setTimeout(()=>{
-        this.$router.go(0)
-      },10)
     }
     // -----------------------
 //      async fetchImages() {

@@ -2,6 +2,11 @@
 import {ref,watch} from 'vue'
 import axios from 'axios'
 import 'animate.css'
+import {CircleCheckFilled,CircleCloseFilled} from '@element-plus/icons-vue'
+
+// alert弹出警告
+const currentAlert = ref('')
+
 // 1.创建响应式变量来存储name输入框的值
 const input1Value = ref('')
 // 1.创建图标的响应式变量
@@ -84,7 +89,7 @@ const inputIco2Email = ref('none')
 // 4.创建响应式变量来存储Email测试的值
 const inputTest4 = ref(0)
 // 4.定义Email的正则表达式
-const rules4 = /.+/
+const rules4 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 // 4.监听Email变化
 watch(input4Value,(newValue)=>{
     if (rules4.test(newValue)) {
@@ -102,39 +107,80 @@ watch(input4Value,(newValue)=>{
       }
 })
 
+// 5.获取选中的方向
+const selectDirection = ref('')
+
+// 6.获取自我介绍
+const input6Value = ref('')
+
 // 表单提交处理函数
 const handleSubmit = async () => {
+  // 清除之前的警告
+  currentAlert.value = ''
+  // 检查输入是否为空
   if(!input1Value.value || !input2Value.value || !input3Value.value || !input4Value.value){
-    alert('请输入完整的信息')
+    currentAlert.value = 'emptyFields'
     return
   }
+  // 检查输入是否错误
   if(inputTest1.value === 1 || inputTest2.value === 1 || inputTest3.value === 1 || inputTest4.value === 1){
-    alert('请输入正确的信息')
+    currentAlert.value = 'inputError'
     return
   }
   const postData = {
     name:input1Value.value,
     number:input2Value.value,
     class:input3Value.value,
-    email:input4Value.value
+    email:input4Value.value,
+    direction:selectDirection.value,
+    selfIntroduction:input6Value.value
   }
   try{
-    const response = await axios.post('url',postData)
-    alert('提交成功')
+    const response = await axios.post('http://8.136.124.250:8080/baoming',postData)
+    currentAlert.value = 'success'
     console.log(response.data)
   }catch(error){
+    currentAlert.value = 'requestFailed'
     console.error(error)
-    alert('提交失败,请稍后再试')
   }
 }
 </script>
 
 <template>
+      <el-alert
+        v-if="currentAlert === 'success'"
+        title="Success alert"
+        type="success"
+        description="注册成功"
+        show-icon
+        class="custom-alert"
+      />
+      <el-alert
+        v-if="currentAlert === 'emptyFields'"
+        title="Error alert"
+        type="error"
+        description="请输入完整的信息"
+        show-icon
+        class="custom-alert"
+      />
+      <el-alert
+        v-if="currentAlert === 'inputError'"
+        title="Error alert"
+        type="error"
+        description="请输入正确的信息"
+        show-icon
+        class="custom-alert"
+      />
+      <el-alert
+        v-if="currentAlert === 'requestFailed'"
+        title="Error alert"
+        type="error"
+        description="提交失败,请稍后再试"
+        show-icon
+        class="custom-alert"
+      />
   <div class="container">
-    <img class="left animate__animated animate__fadeInRight animate__slow 1s" src="../../assets/join-left.png" alt="">
-    <img class="right animate__animated animate__fadeInLeft animate__slow 1s" src="../../assets/join-right.png" alt="">
-    <div class="main">
-      <form method="post" @submit.prevent="handleSubmit">
+      <form method="post" id="main" @submit.prevent="handleSubmit">
         <div class="top">
           <div class="register animate__animated animate__swing"><span>Register</span></div>
         </div>
@@ -142,599 +188,478 @@ const handleSubmit = async () => {
           <div id="name">
             <span class="name">姓名</span>
             <input class="inputName" v-model="input1Value" placeholder="请输入你的姓名" type="text">
-            <span><img class="icon1" :style="{display:inputIco1Name}" src="../../assets/1.ico" alt=""></span>
-            <span><img class="icon2" :style="{display:inputIco2Name}" src="../../assets/2.ico" alt=""></span>
+            <el-icon size="25" class="icon1" :style="{display:inputIco1Name}" ><CircleCheckFilled /></el-icon>
+            <el-icon size="25" class="icon2" :style="{display:inputIco2Name}" ><CircleCloseFilled /></el-icon>
             <div class="name-test" :style="{opacity:inputTest1}">请输入真实姓名</div>
           </div>
           <div id="number">
             <span class="number">学号</span>
             <input class="inputNumber" v-model="input2Value" placeholder="请输入你的学号" type="text">
-            <span><img class="icon1" :style="{display:inputIco1Number}" src="../../assets/1.ico" alt=""></span>
-            <span><img class="icon2" :style="{display:inputIco2Number}" src="../../assets/2.ico" alt=""></span>
+            <el-icon size="25" class="icon1" :style="{display:inputIco1Number}" ><CircleCheckFilled /></el-icon>
+            <el-icon size="25" class="icon2" :style="{display:inputIco2Number}" ><CircleCloseFilled /></el-icon>
             <div class="number-test" :style="{opacity:inputTest2}">学号应该共12位</div>
           </div>
           <div id="class">
             <span class="class">班级</span>
             <input class="inputClass" v-model="input3Value" placeholder="请输入你的班级" type="text">
-            <span><img class="icon1" :style="{display:inputIco1Class}" src="../../assets/1.ico" alt=""></span>
-            <span><img class="icon2" :style="{display:inputIco2Class}" src="../../assets/2.ico" alt=""></span>
+            <el-icon size="25" class="icon1" :style="{display:inputIco1Class}" ><CircleCheckFilled /></el-icon>
+            <el-icon size="25" class="icon2" :style="{display:inputIco2Class}" ><CircleCloseFilled /></el-icon>
             <div class="class-test" :style="{opacity:inputTest3}">请输入正确的班级名称</div>
           </div>
           <div id="email">
             <span class="email">邮箱</span>
             <input class="inputEmail" v-model="input4Value" placeholder="请输入你的邮箱" type="text">
-            <span><img class="icon1" :style="{display:inputIco1Email}" src="../../assets/1.ico" alt=""></span>
-            <span><img class="icon2" :style="{display:inputIco2Email}" src="../../assets/2.ico" alt=""></span>
+            <el-icon size="25" class="icon1" :style="{display:inputIco1Email}" ><CircleCheckFilled /></el-icon>
+            <el-icon size="25" class="icon2" :style="{display:inputIco2Email}" ><CircleCloseFilled /></el-icon>
             <div class="email-test" :style="{opacity:inputTest4}">请输入正确邮箱地址</div>
           </div>
           <div id="direction">
             <span class="direction">方向</span>
-            <select class="choice">
-              <option>请选择方向</option>
-              <option>前端</option>
-              <option>后端</option>
-              <option>UI</option>
+            <select class="choice" v-model="selectDirection">
+              <option disabled value="">请选择方向</option>
+              <option value="前端">前端</option>
+              <option value="后端">后端</option>
+              <option value="UI">UI</option>
             </select>
           </div>
           <div id="selfIntroduction">
             <span class="selfIntroduction">自我介绍</span>
-            <textarea class="inputSelfIntroduction"></textarea>
+            <textarea class="inputSelfIntroduction" style="resize: none;" v-model="input6Value"></textarea>
           </div>
           <button class="button" type="submit">Submit</button>
         </div>
       </form>
-    </div>
   </div>
 </template>
 
 <style scoped>
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 400px;
+  z-index: 1000;
+}
+.container {
+  margin: 0 auto;
+}
 *{
   margin: 0;
   padding: 0;
 }
-@media screen and (min-width:320px){
-  .main{
-    width: 240px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 120px;
-  height: 120px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 120px;
-  height: 120px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}      
-}
-@media screen and (min-width:360px){
-  .main{
-    width: 270px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 135px;
-  height: 135px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 135px;
-  height: 135px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}
-}      
-@media screen and (min-width:375px){
-  .main{
-    width: 282px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 140px;
-  height: 140px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 140px;
-  height: 140px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}     
-}      
-@media screen and (min-width:390px){
-  .main{
-    width: 294px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 146px;
-  height: 146px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 146px;
-  height: 146px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}      
-}
-@media screen and (min-width:405px){
-  .main{
-    width: 306px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 152px;
-  height: 152px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 152px;
-  height: 152px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}      
-}
-@media screen and (min-width:420px){
-  .main{
-    width: 318px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 157px;
-  height: 157px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 157px;
-  height: 157px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}      
-}
-@media screen and (min-width:480px){
-  .main{
-    width: 360px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 180px;
-  height: 180px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 180px;
-  height: 180px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-}      
-}
-@media screen and (min-width:540px){
-  .main{
-    width: 405px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 202px;
-  height: 202px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 202px;
-  height: 202px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-  }      
-}
-@media screen and (min-width:750px){
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 281px;
-  height: 281px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 281px;
-  height: 281px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-  }      
-}
-@media screen and (min-width:970px){
-  .main{
-    width: 405px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 364px;
-  height: 364px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 364px;
-  height: 364px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-  }      
-}
-@media screen and (min-width:1120px){
-  .main{
-    width: 405px;
-  }
-  .left{
-  position: absolute;
-  top: 22%;
-  left: 0;
-  width: 420px;
-  height: 420px;
-  }
-  .right{
-  position: absolute;
-  top: 22%;
-  right: 0;
-  width: 420px;
-  height: 420px;
-  }
-  img{
-  width: 100%;
-  height: 100%;
-  }      
-}
 .container{
-  transform: translateY(60px);
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 100vh;
-  position: relative;
-  margin-bottom: 60px;
-  background: url(../../assets/join.jpg) no-repeat;
-}
-.main{
-  position: relative;
+  height: 115vh;
+  transform: translateY(60px);
   margin: 0 auto;
-  height: 470px;
-  transform: translateY(140px);
-  text-align: center;
-  border-radius: 25px;
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: rgba(255,255,255, .5);
-  box-shadow: 10px 10px 20px rgba(25,0,0, .5);
+  background: url(../../assets/join.jpg) no-repeat;
+  margin-bottom: 60px;
+}
+#main{
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  transform: translateY(-40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 40px;
+  box-shadow: 10px 10px 20px #ddd;
 }
 .top{
-  position: absolute;
-  top: 0px;
   width: 100%;
-  height: 50px;
-  border-bottom: 1px solid rgb(238, 252, 255);
-}
-.register{
   text-align: center;
+  height: 50px;
+  font-size: 25px;
   line-height: 50px;
-  font-weight: 700;
-  color: #122021;
-  font-size: 20px;
 }
-.register:hover{
-  cursor: pointer;
+.content{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #name{
-  position: absolute;
-  top: 55px;
-  left: -5%;
+  flex: 1;
   position: relative;
+  width: 100%;
+  height: 40px;
 }
 #name .name{
   position: absolute;
-  display: inline-block;
-  width: 50px;
-  font-size: 15px;
-  top: 5px;
-  left: 33px;
-  color: black;
+  width: 9%;
+  height: 40px;
+  top: 5%;
+  left: 10%;
+  font-size: 20px;
 }
 #name .inputName{
   position: absolute;
-  top: 0;
-  left: 80px;
   width: 70%;
-  height: 35px;
+  height: 40px;
+  top: 0;
+  left: 20%;
   border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 6px;
-  font-size: 12px;
+  padding-left: 5px;
 }
-.name-test{
+#name .name-test{
   position: absolute;
-  top: 30px;
-  left: 88px;
-  font-size: 10px;
-  margin-top: 4px;
-  color: red;
+  width: 60%;
+  bottom: 10%;
+  left: 22%;
+  font-size: 12px;
+  color: #F56C6C;
 }
 #number{
-  position: absolute;
-  top: 110px;
-  left: -5%;
+  flex: 1;
   position: relative;
+  width: 100%;
+  height: 40px;
 }
 #number .number{
   position: absolute;
-  display: inline-block;
-  width: 50px;
-  font-size: 15px;
-  top: 5px;
-  left: 33px;
-  color: black;
+  width: 9%;
+  height: 40px;
+  top: 5%;
+  left: 10%;
+  font-size: 20px;
 }
 #number .inputNumber{
   position: absolute;
-  top: 0;
-  left: 80px;
   width: 70%;
-  height: 35px;
+  height: 40px;
+  top: 0;
+  left: 20%;
   border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 6px;
-  font-size: 12px;
+  padding-left: 5px;
 }
-.number-test{
+#number .number-test{
   position: absolute;
-  top: 30px;
-  left: 88px;
-  font-size: 10px;
-  margin-top: 4px;
-  color: red;
+  width: 60%;
+  bottom: 10%;
+  left: 22%;
+  font-size: 12px;
+  color: #F56C6C;
 }
 #class{
-  position: absolute;
-  top: 170px;
-  left: -5%;
+  flex: 1;
   position: relative;
+  width: 100%;
+  height: 40px;
 }
 #class .class{
   position: absolute;
-  top: 5px;
-  left: 33px;
-  color: black;
-  display: inline-block;
-  width: 50px;
-  font-size: 15px;
+  width: 9%;
+  height: 40px;
+  top: 5%;
+  left: 10%;
+  font-size: 20px;
 }
 #class .inputClass{
   position: absolute;
-  top: 0;
-  left: 80px;
   width: 70%;
-  height: 35px;
+  height: 40px;
+  top: 0;
+  left: 20%;
   border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 6px;
-  font-size: 12px;
+  padding-left: 5px;
 }
-.class-test{
+#class .class-test{
   position: absolute;
-  top: 30px;
-  left: 88px;
-  font-size: 10px;
-  margin-top: 4px;
-  color: red;
+  width: 60%;
+  bottom: 10%;
+  left: 22%;
+  font-size: 12px;
+  color:#F56C6C;
+;
 }
 #email{
-  position: absolute;
-  top: 230px;
-  left: -5%;
+  flex: 1;
   position: relative;
+  width: 100%;
+  height: 40px;
 }
 #email .email{
   position: absolute;
-  top: 5px;
-  left: 33px;
-  color: black;
-  display: inline-block;
-  width: 50px;
-  font-size: 15px;
+  width: 9%;
+  height: 40px;
+  top: 5%;
+  left: 10%;
+  font-size: 20px;
 }
 #email .inputEmail{
   position: absolute;
-  top: 0;
-  left: 80px;
   width: 70%;
-  height: 35px;
+  height: 40px;
+  top: 0;
+  left: 20%;
   border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 6px;
-  font-size: 12px;
+  padding-left: 5px;
 }
-.email-test{
+#email .email-test{
   position: absolute;
-  top: 30px;
-  left: 88px;
-  font-size: 10px;
-  margin-top: 4px;
-  color: red;
+  width: 60%;
+  bottom: 10%;
+  left: 22%;
+  font-size: 12px;
+  color: #F56C6C;
 }
 #direction{
-  position: absolute;
-  top: 290px;
-  left: -5%;
+  flex: 1;
   position: relative;
+  width: 100%;
+  height: 40px;
 }
 #direction .direction{
   position: absolute;
-  top: 5px;
-  left: 33px;
-  color: black;
-  display: inline-block;
-  width: 50px;
-  font-size: 15px;
+  width: 9%;
+  height: 40px;
+  top: 5%;
+  left: 10%;
+  font-size: 20px;
 }
-.choice{
+#direction .choice{
   position: absolute;
-  top: 0;
-  left: 80px;
   width: 70%;
-  height: 35px;
+  height: 40px;
+  top: 0;
+  left: 20%;
   border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 6px;
-  font-size: 12px;
+  padding-left: 5px;
 }
 #selfIntroduction{
-  position: absolute;
-  top: 350px;
-  left: -5%;
+  flex: 1;
   position: relative;
+  width: 100%;
+  height: 40px;
 }
 #selfIntroduction .selfIntroduction{
   position: absolute;
-  top: 20px;
-  left: 40px;
-  color: black;
-  display: inline-block;
-  width: 30px;
-  font-size: 15px;
-  transform: translateY(-22px);
+  width: 17%;
+  height: 55px;
+  top: 16%;
+  left: 2%;
+  font-size: 20px;
 }
 #selfIntroduction .inputSelfIntroduction{
   position: absolute;
-  top: 0;
-  left: 80px;
   width: 70%;
-  height: 40px;
-  border: 2px solid #ccc;
+  height: 55px;
+  top: 0;
+  left: 20%;
+  border-radius: 10px;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 6px;
-  padding-top: 6px;
-  font-size: 12px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.icon1{
+  color: green;
+  position: absolute;
+  top: 15%;
+  right: 12%;
+}
+.icon2{
+  color: red;
+  position: absolute;
+  top: 15%;
+  right: 12%;
 }
 .button{
-  position: absolute;
-  top: 410px;
-  position: relative;
-  width: 80px;
-  height: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 90px;
+  height: 50px;
   font-size: 20px;
-  color: #21ebff;
-  background-color: #fff;
-  border: 0;
-  overflow: hidden;
-  transition: .5s;
-  -webkit-box-reflect: below 1px linear-gradient(transparent,#0003);
+  margin-bottom: 10px;
 }
 .button:hover{
   cursor: pointer;
-  background-color: #21ebff;
-  color: #111;
-  box-shadow: 0 0 50px #21ebff;
-  transition-delay: .5s;
 }
-.button::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-left: 2px solid #21ebff;
-  border-top: 2px solid #21ebff;
-  transition: .5s;
+@media screen and (min-width:350px){
+#main{
+  width: 300px;
+  transform: translateY(-30px);
 }
-.button::after{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-bottom: 2px solid #21ebff;
-  border-right: 2px solid #21ebff;
-  transition: .5s;
+#name .name{
+  width: 11%;
+  top: 10%;
+  left: 8%;
+  font-size: 16px;
 }
-.button:hover::before,.button:hover::after{
-  width: 100%;
-  height: 100%;
+#name .name-test{
+  font-size: 11px;
 }
-.icon1{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 12%;
-  top: 8px;
+#number .number{
+  width: 11%;
+  top: 10%;
+  left: 8%;
+  font-size: 16px;
 }
-.icon2{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 12%;
-  top: 8px;
+#number .number-test{
+  font-size: 11px;
+}
+#class .class{
+  width: 11%;
+  top: 10%;
+  left: 8%;
+  font-size: 16px;
+}
+#class .class-test{
+  font-size: 11px;
+}
+#email .email{
+  width: 11%;
+  top: 10%;
+  left: 8%;
+  font-size: 16px;
+}
+#email .email-test{
+  font-size: 11px;
+}
+#direction .direction{
+  width: 11%;
+  top: 10%;
+  left: 8%;
+  font-size: 16px;
+}
+#selfIntroduction .selfIntroduction{
+  width: 11%;
+  top: 10%;
+  left: 8%;
+  font-size: 16px;
+}
+.button{
+  width: 80px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+}
+
+@media screen and (min-width:390px){
+#main{
+  width: 334px;
+  transform: translateY(-40px);
+}
+}
+@media screen and (min-width:430px){
+#main{
+  width: 368px;
+  transform: translateY(-40px);
+}
+}
+@media screen and (min-width:720px){
+#main{
+  width: 450px;
+  transform: translateY(-40px);
+}
+#name .name{
+  width: 11%;
+  top: 10%;
+  left: 10%;
+  font-size: 18px;
+}
+#name .name-test{
+  font-size: 12px;
+}
+#number .number{
+  width: 11%;
+  top: 10%;
+  left: 10%;
+  font-size: 18px;
+}
+#number .number-test{
+  font-size: 12px;
+}
+#class .class{
+  width: 11%;
+  top: 10%;
+  left: 10%;
+  font-size: 18px;
+}
+#class .class-test{
+  font-size: 12px;
+}
+#email .email{
+  width: 11%;
+  top: 10%;
+  left: 10%;
+  font-size: 18px;
+}
+#email .email-test{
+  font-size: 12px;
+}
+#direction .direction{
+  width: 11%;
+  top: 10%;
+  left: 10%;
+  font-size: 18px;
+}
+#selfIntroduction .selfIntroduction{
+  width: 11%;
+  top: 5%;
+  left: 10%;
+  font-size: 18px;
+}
+}
+@media screen and (min-width:970px){
+#main{
+  width: 480px;
+  transform: translateY(-100px);
+}
+}
+@media screen and (min-width:1170px){
+#main{
+  width: 500px;
+  transform: translateY(-120px);
+}
+#name .name{
+  left: 9%;
+  top: 5%;
+  font-size: 20px;
+}
+#number .number{
+  left: 9%;
+  top: 5%;
+  font-size: 20px;
+}
+#class .class{
+  left: 9%;
+  top: 5%;
+  font-size: 20px;
+}
+#email .email{
+  left: 9%;
+  top: 5%;
+  font-size: 20px;
+}
+#direction .direction{
+  left: 9%;
+  top: 5%;
+  font-size: 20px;
+}
+#selfIntroduction .selfIntroduction{
+  width: 11%;
+  top: 2%;
+  left: 9%;
+  font-size: 20px;
+}
 }
 </style>
