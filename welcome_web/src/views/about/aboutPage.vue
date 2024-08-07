@@ -6,8 +6,9 @@ import game from './game.vue'
   
 <template>
     <div style="background-color:#f6f6f6">
-        <game></game>
+         <div style="padding-top:60px" ></div>
         <studyClass></studyClass>
+          <game></game>
         <DevelopMent></DevelopMent>
     </div>
 </template>

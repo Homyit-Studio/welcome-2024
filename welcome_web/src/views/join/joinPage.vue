@@ -1,8 +1,33 @@
 <script setup>
-import {ref,watch} from 'vue'
+import {ref,watch,onMounted} from 'vue'
 import axios from 'axios'
 import 'animate.css'
 import {CircleCheckFilled,CircleCloseFilled} from '@element-plus/icons-vue'
+import lottie from 'lottie-web'
+
+// 动画文件的路径
+import animationData2 from '@/assets/json/Animation2.json'
+import animationData3 from '@/assets/json/Animation3.json'
+// 动画容器的引用
+const animationContainer2 = ref(null)
+const animationContainer3 = ref(null)
+// 在组件挂载后初始化动画
+onMounted(() => {
+  lottie.loadAnimation({
+    container: animationContainer2.value, // 动画容器
+    animationData: animationData2,        // 动画数据
+    renderer: 'svg',                     // 渲染方式
+    loop: true,                          // 是否循环
+    autoplay: true                       // 是否自动播放
+  });
+  lottie.loadAnimation({
+    container: animationContainer3.value, // 动画容器
+    animationData: animationData3,        // 动画数据
+    renderer: 'svg',                     // 渲染方式
+    loop: true,                          // 是否循环
+    autoplay: true                       // 是否自动播放
+  });
+});
 
 // alert弹出警告
 const currentAlert = ref('')
@@ -136,7 +161,7 @@ const handleSubmit = async () => {
     selfIntroduction:input6Value.value
   }
   try{
-    const response = await axios.post('http://8.136.124.250:8080/baoming',postData)
+    const response = await axios.post('/api/baoming',postData)
     currentAlert.value = 'success'
     console.log(response.data)
   }catch(error){
@@ -180,6 +205,8 @@ const handleSubmit = async () => {
         class="custom-alert"
       />
   <div class="container">
+      <div ref="animationContainer2" class="animation-container2"></div>
+      <div ref="animationContainer3" class="animation-container3"></div>
       <form method="post" id="main" @submit.prevent="handleSubmit">
         <div class="top">
           <div class="register animate__animated animate__swing"><span>Register</span></div>
@@ -224,7 +251,7 @@ const handleSubmit = async () => {
           </div>
           <div id="selfIntroduction">
             <span class="selfIntroduction">自我介绍</span>
-            <textarea class="inputSelfIntroduction" style="resize: none;" v-model="input6Value"></textarea>
+            <textarea class="inputSelfIntroduction" style="resize: none;" v-model="input6Value" placeholder="请输入自我介绍"></textarea>
           </div>
           <button class="button" type="submit">Submit</button>
         </div>
@@ -250,6 +277,7 @@ const handleSubmit = async () => {
   padding: 0;
 }
 .container{
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -259,6 +287,20 @@ const handleSubmit = async () => {
   overflow: hidden;
   background: url(../../assets/join.jpg) no-repeat;
   margin-bottom: 60px;
+}
+.animation-container2{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 25%;
+  right: 3%;
+}
+.animation-container3{
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: 0;
 }
 #main{
   width: 500px;
@@ -279,6 +321,7 @@ const handleSubmit = async () => {
   height: 50px;
   font-size: 25px;
   line-height: 50px;
+  margin-top: 15px;
 }
 .content{
   width: 100%;
@@ -444,6 +487,7 @@ const handleSubmit = async () => {
   border: 1px solid gray;
   outline: none;
   padding-left: 5px;
+  color: gray;
 }
 #selfIntroduction{
   flex: 1;
@@ -470,6 +514,7 @@ const handleSubmit = async () => {
   outline: none;
   padding-top: 5px;
   padding-left: 5px;
+  font-size: 14px;
 }
 .icon1{
   color: green;
@@ -488,11 +533,22 @@ const handleSubmit = async () => {
   height: 50px;
   font-size: 20px;
   margin-bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  background:linear-gradient(120deg, #aac3d4, #9ebfd5);
 }
 .button:hover{
   cursor: pointer;
 }
 @media screen and (min-width:350px){
+/* .animation-container2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 73%;
+  right: 0;
+} */
 #main{
   width: 300px;
   transform: translateY(-30px);
@@ -547,13 +603,20 @@ const handleSubmit = async () => {
 }
 .button{
   width: 80px;
-  height: 50px;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 }
 
 @media screen and (min-width:390px){
+/* .animation-container2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 4%;
+  right: 0;
+} */
 #main{
   width: 334px;
   transform: translateY(-40px);
@@ -660,6 +723,13 @@ const handleSubmit = async () => {
   top: 2%;
   left: 9%;
   font-size: 20px;
+}
+.button{
+  width: 90px;
+  font-size: 20px;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 }
 </style>
