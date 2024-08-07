@@ -5,11 +5,11 @@
       <el-carousel-item class="index"><img src="../../assets/one.png" alt=""></el-carousel-item>
       <el-carousel-item class="index"><img src="../../assets/three.png" alt=""></el-carousel-item>
     </el-carousel> -->
-    <!-- <el-carousel height="90vh">
-      <el-carousel-item v-for="(image, id) in images" :key="id">
-        <img :src="image.path" alt="">
+    <el-carousel height="90vh">
+      <el-carousel-item v-for="(image, id) in images" :key="id" class="index">
+        <img :src="image.url" alt="">
       </el-carousel-item>
-   </el-carousel> -->
+   </el-carousel>
     <div class="advatages">
       <div class="slogan">
         加入Homyit,锻炼综合能力!<br>
@@ -139,8 +139,10 @@ export default {
     // -----------------------
      async fetchImages() {
        try {
-         const response = await axios.get('http://8.136.124.250:8080/getallimages');  // 发送GET请求到后端API接口
-         this.images = response.data;  // 将返回的图片数据存储到images数组中
+         const response = await axios.get('/api/getallimages');  // 发送GET请求到后端API接口
+         console.log(response)
+         this.images = response.data.data;  // 将返回的图片数据存储到images数组中
+         console.log(this.images)
       } catch (error) {
          console.error('获取失败', error);
       }
@@ -528,6 +530,7 @@ a.btn:hover {
     width: 100%;
     height: 100%;
   }
+  
 }
 
 </style>

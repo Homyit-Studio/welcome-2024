@@ -7,7 +7,7 @@
       <img src="@/assets/homyit_logo.png" alt="Logo">
     </div>
     <div class="guide">
-      <router-link to="/index" class="nav-link">Index</router-link>
+      <router-link to="/index" class="nav-link">Home</router-link>
       <router-link to="/about" class="nav-link">About</router-link>
       <router-link to="/employment" class="nav-link">Employment</router-link>
       <router-link to="/join" class="nav-link">Join</router-link>

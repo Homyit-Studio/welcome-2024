@@ -203,7 +203,9 @@ export default {
   margin: 50px 0px;
   text-align: center;
   color: #585858;
-  font: bold 20px 'Open Sans Condensed', sans-serif;
+  font: bold 26px 'Open Sans Condensed', sans-serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
 }
 .set {
   position: relative;
@@ -315,6 +317,9 @@ export default {
 }
 /* 响应式 */
 @media (max-width: 1024px) {
+  .contents .title {
+    font-size: 25px;
+  }
   .set {
     width: 95%;
     height: 550px;
@@ -475,6 +480,9 @@ export default {
 }
 }
 @media (max-width: 600px) {
+  .contents .title {
+    font-size: 20px;
+  }
 .set {
   width: 95%;
   height: 350px;
@@ -555,7 +563,7 @@ export default {
 }
 .contents .title {
   margin: 30px 0px;
-  font: 16px;
+  /* font: 13px; */
 }
 .set {
   width: 95%;

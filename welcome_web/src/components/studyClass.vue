@@ -71,24 +71,12 @@
       display: flex;
       align-items: flex-end;
       transition: .6s cubic-bezier(.28, -0.03, 0, .99);
-      box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
     }
   
     .card>.row {
       color: black;
       display: flex;
       flex-wrap: nowrap;
-    }
-  
-    .card>.row>.icon {
-      background: #fff;
-      color: gray;
-      border-radius: 50%;
-      width: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
     }
     
     .card>.row>.description {
