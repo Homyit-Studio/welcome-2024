@@ -350,25 +350,25 @@
 
 @media screen and (min-width:1200px){
     input:checked+label {
-      width: 800px; 
+      width: 700px; 
     }
     .container{
-      height: 800px;
+      height: 700px;
     }
     .description p{
       font-size: 22px;
       padding-bottom: 30px;
-      height: 150px;
+      height: 131px;
       font-weight: 700;
     }
     .card {
-      width: 126px;
+      width: 110px;
       border-radius: 0.7rem;
       margin: 0 6px;
     }
     .card>.row>.description {
-      width: 705px;
-      height: 150px;
+      width: 617px;
+      height: 131px;
       margin-bottom: 30px;
       opacity: 0;
     }
@@ -377,15 +377,19 @@
       transform: translateY(0) !important;
     }
     .card[for="c1"] {
-      background-size: 800px 800px;
+      background-size: 700px 700px;
     }
   
     .card[for="c2"] {
-      background-size: 800px 800px;
+      background-size: 700px 700px;
     }
   
     .card[for="c3"] {
-      background-size: 800px 800px;
+      background-size: 700px 700px;
     }  
 }
+<<<<<<< HEAD
+ </style>
+=======
 </style>
+>>>>>>> 5825ca0cd23c06ccd507eb1999ed84747cb7dcff
