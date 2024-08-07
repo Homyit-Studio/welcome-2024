@@ -19,19 +19,24 @@ public enum CodeEnum {
     LOGIN_STATUS_EXPIRED(601,"登录状态已过期"),
     LOGIN_USEorNAME_NULL(605,"用户名或密码为空"),
     DELECT_SUCCESS(701,"删除成功"),
+    INSERT_ERROR(800,"添加失败"),
     INSERT_SUCCESS(801,"添加成功"),
     INSERT_NAME_NULL(802,"名字不能为空"),
-    INSERT_YOUXIAN_NULL(802,"邮箱不能为空"),
-    INSERT_BANJI_NULL(802,"班级不能为空"),
-    INSERT_FANGXIANG_NULL(802,"方向不能为空"),
-    INSERT_XUEHAO_NULL(802,"学号不能为空"),
+    INSERT_YOUXIAN_NULL(803,"邮箱不能为空"),
+    INSERT_BANJI_NULL(804,"班级不能为空"),
+    INSERT_FANGXIANG_NULL(805,"方向不能为空"),
+    INSERT_XUEHAO_NULL(806,"学号不能为空"),
     BAOMING_SUCCESSS( 901,"报名成功"),
+    BAOMING_ERROR(900,"报名失败"),
     DOWNLOAD_SUCCESS(902,"下载成功"),
     UPDATE_SUCCESS(903,"修改成功"),
+    UPDATE_ERROR(909,"修改失败"),
     UPLOAD_SUCCESS(904,"图片上传成功"),
     GETIMAGES_SUCCESS(905,"获取图片成功"),
     GETDATA_SUCCESS(906,"获取地图数据成功"),
-    SYSTEM_UNKNOW_ERR(999,"未知错误" );
+    SYSTEM_UNKNOW_ERR(999,"未知错误" ),
+    SELECT_SUCCESS(907,"查询成功"),
+    EMAIL_ERROR(908,"邮箱格式不对"), DELECT_ERROR(911,"删除失败" );
     private Integer code;
     private String message;
 

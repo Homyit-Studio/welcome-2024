@@ -47,10 +47,10 @@ public class FileController {
         } else if (videos.contains(fileExt)) {
             module = "video";
         }
-        String savePath = MessageFormat.format("{0}/{1}/{2}/", "xiangyang", module, new SimpleDateFormat("yyyy/MM/dd").format(new Date()));
+        String savePath = MessageFormat.format("{0}/{1}/",  module, new SimpleDateFormat("yyyy/MM/dd").format(new Date()));
         fileService.upload(file, fileName, savePath);
         String filePath = savePath + fileName;
-        String url = UploadConfig.reUrl + filePath;
+        String url = UploadConfig.reUrl + "images/"+filePath;
         System.out.println("返回地址:" + url);
         //一次性上传多张的时候最好加上这个
         //Thread.sleep(500);

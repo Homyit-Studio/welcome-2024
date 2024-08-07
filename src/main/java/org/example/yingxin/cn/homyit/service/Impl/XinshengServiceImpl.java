@@ -28,17 +28,18 @@ public class XinshengServiceImpl implements XinshengService {
         return xingxinshengMapper.select(id,name,xuehao,banji,fangxiang,page,pagesize);
     }
     @Override
-    public void delect(Xinsheng xinsheng){
-        xingxinshengMapper.delete(xinsheng.getId());
+    public Integer delect(Xinsheng xinsheng){
+        return xingxinshengMapper.delete(xinsheng.getId());
+
     }
     @Override
-    public void insert(Xinsheng xinsheng){
-        xingxinshengMapper.insert(xinsheng.getId(),xinsheng.getName() ,xinsheng.getXuehao(),xinsheng.getBanji(),
+    public Integer insert(Xinsheng xinsheng){
+       return  xingxinshengMapper.insert(xinsheng.getId(),xinsheng.getName() ,xinsheng.getXuehao(),xinsheng.getBanji(),
                 xinsheng.getYouxiang(),xinsheng.getFangxiang(),xinsheng.getJieshao());
     }
     @Override
-    public void update(Xinsheng xinsheng){
-        xingxinshengMapper.update(xinsheng.getName(),xinsheng.getXuehao(),xinsheng.getBanji(),
+    public Integer update(Xinsheng xinsheng){
+      return   xingxinshengMapper.update(xinsheng.getName(),xinsheng.getXuehao(),xinsheng.getBanji(),
                 xinsheng.getYouxiang(),xinsheng.getFangxiang(),xinsheng.getId());
 
     }

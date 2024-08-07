@@ -12,9 +12,9 @@ public interface XinshengService {
 
     List<Xinsheng>select(Xinsheng xinsheng, Integer page, Integer pagesize);
 
-    void delect(Xinsheng xinsheng);
+  Integer delect(Xinsheng xinsheng);
 
-    void insert(Xinsheng xinsheng);
+   Integer insert(Xinsheng xinsheng);
 
-    void update(Xinsheng xinsheng);
+    Integer update(Xinsheng xinsheng);
 }

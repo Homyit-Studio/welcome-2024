@@ -11,18 +11,28 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://124.221.212.34:3306/lzh_db?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
-    username: lzh
-    password: 114514
+#    url: jdbc:mysql://124.221.212.34:3306/lzh_db?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
+    url: jdbc:mysql://8.136.124.250:3306/yingxin?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
+    username: name
+    password: 123456
   mail:
     host: smtp.qq.com
     default-encoding: UTF-8
     username: homyit_123@qq.com
     password: bhukmvibspnbcjej
+    port: 587
+    properties:
+      mail:
+        debug: true
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+
+
 
 mybatis:
   mapper-locations: org/example/yinxin/cn/homyit/mapper/*.xml
 upload:
   path: /home/answer/ui/images/
-#  path:  D:\test\
+#  path:  /home/photo/
   reUrl:  https://img.abmy.online/images/
+#  reUrl:  http://8.136.124.250/

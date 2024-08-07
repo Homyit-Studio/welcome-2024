@@ -18,11 +18,11 @@ public interface XinshengMapper {
 
 
     @Delete("DELETE from tb_xinsheng where  id=#{id}")
-    void delete( @Param("id") Integer id);
+    Integer delete( @Param("id") Integer id);
 
 
     @Insert("INSERT into tb_xinsheng  (id,name,xuehao,banji,youxiang,fangxiang,jieshao) value (#{id},#{name} ,#{xuehao},#{banji},#{youxiang},#{fangxiang},#{jieshao})")
-    void insert(@Param("id") Integer id, @Param("name") String name, @Param("xuehao") String xuehao, @Param("banji") String banji,
+    Integer insert(@Param("id") Integer id, @Param("name") String name, @Param("xuehao") String xuehao, @Param("banji") String banji,
                 @Param("youxiang") String youxiang, @Param("fangxiang") String fangixang  ,@Param("jieshao") String jieshao);
 
 
@@ -41,7 +41,7 @@ public interface XinshengMapper {
 
     @Update("update tb_xinsheng set name=#{nname},xuehao=#{nxuehao},banji=#{nbanji} , youxiang=#{nyouxiang} ,fangxiang=#{nfangxiang} " +
             "where id=#{id} ")
-    void update(@Param("nname") String nnname,@Param("nxuehao") String nxuehao,@Param("nbanji") String nbanji,
+   Integer update(@Param("nname") String nnname,@Param("nxuehao") String nxuehao,@Param("nbanji") String nbanji,
                 @Param("nyouxiang") String nyouxiang,@Param("nfangxiang") String nfangxiang,@Param("id") Integer id);
 
 }

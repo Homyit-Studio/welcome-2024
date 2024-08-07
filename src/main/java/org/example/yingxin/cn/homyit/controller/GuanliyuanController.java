@@ -54,27 +54,30 @@ public class GuanliyuanController {
     @Autowired
     private XinshengService xinshengService;
 
-    @GetMapping("/selectall")
+    @PostMapping("/selectall")
     @ResponseBody
-    public List<Xinsheng> selecrall( @RequestBody Select select) {
+    public Result selecrall( @RequestBody Select select) {
         Integer pagesize = 10;
         Integer page = (select.getPage()-1)*10;
         Xinsheng xinsheng = new Xinsheng(select.getId(),select.getName(),select.getXuehao(),select.getBanji(),select.getFangxiang(),select.getYouxiang(),null);
         List<Xinsheng> selectall = xinshengService.select(xinsheng, page, pagesize);
-        return selectall;
+        return Result.success(SELECT_SUCCESS, selectall);
     }
 
     @PostMapping("/delect")
     @ResponseBody
     public Result delect(@RequestBody Xinsheng xinsheng) {
-        xinshengService.delect(xinsheng);
-        return Result.success(CodeEnum.DELECT_SUCCESS);
+        if(xinshengService.delect(xinsheng)!=0) {
+            return Result.success(CodeEnum.DELECT_SUCCESS);
+        }else {
+            return Result.error(CodeEnum.DELECT_ERROR);
+        }
     }
 
-    @GetMapping("/insert")
+    @PostMapping("/insert")
     @ResponseBody
-    public Result updata(@RequestBody Xinsheng xinsheng) {
-        xinshengService.insert(xinsheng);
+    public Result insert(@RequestBody Xinsheng xinsheng) {
+
         if (xinsheng.getName() == null || xinsheng.getName().equals("")) {
             return Result.error(CodeEnum.INSERT_NAME_NULL);
         }
@@ -90,14 +93,22 @@ public class GuanliyuanController {
         if (xinsheng.getYouxiang() == null || xinsheng.getYouxiang().equals("")) {
             return Result.error(CodeEnum.INSERT_YOUXIAN_NULL);
         }
-        return Result.success(CodeEnum.INSERT_SUCCESS);
+        if(xinshengService.insert(xinsheng)!=0) {
+            return Result.success(CodeEnum.INSERT_SUCCESS);
+        }else {
+            return Result.error(CodeEnum.INSERT_ERROR);
+        }
     }
 
     @PostMapping("/update")
     @ResponseBody
     public Result update(@RequestBody Xinsheng xinsheng) {
-        xinshengService.update(xinsheng);
+        if(xinshengService.update(xinsheng)!=0){
         return Result.success(CodeEnum.UPDATE_SUCCESS);
+        }
+        else {
+            return Result.error(CodeEnum.UPDATE_ERROR);
+        }
     }
 
 }
