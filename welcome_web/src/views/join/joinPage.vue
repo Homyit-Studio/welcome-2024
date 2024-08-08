@@ -164,7 +164,6 @@ const handleSubmit = async () => {
     const response = await axios.post('/api/baoming',postData)
     currentAlert.value = 'success'
     console.log(response.data)
-    
   }catch(error){
     currentAlert.value = 'requestFailed'
     console.error(error)
