@@ -85,7 +85,7 @@ export default {
         <div class="start">
           <div class="title" id="section1">创立</div>
           <div class="set">
-            <img src="../assets/2020.jpg" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/20_20240807172452.jpg" alt="">
             <div ref="animatedElement1" class="words1 animate__animated">
               宏奕工作室成立于2013年9月,是在江西师范大学计算机信息工程学院各领导、
               老师的大力支持下迅速成长起来的学生自主研发的工作室。该工作室致力于Web开发,以社团的模式传承,
@@ -97,7 +97,7 @@ export default {
         <div class="enviroment">
           <div class="title" id="section2">环境</div>
           <div class="around">
-            <img src="../assets/工作室环境.jpg" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/huan_20240807172524.jpg" alt="">
             <div ref="animatedElement2" class="words2 animate__animated">
               工作室致力于打造舒适温馨的学习环境,24h空调、饮用水不间断供应,内设冰箱等实用设备,
               为成员解决自习室短缺等问题，营造踏实努力的学习氛围。
@@ -108,7 +108,7 @@ export default {
         <div class="success">
           <div class="title" id="section3">成就</div>
           <div class="win">
-            <img src="../assets/获奖情况.jpg" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/jiang_20240807172502.jpg" alt="">
             <div ref="animatedElement3" class="words3 animate__animated">
               从2013年9月工作室成立至今,宏奕工作室也会参加部分web开发赛事,同样在一些赛事中也取得了较好成绩。
               同时，宏奕工作室也会外包商业项目和外包/协助学院老师开发项目，包括美院外包项目-毕业方向辅导小程序,
@@ -119,7 +119,7 @@ export default {
         <div class="new">
            <div class="title">培养新能量</div>
            <div class="cultivate" id="section4">
-            <img src="../assets/新生培训.jpg" alt="">
+            <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/xuan_20240807172509.jpg" alt="">
             <div ref="animatedElement4" class="words4 animate__animated">
               宏奕工作室积极吸纳新鲜血液,工作室重视对新成员的培训和技能提升。
               通过组织培训、技术分享等活动帮助新成员快速适应工作环境,并掌握必要的技术和工具。
