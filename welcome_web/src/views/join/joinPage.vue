@@ -48,7 +48,12 @@ watch(input1Value,(newValue)=>{
         inputIco1Name.value = 'block'
         inputIco2Name.value = 'none'
         inputTest1.value = 0
-      }else{
+      }else if(input1Value.value==='') {
+        inputIco1Name.value = 'none'
+        inputIco2Name.value = 'none'
+        inputTest1.value = 0
+      }
+      else{
         inputIco1Name.value = 'none'
         inputIco2Name.value = 'block'
         inputTest1.value = 1
@@ -70,10 +75,10 @@ watch(input2Value,(newValue)=>{
         inputIco1Number.value = 'block'
         inputIco2Number.value = 'none'
         inputTest2.value = 0
-      } else if(rules2.test(newValue)==='') {
+      } else if(input2Value.value==='') {
         inputIco1Number.value = 'none'
-        inputIco2Number.value = 'block'
-        inputTest2.value = 1
+        inputIco2Number.value = 'none'
+        inputTest2.value = 0
       } else{
         inputIco1Number.value = 'none'
         inputIco2Number.value = 'block'
@@ -96,10 +101,10 @@ watch(input3Value,(newValue)=>{
         inputIco1Class.value = 'block'
         inputIco2Class.value = 'none'
         inputTest3.value = 0
-      } else if(rules3.test(newValue)==='') {
+      } else if(input3Value.value==='') {
         inputIco1Class.value = 'none'
-        inputIco2Class.value = 'block'
-        inputTest3.value = 1
+        inputIco2Class.value = 'none'
+        inputTest3.value = 0
       } else{
         inputIco1Class.value = 'none'
         inputIco2Class.value = 'block'
@@ -122,10 +127,10 @@ watch(input4Value,(newValue)=>{
         inputIco1Email.value = 'block'
         inputIco2Email.value = 'none'
         inputTest4.value = 0
-      } else if(rules4.test(newValue)==='') {
+      } else if(input4Value.value==='') {
         inputIco1Email.value = 'none'
-        inputIco2Email.value = 'block'
-        inputTest4.value = 1
+        inputIco2Email.value = 'none'
+        inputTest4.value = 0
       } else{
         inputIco1Email.value = 'none'
         inputIco2Email.value = 'block'
@@ -167,11 +172,21 @@ const handleSubmit = async () => {
     if(response.data.code===901){
       currentAlert.value = 'success'
       console.log(response.data)
-      setTimeout(()=>{window.location.reload()},500)
+      input1Value.value = ''
+      input2Value.value = ''
+      input3Value.value = ''
+      input4Value.value = ''
+      selectDirection.value = ''
+      input6Value.value = ''
     }else{
       currentAlert.value = 'requestFailed'
       message.value = response.data.desc
-      setTimeout(()=>{window.location.reload()},500)
+      input1Value.value = ''
+      input2Value.value = ''
+      input3Value.value = ''
+      input4Value.value = ''
+      selectDirection.value = ''
+      input6Value.value = ''
     }
   }catch(error){
     currentAlert.value = 'requestFailed'

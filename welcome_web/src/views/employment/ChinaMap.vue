@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted,onBeforeUpdate } from 'vue'
+import { ref, onMounted } from 'vue'
 //引入地图的json文件
 import chinaMap from '../../assets/json/china.json'
 //引入echarts核心模块
