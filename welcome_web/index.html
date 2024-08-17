@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homyit</title>
-    <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;  
-        }
-    </style>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="./employmentPage-vdrdKzPr.js" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homyit</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .weblcome {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 15px;
+                line-height: 1.5;
+                letter-spacing: 0.1em;
+                font-weight: 700;
+                font-family: Open Sans Condensed, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <span class="weblcome">别关闭，宏奕欢迎你，正在加载中...</span>
+        <script type="module" src="/src/main.js"></script>
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                const welcome = document.querySelector(".weblcome")
+                welcome.remove()
+            })
+        </script>
+    </body>
 </html>
