@@ -13,6 +13,7 @@ specifiers:
   lottie-web: ^5.12.2
   pinia: ^2.1.7
   swiper: ^11.1.9
+  syk-toast: ^1.0.4
   unplugin-auto-import: ^0.18.2
   unplugin-vue-components: ^0.27.3
   vite: ^5.3.5
@@ -39,6 +40,7 @@ devDependencies:
   '@vitejs/plugin-vue': 5.1.2_vite@5.4.1+vue@3.4.38
   eslint: 8.57.0
   eslint-plugin-vue: 9.27.0_eslint@8.57.0
+  syk-toast: 1.0.4
   unplugin-auto-import: 0.18.2
   unplugin-vue-components: 0.27.4_vue@3.4.38
   vite: 5.4.1
@@ -3692,6 +3694,10 @@ packages:
     resolution: {integrity: sha512-rflu8zvfGa3x1v/aeSufk4zRJffhOQowyvtJlp46sUBnOqAuk1Rdv5Ldj0AWWBV595iZ+ZMk7VB35ZRtRUomtA==}
     engines: {node: '>= 4.7.0'}
     dev: false
+
+  /syk-toast/1.0.4:
+    resolution: {integrity: sha512-K9CIrxYmhzj3w4xCFrjSgAL3WIHNO1KddhkWuuV4DUbdOEqXd6rd4+bYjziBZjlEPr+WUzBsJKff679L5IgG7g==}
+    dev: true
 
   /tar-stream/1.6.2:
     resolution: {integrity: sha512-rzS0heiNf8Xn7/mpdSVVSMAWAoy9bfb1WOTYC78Z0UQKeKa/CWS8FOq0lKGNa8DWKAn9gxjCvMLYc5PGXYlK2A==}

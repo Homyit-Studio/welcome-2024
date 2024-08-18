@@ -1,4 +1,5 @@
 <script setup>
+import { toast } from "syk-toast"
 import { defineProps, ref, onMounted, onBeforeUnmount } from "vue"
 const props = defineProps({
     src: {
@@ -8,22 +9,31 @@ const props = defineProps({
     },
     rootMargin: {
         type: Number,
-        default: 50,
+        default: 200,
     },
 })
 const imgRef = ref(null)
-
 const observer = new IntersectionObserver(
     (entries) => {
         if (entries[0].isIntersecting) {
             const img = entries[0].target
-            img.src = img.dataset.src
+            const src = img.dataset.src
+            const imageComponent = new Image()
+            imageComponent.src = src
+            imageComponent.onload = () => {
+                img.src = src
+            }
+            imageComponent.onerror = () => {
+                toast.log("图片加载失败")
+            }
+
             observer.unobserve(img)
         }
     },
     {
-        rootMargin: `${-props.rootMargin}px 0px 0px 0px`, // 预加载
+        rootMargin: `${props.rootMargin}px 0px`, // 预加载
         root: null,
+        threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
     }
 )
 onMounted(() => {
