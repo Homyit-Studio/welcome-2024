@@ -294,6 +294,11 @@ const handleSubmit = async () => {
     margin: 0;
     padding: 0;
 }
+span{
+    border: 0;
+    box-shadow: 0 0 0 0;
+    background-color: transparent;
+}
 .container {
     position: relative;
     display: flex;
