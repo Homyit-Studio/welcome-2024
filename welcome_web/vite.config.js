@@ -10,6 +10,10 @@ import { visualizer } from "rollup-plugin-visualizer"
 import { createHtmlPlugin } from "vite-plugin-html"
 import externalGlobals from "rollup-plugin-external-globals"
 
+/** tuomin data */
+const desensitizationUrl =
+    "https%3A%2F%2Flf3-static.bytednsdoc.com%2Fobj%2Feden-cn%2Fnuhrpfboz%2Fecharts.min.js%3Fx-resource-account%3Ddcar"
+
 export default defineConfig({
     plugins: [
         createHtmlPlugin({
@@ -20,7 +24,7 @@ export default defineConfig({
                         injectTo: "body",
                         tag: "script",
                         attrs: {
-                            src: "https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js",
+                            src: decodeURIComponent(desensitizationUrl),
                         },
                         defer: true,
                     },
