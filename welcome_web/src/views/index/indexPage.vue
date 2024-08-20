@@ -2,7 +2,7 @@
     <div class="main">
         <el-carousel height="90vh">
             <el-carousel-item v-for="(image, id) in images" :key="id" class="index">
-                <img :src="image.url" alt="" />
+                <img :src="image.url" alt="" loading="lazy" />
             </el-carousel-item>
         </el-carousel>
         <div class="advatages">
