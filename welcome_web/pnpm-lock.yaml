@@ -15,6 +15,7 @@ specifiers:
   rollup-plugin-external-globals: ^0.12.0
   rollup-plugin-visualizer: ^5.12.0
   swiper: ^11.1.9
+  syk-logger: ^1.0.1
   syk-toast: ^1.0.5
   unplugin-auto-import: ^0.18.2
   unplugin-vue-components: ^0.27.3
@@ -35,6 +36,7 @@ dependencies:
   lottie-web: 5.12.2
   pinia: 2.2.2_vue@3.4.38
   swiper: 11.1.9
+  syk-logger: 1.0.1
   syk-toast: 1.0.5
   vue: 3.4.38
   vue-router: 4.4.3_vue@3.4.38
@@ -4001,6 +4003,10 @@ packages:
   /swiper/11.1.9:
     resolution: {integrity: sha512-rflu8zvfGa3x1v/aeSufk4zRJffhOQowyvtJlp46sUBnOqAuk1Rdv5Ldj0AWWBV595iZ+ZMk7VB35ZRtRUomtA==}
     engines: {node: '>= 4.7.0'}
+    dev: false
+
+  /syk-logger/1.0.1:
+    resolution: {integrity: sha512-wj5XZCnE5xNx6axA1AoRQwl0rjgQA5BXFVw4mG/PWN9c32Y0IHq6KEri36Ars9cw5u3PB5NoBSXTnfDNGYLFJw==}
     dev: false
 
   /syk-toast/1.0.5:

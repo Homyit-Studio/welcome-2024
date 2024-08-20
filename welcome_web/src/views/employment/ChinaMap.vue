@@ -1,151 +1,15 @@
 <script setup>
-
 import { ref, onMounted } from "vue"
-
-
-//引入echarts核心模块
 import { init, registerMap } from "echarts"
-//引入axios
 import axios from "axios"
-
-async function fetchDataAndCache() {  
-  try {  
-    const response = await axios.get('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json');  
-    const data = response.data; 
-    // 将数据转换为字符串并存储到localStorage  
-    localStorage.setItem('mapData', JSON.stringify(data));  
-  } catch (error) {  
-    console.error('获取数据失败:', error);  
-  }  
-}  
-  
-// 调用函数  
-fetchDataAndCache();
-
-function getmapData() {  
-  const mapDataStr = localStorage.getItem('mapData');  
-  if (mapDataStr) {  
-    try {  
-      const mapData = JSON.parse(mapDataStr);  
-      return mapData;  
-    } catch (error) {  
-      console.error('解析缓存数据失败:', error);  
-      // 可以选择删除损坏的数据  
-      localStorage.removeItem('mapData');  
-    }  
-  }  
-  return null; // 如果没有缓存数据或数据损坏，则返回null  
-}  
-  
-// 使用函数  
-const chinaMap = getmapData();  
-
+import { LinesData, data, geoCoordMap } from "@/contant"
+import { initMapData } from "@/utils"
 
 //地图的存放盒子chart的获取
 let chart = ref()
 //数据的声明以及数据的默认值
 let mapData = []
 
-let data = [
-    { name: "北京市", value: 19 },
-    { name: "天津市", value: 10 },
-    { name: "广州市", value: 17 },
-    { name: "深圳市", value: 16 },
-    { name: "成都市", value: 10 },
-    { name: "西安市", value: 10 },
-    { name: "南京市", value: 10 },
-    { name: "武汉市", value: 10 },
-    { name: "上海市", value: 18 },
-    { name: "重庆市", value: 10 },
-    { name: "沈阳市", value: 10 },
-    { name: "广州市", value: 10 },
-    { name: "青岛市", value: 10 },
-    { name: "苏州市", value: 10 },
-    { name: "郑州市", value: 10 },
-    { name: "合肥市", value: 10 },
-    { name: "长沙市", value: 10 },
-    { name: "佛山市", value: 10 },
-    { name: "东莞市", value: 10 },
-    { name: "杭州市", value: 10 },
-]
-let LinesData = [
-    {
-        coords: [
-            [115.89, 28.68],
-            [116.46, 39.92],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [121.48, 31.22],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [113.23, 23.16],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [114.07, 22.62],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [118.767413, 32.041544],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [120.153576, 30.287459],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [119.306239, 26.075302],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [106.54, 29.59],
-        ],
-    },
-    {
-        coords: [
-            [115.89, 28.68],
-            [114.31, 30.52],
-        ],
-    },
-]
-let geoCoordMap = {
-    北京市: [116.46, 39.92],
-    上海市: [121.48, 31.22],
-    广州市: [113.23, 23.16],
-    深圳市: [114.07, 22.62],
-    成都市: [104.06, 30.67],
-    西安市: [108.95, 34.27],
-    南京市: [118.78, 32.04],
-    武汉市: [114.31, 30.52],
-    重庆市: [106.54, 29.59],
-    合肥市: [117.27, 31.86],
-    长沙市: [113, 28.21],
-    杭州市: [120.19, 30.26],
-    东莞市: [113.75, 23.04],
-    苏州市: [120.62, 31.32],
-    郑州市: [113.65, 34.76],
-    青岛市: [120.33, 36.07],
-    佛山市: [113.11, 23.05],
-    天津市: [117.2, 39.13],
-    沈阳市: [123.38, 41.8],
-    南昌市: [115.89, 28.68],
-}
 const convertData = function (data) {
     var res = []
     for (var i = 0; i < data.length; i++) {
@@ -161,29 +25,25 @@ const convertData = function (data) {
 }
 //挂载
 
-
-
 function xhr() {
     var myChart = init(chart.value)
     axios
         .post("/api/data")
-        .then((response) => {
+        .then(async (response) => {
             mapData = response.data.data
+            let chinaMap = localStorage.getItem("mapData")
+            if (!chinaMap) {
+                await initMapData()
+                chinaMap = localStorage.getItem("mapData")
+            }
+            chinaMap = JSON.parse(chinaMap)
             //注册可用地图
             registerMap("china", chinaMap)
             //开始配置
             let option = {
-                //标题以及副标题
-                // title: {
-                //     text: '就业分布',
-                //     subtext: 'Homyit Studio',
-                //     left: 'center'
-                // },
                 //配置浮动框
                 tooltip: [
                     {
-                        // triggerOn: 'click',//点击才会出现提示框
-                        //enterable: true,//鼠标可以进入提示框
                         transitionDuration: 2, //浮动框过度时间
                         borderWidth: 0,
                         padding: 0,
@@ -195,23 +55,26 @@ function xhr() {
                         formatter: function (params) {
                             //模板字符串,用于设计悬浮框样式
                             let tipHtml =
-                              '<div style="width:180px;height:100px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">'
-                            + '<div style="width:180px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' 
-                            + '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' 
-                            + '</i>'
-                            + '<span style="margin-left:10px;color:#fff;font-size:16px;">' 
-                            + params.name 
-                            + '</span>' 
-                            + '</div>'
-                            + '<div style="padding:10px">'
-                            + '<p style="color:#fff;font-size:12px;">' + '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' + '</i>'
-                            + '人数：' 
-                            + '<span style="color:#25f4f2;margin:0 6px;">' 
-                                + params.value + '</span>' 
-                                + '个' 
-                                + '</p>'
-                            + '</div>' 
-                            + '</div>'
+                                '<div style="width:180px;height:100px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">' +
+                                '<div style="width:180px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' +
+                                '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' +
+                                "</i>" +
+                                '<span style="margin-left:10px;color:#fff;font-size:16px;">' +
+                                params.name +
+                                "</span>" +
+                                "</div>" +
+                                '<div style="padding:10px">' +
+                                '<p style="color:#fff;font-size:12px;">' +
+                                '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
+                                "</i>" +
+                                "人数：" +
+                                '<span style="color:#25f4f2;margin:0 6px;">' +
+                                params.value +
+                                "</span>" +
+                                "个" +
+                                "</p>" +
+                                "</div>" +
+                                "</div>"
                             return tipHtml
                         },
                     },
@@ -384,7 +247,7 @@ function xhr() {
 }
 //发送请求
 onMounted(() => {
-    xhr()   
+    xhr()
 })
 </script>
 
