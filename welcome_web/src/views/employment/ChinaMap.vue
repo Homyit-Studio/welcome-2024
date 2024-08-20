@@ -1,11 +1,46 @@
 <script setup>
+
 import { ref, onMounted } from "vue"
-//引入地图的json文件
-import chinaMap from "../../assets/json/china.json"
+
+
 //引入echarts核心模块
 import { init, registerMap } from "echarts"
 //引入axios
 import axios from "axios"
+
+async function fetchDataAndCache() {  
+  try {  
+    const response = await axios.get('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json');  
+    const data = response.data; 
+    // 将数据转换为字符串并存储到localStorage  
+    localStorage.setItem('mapData', JSON.stringify(data));  
+  } catch (error) {  
+    console.error('获取数据失败:', error);  
+  }  
+}  
+  
+// 调用函数  
+fetchDataAndCache();
+
+function getmapData() {  
+  const mapDataStr = localStorage.getItem('mapData');  
+  if (mapDataStr) {  
+    try {  
+      const mapData = JSON.parse(mapDataStr);  
+      return mapData;  
+    } catch (error) {  
+      console.error('解析缓存数据失败:', error);  
+      // 可以选择删除损坏的数据  
+      localStorage.removeItem('mapData');  
+    }  
+  }  
+  return null; // 如果没有缓存数据或数据损坏，则返回null  
+}  
+  
+// 使用函数  
+const chinaMap = getmapData();  
+
+
 //地图的存放盒子chart的获取
 let chart = ref()
 //数据的声明以及数据的默认值
@@ -126,6 +161,8 @@ const convertData = function (data) {
 }
 //挂载
 
+
+
 function xhr() {
     var myChart = init(chart.value)
     axios
@@ -158,26 +195,23 @@ function xhr() {
                         formatter: function (params) {
                             //模板字符串,用于设计悬浮框样式
                             let tipHtml =
-                                '<div style="width:180px;height:100px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">' +
-                                '<div style="width:180px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' +
-                                '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' +
-                                "</i>" +
-                                '<span style="margin-left:10px;color:#fff;font-size:16px;">' +
-                                params.name +
-                                "</span>" +
-                                "</div>" +
-                                '<div style="padding:10px">' +
-                                '<p style="color:#fff;font-size:12px;">' +
-                                '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
-                                "</i>" +
-                                "人数：" +
-                                '<span style="color:#25f4f2;margin:0 6px;">' +
-                                params.value +
-                                "</span>" +
-                                "个" +
-                                "</p>" +
-                                "</div>" +
-                                "</div>"
+                              '<div style="width:180px;height:100px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">'
+                            + '<div style="width:180px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' 
+                            + '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' 
+                            + '</i>'
+                            + '<span style="margin-left:10px;color:#fff;font-size:16px;">' 
+                            + params.name 
+                            + '</span>' 
+                            + '</div>'
+                            + '<div style="padding:10px">'
+                            + '<p style="color:#fff;font-size:12px;">' + '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' + '</i>'
+                            + '人数：' 
+                            + '<span style="color:#25f4f2;margin:0 6px;">' 
+                                + params.value + '</span>' 
+                                + '个' 
+                                + '</p>'
+                            + '</div>' 
+                            + '</div>'
                             return tipHtml
                         },
                     },
@@ -348,9 +382,9 @@ function xhr() {
         myChart.resize()
     })
 }
-//发送请求?
+//发送请求
 onMounted(() => {
-    xhr()
+    xhr()   
 })
 </script>
 

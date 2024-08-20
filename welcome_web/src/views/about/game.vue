@@ -1,4 +1,3 @@
-
 <template type="html">
     <div class="slogan">四型数独-体验由前端code出的游戏</div>
      <div class="slogan1">----点击消息查看游戏详情</div>
