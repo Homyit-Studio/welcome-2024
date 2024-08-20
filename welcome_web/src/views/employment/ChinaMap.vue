@@ -1,9 +1,7 @@
 <script setup>
-<<<<<<< HEAD
-import { ref, onMounted } from 'vue'
-=======
+
 import { ref, onMounted } from "vue"
->>>>>>> ff6818875b9d4b9e9c294fd5bf0c577d4cb8815b
+
 //引入地图的json文件
 import chinaMap from "../../assets/json/china.json"
 //引入echarts核心模块
@@ -130,98 +128,6 @@ const convertData = function (data) {
 }
 //挂载
 
-<<<<<<< HEAD
-function xhr(){
-    var myChart = echarts.init(chart.value)
-    axios.post('/api/data').then(
-    response=>{
-        mapData=response.data.data
-    //注册可用地图
-    echarts.registerMap('china', chinaMap)
-    //开始配置
-    let option = {
-        //配置浮动框
-        tooltip: [{
-            // triggerOn: 'click',//点击才会出现提示框
-            //enterable: true,//鼠标可以进入提示框
-            transitionDuration: 2,//浮动框过度时间
-            borderWidth: 0,
-            padding: 0,
-            textStyle: {
-                color: '#000',
-                decoration: 'none',
-            },
-            //自定义浮动框
-            formatter: function (params) {
-                //模板字符串,用于设计悬浮框样式
-                let tipHtml = '<div style="width:180px;height:100px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">'
-                    + '<div style="width:180px;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' + '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' + '</i>'
-                    + '<span style="margin-left:10px;color:#fff;font-size:16px;">' + params.name + '</span>' + '</div>'
-                    + '<div style="padding:10px">'
-                    + '<p style="color:#fff;font-size:12px;">' + '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' + '</i>'
-                    + '人数：' + '<span style="color:#25f4f2;margin:0 6px;">' + params.value + '</span>' + '个' + '</p>'
-                    + '</div>' + '</div>';
-                return tipHtml;
-            }
-
-        },
-
-        ],
-        //最左边的正方形框,以及地图颜色的相关配置
-        visualMap: {
-            show: false,//是否显示
-            type: 'continuous',
-            min: 0,//最小个数
-            max: 10,//最大个数
-            realtime: true,//根据数据变化
-            left: '0%',//离左边的距离,这边我直接给他隐藏了
-            top: '20%',//位置
-            calculable: true,
-            seriesIndex: [0],//如果只有一个map系列，这里应该是0 
-            inRange: {
-                color: ['#04387b', '#00d8ff'] // 由浅蓝到深蓝
-            }
-        },
-        geo: {//
-            type: 'map',
-            map: 'china',
-            label: {//文字
-                show: true,//字体标签显示
-                color: '#fff',
-                fontSize: 7,
-                opacity: 0.6
-            },
-            itemStyle: {
-                areaColor: '#fff',
-                borderColor: '#3B5077',
-                borderWidth: 1//省份分界线
-            },
-            zoom: 1.2,//地图的缩放比
-            emphasis: {//高亮时的效果展示
-                label: {//字体的颜色
-                    show: true,
-                    color: '#fff',
-                    fontSize: 10,
-                    opacity: 1
-                },
-                itemStyle: {
-                    areaColor: '#2B91B7',//高亮时的颜色
-                    borderColor: '#3B5077',//边缘的颜色
-                }
-            }
-        },
-        series: [
-            {   //地图
-                name: '省份',
-                type: 'map',
-                map: 'china',
-                geoIndex: 0,//地图的层数
-                data: mapData,
-                emphasis: {//高亮时的效果展示
-                    itemStyle: {
-                        areaColor: '#2B91B7',//高亮时的颜色
-                        borderColor: '#3B5077',//边缘的颜色
-=======
 function xhr() {
     var myChart = init(chart.value)
     axios
@@ -276,7 +182,6 @@ function xhr() {
                                 "</div>"
                             return tipHtml
                         },
->>>>>>> ff6818875b9d4b9e9c294fd5bf0c577d4cb8815b
                     },
                 ],
                 //最左边的正方形框,以及地图颜色的相关配置
@@ -445,15 +350,10 @@ function xhr() {
         myChart.resize()
     })
 }
-//发送请求?
+//发送请求
 onMounted(() => {
     xhr()
 })
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ff6818875b9d4b9e9c294fd5bf0c577d4cb8815b
 </script>
 
 <template>
