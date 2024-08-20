@@ -1,8 +1,5 @@
 <script setup>
-
 import { ref, onMounted } from "vue"
-
-
 //引入echarts核心模块
 import { init, registerMap } from "echarts"
 //引入axios
@@ -34,7 +31,7 @@ function getmapData() {
       localStorage.removeItem('mapData');  
     }  
   }  
-  return null; // 如果没有缓存数据或数据损坏，则返回null  
+//   else location.reload(); // 如果没有缓存数据或数据损坏，则重新刷新页面进行数据更新 
 }  
   
 // 使用函数  
@@ -173,12 +170,6 @@ function xhr() {
             registerMap("china", chinaMap)
             //开始配置
             let option = {
-                //标题以及副标题
-                // title: {
-                //     text: '就业分布',
-                //     subtext: 'Homyit Studio',
-                //     left: 'center'
-                // },
                 //配置浮动框
                 tooltip: [
                     {
