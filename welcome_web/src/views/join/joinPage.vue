@@ -41,14 +41,19 @@ const inputIco2Name = ref("none")
 // 1.创建响应式变量来存储name测试的值
 const inputTest1 = ref(0)
 // 1.定义name的正则表达式
-const rules1 = /.+/
+const rules1 = /^(?!\s*$).+/
 // 1.监听name变化
 watch(input1Value, (newValue) => {
     if (rules1.test(newValue)) {
         inputIco1Name.value = "block"
         inputIco2Name.value = "none"
         inputTest1.value = 0
-    } else {
+    }else if (input1Value.value === "") {
+        inputIco1Name.value = "none"
+        inputIco2Name.value = "none"
+        inputTest1.value = 0
+    } 
+    else {
         inputIco1Name.value = "none"
         inputIco2Name.value = "block"
         inputTest1.value = 1
@@ -70,10 +75,10 @@ watch(input2Value, (newValue) => {
         inputIco1Number.value = "block"
         inputIco2Number.value = "none"
         inputTest2.value = 0
-    } else if (rules2.test(newValue) === "") {
+    } else if (input2Value.value === "") {
         inputIco1Number.value = "none"
-        inputIco2Number.value = "block"
-        inputTest2.value = 1
+        inputIco2Number.value = "none"
+        inputTest2.value = 0
     } else {
         inputIco1Number.value = "none"
         inputIco2Number.value = "block"
@@ -89,17 +94,17 @@ const inputIco2Class = ref("none")
 // 3.创建响应式变量来存储Class测试的值
 const inputTest3 = ref(0)
 // 3.定义Class的正则表达式
-const rules3 = /.+/
+const rules3 = /^(?!\s*$).+/
 // 3.监听Class变化
 watch(input3Value, (newValue) => {
     if (rules3.test(newValue)) {
         inputIco1Class.value = "block"
         inputIco2Class.value = "none"
         inputTest3.value = 0
-    } else if (rules3.test(newValue) === "") {
+    } else if (input3Value.value === "") {
         inputIco1Class.value = "none"
-        inputIco2Class.value = "block"
-        inputTest3.value = 1
+        inputIco2Class.value = "none"
+        inputTest3.value = 0
     } else {
         inputIco1Class.value = "none"
         inputIco2Class.value = "block"
@@ -122,10 +127,10 @@ watch(input4Value, (newValue) => {
         inputIco1Email.value = "block"
         inputIco2Email.value = "none"
         inputTest4.value = 0
-    } else if (rules4.test(newValue) === "") {
+    } else if (input4Value.value === "") {
         inputIco1Email.value = "none"
-        inputIco2Email.value = "block"
-        inputTest4.value = 1
+        inputIco2Email.value = "none"
+        inputTest4.value = 0
     } else {
         inputIco1Email.value = "none"
         inputIco2Email.value = "block"
@@ -143,14 +148,17 @@ const input6Value = ref("")
 const handleSubmit = async () => {
     // 清除之前的警告
     currentAlert.value = ""
+    console.log("Current Alert Cleared:", currentAlert.value)
     // 检查输入是否为空
     if (!input1Value.value || !input2Value.value || !input3Value.value || !input4Value.value) {
         currentAlert.value = "emptyFields"
+        console.log("Empty Fields Alert:", currentAlert.value)
         return
     }
     // 检查输入是否错误
     if (inputTest1.value === 1 || inputTest2.value === 1 || inputTest3.value === 1 || inputTest4.value === 1) {
         currentAlert.value = "inputError"
+        console.log("Input Error Alert:", currentAlert.value)
         return
     }
     const postData = {
@@ -163,11 +171,22 @@ const handleSubmit = async () => {
     }
     try {
         const response = await axios.post("/api/baoming", postData)
-        currentAlert.value = "success"
-        console.log(response.data)
+        console.log("Axios Response:", response.data)
+        if(response.data.code === 901){
+            currentAlert.value = "success"
+            console.log("Success Alert:", currentAlert.value)
+            input1Value.value = ''
+            input2Value.value = ''
+            input3Value.value = ''
+            input4Value.value = ''
+            selectDirection.value= ''
+            input6Value.value = ''
+            console.log(response.data)
+        }
     } catch (error) {
-        currentAlert.value = "requestFailed"
-        console.error(error)
+        currentAlert.value = 'requestFailed'
+        console.log("Request Failed Alert:", currentAlert.value)
+        console.log(error)
     }
 }
 </script>
