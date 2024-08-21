@@ -146,48 +146,46 @@ const input6Value = ref("")
 
 // 表单提交处理函数
 const handleSubmit = async () => {
-    // 清除之前的警告
-    currentAlert.value = ""
-    console.log("Current Alert Cleared:", currentAlert.value)
-    // 检查输入是否为空
-    if (!input1Value.value || !input2Value.value || !input3Value.value || !input4Value.value) {
-        currentAlert.value = "emptyFields"
-        console.log("Empty Fields Alert:", currentAlert.value)
-        return
+  // 清除之前的警告
+  currentAlert.value = ''
+  // 检查输入是否为空
+  if(!input1Value.value || !input2Value.value || !input3Value.value || !input4Value.value){
+    currentAlert.value = 'emptyFields'
+    return
+  }
+  // 检查输入是否错误
+  if(inputTest1.value === 1 || inputTest2.value === 1 || inputTest3.value === 1 || inputTest4.value === 1){
+    currentAlert.value = 'inputError'
+    return
+  }
+  const postData = {
+    'name':input1Value.value,
+    'xuehao':input2Value.value,
+    'banji':input3Value.value,
+    'youxiang':input4Value.value,
+    'fangxiang':selectDirection.value,
+    'jieshao':input6Value.value
+  }
+  try{
+    const response = await axios.post('/api/baoming',postData)
+    console.log(response.data)
+    if(response.data.code===901){
+      currentAlert.value = 'success'
+      console.log(response.data)
+      input1Value.value = ''
+      input2Value.value = ''
+      input3Value.value = ''
+      input4Value.value = ''
+      selectDirection.value = ''
+      input6Value.value = ''
+    }else{
+      currentAlert.value = 'requestFailed'
+      message.value = response.data.desc
     }
-    // 检查输入是否错误
-    if (inputTest1.value === 1 || inputTest2.value === 1 || inputTest3.value === 1 || inputTest4.value === 1) {
-        currentAlert.value = "inputError"
-        console.log("Input Error Alert:", currentAlert.value)
-        return
-    }
-    const postData = {
-        name: input1Value.value,
-        xuehao: input2Value.value,
-        banji: input3Value.value,
-        youxiang: input4Value.value,
-        fangxiang: selectDirection.value,
-        jieshao: input6Value.value,
-    }
-    try {
-        const response = await axios.post("/api/baoming", postData)
-        console.log("Axios Response:", response.data)
-        if(response.data.code === 901){
-            currentAlert.value = "success"
-            console.log("Success Alert:", currentAlert.value)
-            input1Value.value = ''
-            input2Value.value = ''
-            input3Value.value = ''
-            input4Value.value = ''
-            selectDirection.value= ''
-            input6Value.value = ''
-            console.log(response.data)
-        }
-    } catch (error) {
-        currentAlert.value = 'requestFailed'
-        console.log("Request Failed Alert:", currentAlert.value)
-        console.log(error)
-    }
+  }catch(error){
+    currentAlert.value = 'requestFailed'
+    console.error(error)
+  }
 }
 </script>
 
