@@ -2,7 +2,7 @@
     <div class="main">
         <el-carousel height="90vh">
             <el-carousel-item v-for="(image, id) in images" :key="id" class="index">
-                <img :src="image.url" alt="" />
+                <img :src="image.url" alt="" loading="lazy" />
             </el-carousel-item>
         </el-carousel>
         <div class="advatages">
@@ -46,36 +46,40 @@
             <div class="projects_items">
                 <div ref="animatedElement1" class="img animate__animated animate__fast 200ms">
                     <div class="img1">
-                        <imageView
+                        <img
                             src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/cai_20240807172115.png"
                             alt=""
+                            loading="lazy"
                         />
                     </div>
                     <a href="https://sis.jxnu.edu.cn/" target="_blank">江西师范大学财务处官网</a>
                 </div>
                 <div ref="animatedElement2" class="img animate__animated animate__delay-0.5s animate__fast 200ms">
                     <div class="img1">
-                        <imageView
+                        <img
                             src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/guan_20240807172110.png"
                             alt=""
+                            loading="lazy"
                         />
                     </div>
                     <a href="https://gljcpj.jxnu.edu.cn/" target="_blank">江西师范大学管理决策评价研究中心官网</a>
                 </div>
                 <div ref="animatedElement3" class="img animate__animated animate__delay-0.8s animate__fast 200ms">
                     <div class="img1">
-                        <imageView
+                        <img
                             src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/guo_20240807172120.png"
                             alt=""
+                            loading="lazy"
                         />
                     </div>
                     <a href="https://sis.jxnu.edu.cn/" target="_blank">江西师范大学国际教育学院官网</a>
                 </div>
                 <div ref="animatedElement4" class="img animate__animated animate__delay-0.5s animate__fast 200ms">
                     <div class="img1">
-                        <imageView
+                        <img
                             src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/ma_20240807172102.png"
                             alt=""
+                            loading="lazy"
                         />
                     </div>
                     <a href="https://mar.jxnu.edu.cn/" target="_blank">江西师范大学马克思主义学院官网</a>
@@ -87,13 +91,9 @@
 <script>
 import "animate.css"
 import axios from "axios"
-import imageView from "@/components/imageView.vue"
 
 export default {
     name: "AnimatedElement",
-    components: {
-        imageView,
-    },
     // ---------------
     data() {
         return {
