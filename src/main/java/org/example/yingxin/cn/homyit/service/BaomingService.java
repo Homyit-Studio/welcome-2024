@@ -14,4 +14,5 @@ public interface BaomingService {
     Integer addxinsheng(Xinsheng xinsheng);
 
 
+  Xinsheng selectxuehao(Xinsheng xinsheng);
 }

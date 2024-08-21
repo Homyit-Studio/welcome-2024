@@ -4,6 +4,7 @@ import org.example.yingxin.cn.homyit.Until.FileUtils;
 import org.example.yingxin.cn.homyit.config.UploadConfig;
 import org.example.yingxin.cn.homyit.enums.CodeEnum;
 import org.example.yingxin.cn.homyit.mapper.ImagesMapper;
+import org.example.yingxin.cn.homyit.pojo.Image;
 import org.example.yingxin.cn.homyit.pojo.Result;
 import org.example.yingxin.cn.homyit.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +57,16 @@ public class FileController {
         //Thread.sleep(500);
         imagesMapper.insertimage(imageName, url);
         return Result.success(CodeEnum.UPLOAD_SUCCESS,url);
+    }
+    @PostMapping("/delectimages")
+    @ResponseBody
+    public Result delectimages(@RequestBody Image image) throws IOException, InterruptedException {
+        Integer deleteimage = imagesMapper.deleteimage(image.getId());
+        if (deleteimage > 0) {
+             return Result.success(CodeEnum.DELECTIMAGES_SUSSESS);
+        }else {
+            return Result.error(CodeEnum.DELECTIMAGES_ERROR);
+        }
+
     }
 }

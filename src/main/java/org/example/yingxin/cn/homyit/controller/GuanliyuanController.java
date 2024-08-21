@@ -15,11 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +29,7 @@ import static org.example.yingxin.cn.homyit.enums.CodeEnum.*;
 public class GuanliyuanController {
     @Autowired
     private GuanliyuanService guanliyuanservice;
+
 
     @PostMapping("/login")
     @ResponseBody
@@ -44,13 +43,20 @@ public class GuanliyuanController {
                 String jwt = JwtUntil.generateJwt(claims);
                 return Result.success(jwt);
             } else {
-                System.out.println("guanliyuan = " + guanliyuan);
+
                 return Result.error(LOGIN_ERR);
             }
         }
         return Result.error(LOGIN_USEorNAME_NULL);
     }
+    @PostMapping("/logout")
+    @ResponseBody
+    public Result Logout(HttpServletRequest request) throws IOException, ServletException {
+        String jwt = request.getHeader("token");
+        Result logout= guanliyuanservice.Logout(jwt);
+        return logout;
 
+    }
     @Autowired
     private XinshengService xinshengService;
 

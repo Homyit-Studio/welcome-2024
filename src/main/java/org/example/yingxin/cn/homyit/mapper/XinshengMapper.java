@@ -14,7 +14,8 @@ public interface XinshengMapper {
                           @Param("fangxiang") String fangxiang, @Param("page") Integer page, @Param("pagesize") Integer pagesize);
     @Select("SELECT *from tb_xinsheng")
     List<Xinsheng> selectall();
-
+    @Select("SELECT *from tb_xinsheng where xuehao=#{xuehao}")
+    Xinsheng selectxuehao(@Param("xuehao") String xuhao);
 
 
     @Delete("DELETE from tb_xinsheng where  id=#{id}")
@@ -43,5 +44,6 @@ public interface XinshengMapper {
             "where id=#{id} ")
    Integer update(@Param("nname") String nnname,@Param("nxuehao") String nxuehao,@Param("nbanji") String nbanji,
                 @Param("nyouxiang") String nyouxiang,@Param("nfangxiang") String nfangxiang,@Param("id") Integer id);
-
+    @Delete("DELETE from tb_xinsheng where name=#{name} and youxiang=#{youxiang} ")
+    void deleteyouxiang(@Param("name") String name,@Param("youxiang") String youxiang);
 }

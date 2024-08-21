@@ -1,9 +1,6 @@
 package org.example.yingxin.cn.homyit.mapper;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.example.yingxin.cn.homyit.pojo.Image;
 
 import java.util.List;
@@ -16,4 +13,6 @@ public interface ImagesMapper {
 //    String selectimage(@Param("imagename") String imagename);
     @Select("SELECT * from tb_images")
     List<Image> selectallimages();
+    @Delete("delete from tb_images where id=#{id}")
+    Integer deleteimage(@Param("id") Integer id);
 }

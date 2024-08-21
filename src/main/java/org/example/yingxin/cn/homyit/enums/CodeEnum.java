@@ -15,6 +15,8 @@ import lombok.ToString;
 @ToString
 public enum CodeEnum {
     SUCCESS(200,"登录成功"),
+    LOGOUT(203,"已退出登录"),
+    NOLOGIN(204,"你还未登录，请先登录"),
     LOGIN_ERR(600,"用户名或密码错误"),
     LOGIN_STATUS_EXPIRED(601,"登录状态已过期"),
     LOGIN_USEorNAME_NULL(605,"用户名或密码为空"),
@@ -36,7 +38,12 @@ public enum CodeEnum {
     GETDATA_SUCCESS(906,"获取地图数据成功"),
     SYSTEM_UNKNOW_ERR(999,"未知错误" ),
     SELECT_SUCCESS(907,"查询成功"),
-    EMAIL_ERROR(908,"邮箱格式不对"), DELECT_ERROR(911,"删除失败" );
+    EMAIL_ERROR(908,"邮箱格式不对"), DELECT_ERROR(911,"删除失败" ),
+    BAOMING_CHONGFU(912,"请勿重复报名"),
+    YOUXIANG_WUXIAO(913,"请检查你填写的邮箱是否正确"),
+    DELECTIMAGES_SUSSESS(301,"图片删除成功"),
+    DELECTIMAGES_ERROR(300,"图片不存在"),
+    JWT_ERORR(299,"JWT令牌失效");
     private Integer code;
     private String message;
 

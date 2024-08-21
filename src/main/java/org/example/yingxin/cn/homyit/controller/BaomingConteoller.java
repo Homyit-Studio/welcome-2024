@@ -1,6 +1,7 @@
 package org.example.yingxin.cn.homyit.controller;
 
 import org.example.yingxin.cn.homyit.enums.CodeEnum;
+import org.example.yingxin.cn.homyit.mapper.XinshengMapper;
 import org.example.yingxin.cn.homyit.pojo.RegexPatterns;
 import org.example.yingxin.cn.homyit.pojo.Result;
 import org.example.yingxin.cn.homyit.pojo.Xinsheng;
@@ -18,8 +19,7 @@ import java.io.UnsupportedEncodingException;
 public class BaomingConteoller {
     @Autowired
     private BaomingService baomingService;
-    @Autowired
-    private XinshengService xinshengService;
+
     @PostMapping("/baoming")
     @ResponseBody
     public Result baoming(@RequestBody Xinsheng  xinsheng)throws AddressException, UnsupportedEncodingException {
@@ -46,11 +46,20 @@ public class BaomingConteoller {
             return Result.error(CodeEnum.EMAIL_ERROR);
 
         }
+        if(baomingService.selectxuehao(xinsheng)!=null){
+            return Result.error(CodeEnum.BAOMING_CHONGFU);
+        }
      if(baomingService.addxinsheng(xinsheng)!=0&&baomingService.sendEmail(xinsheng.getYouxiang(),xinsheng.getName())==1){
 
             return Result.success(CodeEnum.BAOMING_SUCCESSS);
 
-     }else {
+     }
+     else if(baomingService.addxinsheng(xinsheng)!=0&&baomingService.sendEmail(xinsheng.getYouxiang(),xinsheng.getName())==0){
+
+            return Result.error(CodeEnum.YOUXIANG_WUXIAO);
+        }
+     else {
+
          return Result.error(CodeEnum.BAOMING_ERROR);
      }
 
