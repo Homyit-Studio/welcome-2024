@@ -21,12 +21,12 @@ export default defineConfig({
             inject: {
                 tags: [
                     {
-                        injectTo: "head",
-                        tag: "link",
+                        injectTo: "body",
+                        tag: "script",
                         attrs: {
-                            herf: decodeURIComponent(desensitizationUrl),
-                            rel: "prefetch",
+                            src: decodeURIComponent(desensitizationUrl),
                         },
+                        defer: true,
                     },
                 ],
             },
