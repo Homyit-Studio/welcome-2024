@@ -17,11 +17,6 @@ import java.util.List;
 public class GetImageController {
     @Autowired
     private ImagesMapper imagesMapper;
-//    @PostMapping("/")
-//    @ResponseBody
-//    public String GetImage(@PathVariable String imagename) {
-//
-//    }
     @GetMapping("/getallimages")
     @ResponseBody
     public Result getAllImages() {

@@ -17,4 +17,6 @@ public interface XinshengService {
    Integer insert(Xinsheng xinsheng);
 
     Integer update(Xinsheng xinsheng);
+
+    List<Xinsheng>selectall();
 }

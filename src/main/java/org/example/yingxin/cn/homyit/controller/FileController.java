@@ -69,4 +69,9 @@ public class FileController {
         }
 
     }
+    @GetMapping("/getallimages")
+    @ResponseBody
+    public Result getAllImages() {
+        return Result.success(CodeEnum.GETIMAGES_SUCCESS,imagesMapper.selectallimages());
+    }
 }

@@ -38,12 +38,16 @@ public enum CodeEnum {
     GETDATA_SUCCESS(906,"获取地图数据成功"),
     SYSTEM_UNKNOW_ERR(999,"未知错误" ),
     SELECT_SUCCESS(907,"查询成功"),
-    EMAIL_ERROR(908,"邮箱格式不对"), DELECT_ERROR(911,"删除失败" ),
+    EMAIL_ERROR(908,"邮箱格式不对"),
+    DELECT_ERROR(911,"删除失败" ),
     BAOMING_CHONGFU(912,"请勿重复报名"),
     YOUXIANG_WUXIAO(913,"请检查你填写的邮箱是否正确"),
     DELECTIMAGES_SUSSESS(301,"图片删除成功"),
     DELECTIMAGES_ERROR(300,"图片不存在"),
-    JWT_ERORR(299,"JWT令牌失效");
+    JWT_ERORR(299,"JWT令牌失效"),
+    UPDATADITU_ERROR(930,"地图修改失败"),
+    UPDATADITU_SUCCESS(931,"地图修改成功"),
+    UPDATADITU_NULL(932,"地图名称或值为空");
     private Integer code;
     private String message;
 

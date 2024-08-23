@@ -1,6 +1,5 @@
 package org.example.yingxin.cn.homyit.controller;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.example.yingxin.cn.homyit.Until.JwtUntil;
 import org.example.yingxin.cn.homyit.enums.CodeEnum;
 import org.example.yingxin.cn.homyit.pojo.Guanliyuan;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -65,9 +63,14 @@ public class GuanliyuanController {
     public Result selecrall( @RequestBody Select select) {
         Integer pagesize = 10;
         Integer page = (select.getPage()-1)*10;
-        Xinsheng xinsheng = new Xinsheng(select.getId(),select.getName(),select.getXuehao(),select.getBanji(),select.getFangxiang(),select.getYouxiang(),null);
-        List<Xinsheng> selectall = xinshengService.select(xinsheng, page, pagesize);
-        return Result.success(SELECT_SUCCESS, selectall);
+        if(select.getPage()==0){
+            List<Xinsheng> selectall = xinshengService.selectall();
+            return Result.success(SELECT_SUCCESS, selectall);
+        }else{
+        Xinsheng xinsheng = new Xinsheng(select.getId(),select.getName(),select.getXuehao(),select.getBanji(),null,select.getFangxiang(),null);
+        List<Xinsheng> selects = xinshengService.select(xinsheng, page, pagesize);
+        return Result.success(SELECT_SUCCESS, selects);
+        }
     }
 
     @PostMapping("/delect")
@@ -116,5 +119,6 @@ public class GuanliyuanController {
             return Result.error(CodeEnum.UPDATE_ERROR);
         }
     }
+
 
 }

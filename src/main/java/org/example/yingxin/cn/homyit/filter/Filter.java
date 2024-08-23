@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@Component
+
 @WebFilter("/guanliyuan/*")
 public class Filter implements javax.servlet.Filter {
     @Autowired

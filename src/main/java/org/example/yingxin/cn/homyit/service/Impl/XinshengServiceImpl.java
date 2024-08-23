@@ -43,4 +43,8 @@ public class XinshengServiceImpl implements XinshengService {
                 xinsheng.getYouxiang(),xinsheng.getFangxiang(),xinsheng.getId());
 
     }
+    @Override
+    public List<Xinsheng>selectall(){
+        return xingxinshengMapper.selectall();
+    }
 }
