@@ -325,7 +325,7 @@ span{
     transform: translateY(60px);
     margin: 0 auto;
     overflow: hidden;
-    background: url(../../assets/join.jpg) no-repeat;
+    background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/images/join.jpg') no-repeat;
     background-size: cover;
     margin-bottom: 60px;
 }

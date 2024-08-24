@@ -170,27 +170,27 @@ onMounted(() => {
         <div class="animation-container">
             <div class="list">
                 <div data-order="0" class="list-item">
-                    <ImageView src="/logo-map/tencent_logo.png" alt="" />
+                    <ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/tencent_logo.png" alt="" />
                 </div>
                 <div data-order="1" class="list-item">
-                    <ImageView src="/logo-map/ByteDance.png" alt="" />
+                    <ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/ByteDance.png" alt="" />
                 </div>
                 <div data-order="2" class="list-item">
-                    <ImageView src="/logo-map/ANT-GROUP.png" alt="" />
+                    <ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/ANT-GROUP.png" alt="" />
                 </div>
                 <div data-order="1" class="list-item">
-                    <ImageView src="/logo-map/baidulogo.png" alt="" />
+                    <ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/baidulogo.png" alt="" />
                 </div>
                 <div data-order="0" class="list-item">
-                    <ImageView src="/logo-map/RingCentral.png" alt="" />
+                    <ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/RingCentral.png" alt="" />
                 </div>
-                <div data-order="0" class="list-item"><ImageView src="/logo-map/didi.png" alt="" /></div>
-                <div data-order="1" class="list-item"><ImageView src="/logo-map/hd.png" alt="" /></div>
+                <div data-order="0" class="list-item"><ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/didi.png" alt="" /></div>
+                <div data-order="1" class="list-item"><ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/hd.png" alt="" /></div>
                 <div data-order="2" class="list-item">
-                    <ImageView src="/logo-map/logo_nvidia.png" alt="" />
+                    <ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/logo_nvidia.png" alt="" />
                 </div>
-                <div data-order="1" class="list-item"><ImageView src="/logo-map/mtlog.png" alt="" /></div>
-                <div data-order="0" class="list-item"><ImageView src="/logo-map/4399.png" alt="" /></div>
+                <div data-order="1" class="list-item"><ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/mtlog.png" alt="" /></div>
+                <div data-order="0" class="list-item"><ImageView src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/logo_map/4399.png" alt="" /></div>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 <template>
   <div class="buttom">
     <div class="qq">
-      <img src="../assets/qq.jpg" alt="" class="img1">
+      <img src="https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/images/qq.jpg" alt="" class="img1">
     </div>
     <div class="words">
       版权:江西师范大学(Jiangxi Normal University) <br>

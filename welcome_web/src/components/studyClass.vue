@@ -113,18 +113,18 @@
     }
     
     .card[for="c1"] {
-      background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/font-end_20240807172004.png') no-repeat;
+      background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/images/about1.jpg') no-repeat;
       object-fit: cover;
       background-size: 600px 400px;
     }
   
     .card[for="c2"] {
-      background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/back-end_20240807172013.png') no-repeat;
+      background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/images/about2.jpg') no-repeat;
       background-size: 600px 400px;
     }
   
     .card[for="c3"] {
-      background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/UI20240807171954.png') no-repeat;
+      background: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/images/about3.jpg') no-repeat;
       background-size: 600px 400px;
     }
 @media screen and (min-width:350px){

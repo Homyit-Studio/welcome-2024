@@ -1,11 +1,11 @@
 <script setup>
 import { ref, onMounted } from "vue"
-import { init, registerMap } from "echarts"
+
 import axios from "axios"
 import { LinesData, data, geoCoordMap } from "@/contant"
 import { initMapData } from "@/utils"
 
-
+import { init, registerMap } from "echarts"
 //地图的存放盒子chart的获取
 let chart = ref()
 //数据的声明以及数据的默认值

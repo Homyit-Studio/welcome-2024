@@ -158,7 +158,7 @@ export default {
     height: 384px;
     width: 100%;
     background-size: cover;
-    background-image: url(@/assets/banner.jpg);
+    background-image: url('https://welcome2023-1319900784.cos.ap-shanghai.myqcloud.com/welcome/image/images/banner.jpg');
     background-position: center;
     color: #fff;
 }
