@@ -6,6 +6,7 @@ import org.example.yingxin.cn.homyit.service.FileService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 
 @Service
@@ -22,6 +23,21 @@ public class FileServiceImpl implements FileService {
 
             FileUtils.write(newPath, file.getInputStream());
 
+        }
+        @Override
+        public void deleteFile(String savePath, String fileName) {
+            String filePath = savePath + fileName;
+            System.out.println(filePath);
+            File file = new File(filePath);
+            if (file.exists()) {
+                if (file.delete()) {
+                    System.out.println("文件删除成功：" + fileName);
+                } else {
+                    System.out.println("无法删除文件：" + fileName);
+                }
+            } else {
+                System.out.println("文件不存在：" + fileName);
+            }
         }
     }
 

@@ -34,5 +34,6 @@ mybatis:
 upload:
   path: /home/answer/ui/images/
 #  path:  /home/photo/
-  reUrl:  https://img.abmy.online/images/
+  reUrl:  https://img.abmy.online/
 #  reUrl:  http://8.136.124.250/
+  

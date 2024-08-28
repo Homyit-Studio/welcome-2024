@@ -47,7 +47,9 @@ public enum CodeEnum {
     JWT_ERORR(299,"JWT令牌失效"),
     UPDATADITU_ERROR(930,"地图修改失败"),
     UPDATADITU_SUCCESS(931,"地图修改成功"),
-    UPDATADITU_NULL(932,"地图名称或值为空");
+    UPDATADITU_NULL(932,"地图名称或值为空"), IMAGE_NOT_FOUND(933,"图片没找到" ),
+    SELECTDITU_SUCCESS(940,"地图查找成功"),
+    SELECTDITU_ERROR(941,"地图查找失败");
     private Integer code;
     private String message;
 

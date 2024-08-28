@@ -14,4 +14,6 @@ public interface dituMapper {
     List<Ditu> dituList();
     @Update("update  tb_ditu set value=#{value} where name=#{name} ")
     Integer updateDitu(@Param("value") Integer value, @Param("name") String name);
+    @Select("select *from tb_ditu where name=#{name}")
+    Ditu seletditu(@Param("name") String name);
 }

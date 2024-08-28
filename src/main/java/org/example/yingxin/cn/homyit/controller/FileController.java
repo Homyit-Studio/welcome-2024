@@ -61,6 +61,23 @@ public class FileController {
     @PostMapping("/delectimages")
     @ResponseBody
     public Result delectimages(@RequestBody Image image) throws IOException, InterruptedException {
+        Image deletedImage = imagesMapper.getImageById(image.getId());
+        if (deletedImage == null) {
+            return Result.error(CodeEnum.IMAGE_NOT_FOUND);
+        }
+
+        // 删除存储在服务器上的图片文件
+        String imageUrl = deletedImage.getUrl();
+        String filePath = imageUrl.substring(imageUrl.lastIndexOf("/") + 1);
+        System.out.println(filePath);
+        String extractedPath = imageUrl.substring(imageUrl.indexOf("image/") + 6, imageUrl.indexOf(filePath));
+        System.out.println(extractedPath);
+        String savePath = UploadConfig.path+extractedPath;
+        System.out.println(savePath);
+        fileService.deleteFile(savePath, filePath);
+
+
+        //删除数据库的url
         Integer deleteimage = imagesMapper.deleteimage(image.getId());
         if (deleteimage > 0) {
              return Result.success(CodeEnum.DELECTIMAGES_SUSSESS);

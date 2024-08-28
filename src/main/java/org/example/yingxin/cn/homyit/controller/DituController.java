@@ -39,4 +39,17 @@ public class    DituController {
     public Result getmap() {
         return Result.success(CodeEnum.GETDATA_SUCCESS,ditumapper.dituList());
     }
+    @PostMapping("/guanliyuan/selectmap")
+    @ResponseBody
+    public Result selectmap(@RequestBody Ditu ditu) {
+        if(ditu.getName()==null||"".equals(ditu.getName())){
+            return Result.error(CodeEnum.UPDATADITU_NULL);
+        }
+        Ditu seletditu = ditumapper.seletditu(ditu.getName());
+        if(seletditu!=null){
+            return Result.success(CodeEnum.SELECTDITU_SUCCESS,seletditu);
+        }else {
+            return Result.error(CodeEnum.SELECTDITU_ERROR);
+        }
+    }
 }

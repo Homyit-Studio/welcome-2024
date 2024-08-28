@@ -13,6 +13,8 @@ public interface ImagesMapper {
 //    String selectimage(@Param("imagename") String imagename);
     @Select("SELECT * from tb_images")
     List<Image> selectallimages();
+    @Select("select *from tb_images where id=#{id}")
+    Image getImageById(@Param("id") int id);
     @Delete("delete from tb_images where id=#{id}")
     Integer deleteimage(@Param("id") Integer id);
 }
